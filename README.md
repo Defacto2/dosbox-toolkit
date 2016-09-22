@@ -4,6 +4,8 @@ A self-contained emulation package that we use to capture screenshots and troubl
 
 The package comprises of [D-Fend](http://dfendreloaded.sourceforge.net/), [DOSBox SVN-lfn](https://www.dosbox.com/wiki/SVN_Builds), custom D-Fend `Confs` and a selection of DOS tools and utilities.
 
+![Screen capture](SCREEN.png)
+
 #### Install
 
 Unfortunately only for Windows.
@@ -49,5 +51,3 @@ Please note while D-Fend, DOSBox and the configurations are released under a GPL
 
 ######Gravis Ultrasound Patches
 `ULTRASND`
-
-![Screen capture](SCREEN.png)
