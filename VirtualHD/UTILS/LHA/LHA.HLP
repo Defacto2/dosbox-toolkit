@@ -1,0 +1,201 @@
+
+                        LHA v2.11 HELP GUIDE
+
+                 by Irv Hoff, cleared by Yoshi-san
+
+                            3 March 1991
+
+
+LHA v2.11 - WHAT IS IT?
+-----------------------
+
+     LHA v2.11 is a dual purpose archive program.
+
+     1)  Its primary purpose is to take normal binary or text files
+         and make them smaller in size.  This saves great amounts of
+         storage space, with typical results being approximately 1/4
+         to 1/3 of original size.  It can handle any size file that
+         can be placed on the disk, together with the compressed file
+         it then makes.  Files in excess of 1 Mb may be easily used,
+         even though perhaps only 200 Kb RAM might be available.
+
+         This eliminates any potential problems from one computer to
+         another.
+
+         It does this with by using special "compression tables."
+         These are automatically built into the program and involve
+         mathematical procedures which are simple for a computer.
+
+     2)  The secondary purpose is to take more than one of these
+         programs and include them in just one file, although each
+         will have its own individual name inside that file.
+
+               This is called an "archive."  In the days of
+               CP/M, they were called "library" files.  In the
+               early days of MS-DOS (and other comparable pro-
+               grams used by IBM computers) they were called
+               .ARC files.
+
+               However, as other comparable programs appeared,
+               they were given various "extents" to identify
+               the program used.  Some sample names are .ARC,
+               .DWC, .LZH, .PAK, .ZIP, .ZOO, etc.
+
+               Each has its own special characteristics.
+               Lists comparing the various programs are
+               available.
+
+
+ARCHIVE FILES
+-------------
+
+     LHA v2.11 can have hundreds of files in a single .LZH archive.
+     This allows storing complete hard disk directories in a space
+     typically 1/2 or less the original total - although many of the
+     files might already be archived.
+
+     One such check we tried, made a file we called "TEST.LZH."  It
+     had 200 files and was 41% the original directory size.
+
+     Not only is this a great saving in size for storage, but puts
+     (in this case), the 200 files into one, single file.  This is
+     often beneficial.  Among other things, all files associated with
+     one program are kept together in the same archive.
+
+
+------------------------------------------------------------------------
+
+SIMPLE INSTRUCTIONS FOR USING LHA v2.11
+---------------------------------------
+
+     1)  To compress one file called ABC.TXT.  (It will make a
+         file called ABC.LZH.)
+
+'a'               LHA a ABC ABC.TXT
+             or
+'a'               LHA a ABC.LZH ABC.TXT
+                      ^    ^       ^
+                      a    b       c
+
+
+                  a  =  command
+                  b  =  archive program name
+                  c  =  pgm (or pgms) to be added/compressed
+
+
+         Either is suitable, one requires more typing.
+
+         a)  In this case, the "a" is called a command.  There are
+             12 of those available (shown below).  A few are dupli-
+             cates to initially help users more familiar with other
+             programs.
+
+             Typing LHA <ret> will display this list on the screen.
+             It also gives a very short summary what the command
+             does.
+
+
+     2)  ADDING a program to an existing file:
+
+'a'               LHA a ABC ABC.DOC
+                         ^
+                         archive name
+
+
+     3)  ADDING SEVERAL files at one time:
+
+'a'               LHA a ABC PGM1.EXT PGM2.EXT PGM3.EXT
+                         ^
+                         archive name
+
+
+     4) DELETING a file called PGM4.EXT:
+
+'d'               LHA d ABC PGM4
+                         ^
+                         archive name
+
+
+     5) EXTRACTING a file called PGM4.EXT:
+
+'e'  (or 'x')     LHA e ABC PGM4
+                         ^
+                         archive name
+
+
+     6) LOOKING at the archive contents:
+
+'l'  (or 'v')     LHA l ABC PGM4
+                         ^
+                         archive name
+
+
+     7) MOVES files into archive and deletes file from directory:
+
+'m'               LHA m ABC PGM1 PGM2 PGM3
+                         ^
+                         archive name
+
+
+     8) DISPLAY a text file in an archive:
+
+'p'               LHA p ABC PGM4
+                         ^
+                         archive name
+
+
+     9) TEST the integrity of an archive:
+
+'t'               LHA t ABC PGM4
+                         ^
+                         archive name
+
+
+          NOTE:  LHA.EXE makes both "long and short SFX files."
+                 Check the advanced .DOC file for information.
+                 It has a quite extensive discussion on the SFX
+                 files.
+
+
+COMMANDS:
+---------
+
+     There are 12 commands available.
+
+     The 'l' and 'v' are very slightly different, the 'v' putting
+     the file name on a line by itself.)  The 'e' and 'x' are
+     slightly different, as well.
+
+     These are listed by typing just LHA without any command of
+     file name:
+
+-------------------------------------------------------------------------------
+
+  <command>
+     a: Add files           u: Update files        m: Move files
+     f: Freshen files       d: Delete files        p: disPlay files
+     e: Extract files       x: eXtract files with pathnames
+     l: List of files       v: View listing of files with pathnames
+     s: make a Self-extracting archive   t: Test the integrity of an archive
+
+
+OPTIONS
+-------
+
+     There are 15 "options" which many users will not need/use.
+     They will be explained in detail in the LHA211.DOC manual for
+     advanced users.  Those are:
+
+
+  <option>
+     r: Recursively collect files        w: assign Work directory
+     x: allow eXtended file names        m: no Message for query
+     p: distinguish full Path names      c: skip time-stamp Check
+     a: allow any Attributes of files    z: Zero compression (only store)
+     t: archive's Time-stamp option      h: select Header level (default = 1)
+     o: use Old compatible method        n: display No indicator a/o pathname
+     i: not Ignore lower case            l: display Long name with indicator
+     -: '-' or '@' as the first letter of filenames
+===============================================================================
+
+                                  - end -

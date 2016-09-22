@@ -1,0 +1,234 @@
+Graphical FreeDOS installer v2.1-GR
+
+What's new:
+ + Bugs fixed. Now we ignore configuration errors.
+ + Some switches added.
+ + Support for *.ini files to configure packages added
+   and updating fdauto.bat and fdconfig.sys according
+   to the settings in *.ini files and freedos.ini file.
+ + Installer creates directory INSTBASE and has
+   a possibility to uninstall packages (update FreeDOS installation)
+   using switch /change
+ + Installer sets the variable fdosdir (that indicates
+   destination directory) and adds it to fdauto.bat
+
+Copyright (c) 2003  Sergey Kozlovich (Riga, Latvia - GMT+2).
+e-mail (English/Russian/Latvian):
+        kozlovichREMOVE_THIS@inbox.lv
+        sergey_kozlovich@hotmail.com
+
+
+Compiled by FreePASCAL installer doesn't more require any
+images or fonts - they are linked into *.exe file.
+
+Uses library GUI (also by Sergey Kozlovich)
+to provide Graphical User Interface.
+GUI can be downloaded from:
+  artificial.times.lv/gui
+  creative.cool.lv/gui
+
+To compile do these steps:
+--------------------------
+  - FreePascal should be installed and should be accessible from
+    the PATH variable;
+  - if gui\ subdirectory doesn't exist in this archive,
+      download gui from one of the sites above and
+      extract the archive to the directory where the sources
+      of installer are located (this will make a subdirectory gui);
+  - run build_fp.bat or make_fp.bat
+
+What is necessary to run installer:
+-----------------------------------
+ o install.exe (may be compressed with UPX or PKLITE)
+ o textinst.exe (default text-mode installer; you may redefine it using
+                 switches - see below)
+ o licence.txt
+ o mouse driver loaded (ctmouse2.exe works fine)
+ o if it adviced to load disk bufferring software (e.g. SMARTDRV)
+   and/or to specify BUFFERS=50 in fdconfig.sys
+ o files install.dat and install.min must be in the current directory
+   and the directory EN\ with descriptions of disks should
+   also be there;
+ o *.lsm files that are used to show information about package
+   to user when he/she is seleceting packages to install
+   (if *.lsm file is not found user may not know what does the
+   package stay for and does he/she need it);
+
+   if you install from CD, all *.lsm files can be read and we can
+   get info about all the packages; but installing from floppies
+   we can't do that becase *.lsm files are situated on different
+   floppies; I recommend to use lsm.exe program (call it with
+   one parameter that is a directory with packages). This program
+   will search recursively for *.lsm files and will create
+   lsm.ini file containing information about packages;
+
+   Now, if graphical installer won't find *.lsm file, it can
+   get info from lsm.ini file;
+
+   lsm.ini file can be situated in the current directory (where
+   install.exe is located) or in the directory with packages
+   
+   if you are installing from floppies, we can put lsm.ini to the
+   first floppy: and we can get info about ALL the packages!
+
+Optional for Graphical installer (not supported by standart text-installer):
+----------------------------------------------------------------------------
+ o freedos.ini file in current directory (where install.exe is located)
+   or in the directory where packages are located (source path)
+
+   see the default freedos.ini for example
+
+   !!! graphical installer can modify files fdauto.bat and fdconfig.sys;
+   it uses keys FDAUTO1=..., FDAUTO2=..., etc. and
+   FDCONFIG1=..., FDCONFIG2=..., etc.  from freedos.ini
+   to add lines to fdauto.bat and fdconfig.sys;
+
+   So, if you use graphical installer, please, do not
+   re-create fdauto.bat and fdconfig.sys files. The best solution,
+   I think, is to check if graphical installer was used
+   (i.e. if variable "%GUI_inst%"=="true" or
+    %fdosdir%\instbase\freedos.log file exists)
+   then we don't create fdauto.bat and fdconfig.sys,
+   otherwise, we do.
+
+   You can specify configuration files using AUTOFILE=... and CFGFILE=...
+   parameters in freedos.ini.
+
+   You can call a command after the install has finished;
+   set this option using POSTINSTALL=... parameter in file
+   freedos.ini.
+
+   This will work also to other packages that need post-install (e.g. seal).
+   Set this option in file <package>.ini (see below).
+
+   Post-install commands are added to the queue, and executed after GUI has
+   finished. The first command is that was specified in file freedos.ini.
+
+
+ o <package>.ini file; not required for each package, but is
+   useful for packages that need to add paths/environment variables
+   or to add some strings to fdauto.bat/fdconfig.sys
+
+   some of the packages is better to install to a specified folder
+   (not the default like C:\FDOS), e.g. DJGPP may be installed
+   in D:\DJGPP and not in C:\FDOS\DJGPP.
+   you may also specify the default destination directory
+   in file <package>.ini
+
+   Example:
+
+   you have to use a special configuration for package DJGPP
+   (i.e. to install DJGPP to a separate directory and set up
+   variable DJDIR in fdauto.bat)
+
+   create a file called djgpp214.ini (if zip-file is djgpp214.zip)
+   see for example packages\djgpp214.ini in this archive;
+
+   put the file to the directory on cd or floppy where djgpp214.zip
+   and djgpp214.lsm are located;
+
+   See for more examples in packages\ directory of this archive.
+
+
+   variables that can be used in *.ini files:
+     %DIRECTORY% - the target directory of the package
+       (the main configuration of FreeDOS is stored in file freedos.ini)
+     %AUTOFILE% - e.g. c:\freedos\fdauto.bat or c:\autoexec.bat depending on          settings
+     %CFGFILE% - e.g. c:\fdconfig.sys or c:\config.sys depending on settings
+
+
+ o It is recommended to load mouse driver while booting.
+
+   Install can work with or without mouse (if second you may
+   use all the same keys as in Windows to swith between the items -
+   TAB/SHIFT+TAB/UP ARROW/DOWN ARROW, etc.
+   to check/uncheck the item, press SPACEBAR).
+
+ o It is recommended to load also disk buffering software (like SMARTDRV).
+
+
+Command-line parameters (case insensitive):
+-------------------------------------------
+
+The parameters listed below may be passed in the command
+line while executing Graphical FreeDOS installer:
+  /df filename   - specify DAT-file name ( default: INSTALL.DAT )
+  /logfile filename - sprecift LOG-file name ( default: INSTALL.LOG )
+  /nolog - don't create LOG-file
+  /nobase - don't create installation database (for uninstalling packages)
+  /mono - used only if the user starts Text-mode installer
+  /noask - don't ask which graphic/text mode to use;
+           if this option is specified the 640x480x16colors mode will be used
+  /auto - automatically install FreeDOS with no questions if all is O.K.
+          if the error occurs, the dialog box will be displayed
+          Some windows will wail 5 sec. to allow user to press something.
+
+          If there are no errors and user presses nothing, the
+          install program will install FreeDOS with the default options
+          and exit.
+
+  /src path - specify source path
+  /dst path - specify destination path
+  /noevery
+    or
+  /dontshowfilenames - don't show the name of each file while extracting
+  /nocancel - don't allow to break copying process
+  /textinstall programname - specify the name of text-install program
+                             ( default: textinst.exe )
+  /licence filename - specify the filename of licence agreement
+                      ( default: licence.txt )
+  /acceptlicence - accept licence
+  /overwrite - don't ask for overwrite and overwrite existing files
+  /keepfiles - don't ask for overwrite and keep existing files
+
+
+  /change - this option allows to modify the existing FreeDOS installation
+            and deinstall some packages!
+            This options uses files from directory
+            %fdosdir%\instbase
+            If the installation program tells that it couldn't read
+            installation database, please, verify that you have inserted
+            the installation disk to the same drive where it was
+            during install. If FreeDOS source path was change,
+            please, change it in configuration file
+            %fdosdir%\instbase\freedos.log
+
+  /theme dir-name - use GUI theme that is located in directory
+                    (e.g. /theme linux.thm
+                    here: in directory linux.thm should be file
+                    with the same name linux.thm and bmp-images
+                    that are used in theme)
+                    theme will be loaded only in 16-bit graphic mode;
+                    if we cannot open theme, it is not loaded
+                    and default buttons/forms/checkboxes are used;
+
+
+Install program sets the environment variable fdosdir (and adds it to fdauto.bat).
+This variable is a directory name where FreeDOS is installed without end slash.
+
+It adds also variables %autofile%, %cfgfile% and %GUI_inst%:
+  autofile==c:\autoexec.bat or path\fdauto.bat (specified in freedos.ini)
+  cfgfile==c:\fdconfig.sys or c:\config.sys (specified in freedos.ini)
+  GUI_inst==true.
+
+These variables will not remain after reboot. If you want to set
+them permanent you have to configure freedos.ini and add appropriate
+line to %AUTOFILE%
+
+
+If you want to check if Graphical Installer was used, you may do the
+following things:
+
+if "GUI_inst"=="true" echo Graphical installer WAS used
+if "GUI_inst"=="" echo Graphical installer was NOT used
+
+or
+
+
+if exist %fdosdir%\INSTBASE\freedos.log echo Graphical installer WAS used
+if not exist %fdosdir%\INSTBASE\freedos.log echo Graphical installer was NOT used
+
+
+P.S.
+  Sorry for possible errors in my English :)
+

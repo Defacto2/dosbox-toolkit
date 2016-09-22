@@ -1,0 +1,1474 @@
+D-Fend Reloaded Changelog
+
+
+Version 1.4.4 (07/30/2015)
+==========================
+- All path names in conf files stored in archive files are made relaltive.
+
+
+Version 1.4.3 (06/27/2015)
+==========================
+- Updated Turkish language file.
+- Updated DOSZip from 3.21 to 3.38.
+- [Fix] The mobygames data read failed to download images specified as relative URLs.
+
+
+Version 1.4.2 (09/19/2014)
+==========================
+- Updated Korean language file.
+- Better error handling when internet connection fails while trying to download
+  game information from Mobygames.
+- [Fix] The "File path is relative to the DOSBox directory structure" checkbox
+  below the program file input line in the profile editor was not visible
+  anymore.
+  
+
+Version 1.4.1 (07/29/2014)
+==========================
+- Updated French, Italian and Russian language files.
+- Improved sorting speed in the package manager.
+- Records can be manually deleted from the package manager via the context
+  menu.
+- [Fix] Sorting the package manager games list by download size did not work.
+
+
+Version 1.4.0 (07/01/2014)
+==========================
+- When downloading game information now The Games DB (thegamesdb.net) can be
+  used as data source, too.
+- DOSBox, ScummVM and Windows games can be set up to be started with admin
+  rights. (This option is turned off by default and has to be enabled on the
+  security page of the program settings dialog.)
+- When choosing "max" for the CPU cycles in the profile editor additionally
+  a limiting value can be defined now.
+- The lists in the data package manager can be sorted now by clicking on the
+  column headers.
+- [Fix] When internet connection is cut during download of a package manager
+  file the download dialog is not blcoking the whole program anymore.
+- [Fix] Sometimes a video file was still clickable in the meda tab after being
+  deleted from disk.
+- [Fix] Viewing the DOSBox conf file fails when using a custom DOSBox
+  installation.
+
+
+Version 1.3.6 (03/31/2014)
+==========================
+- Updated Danisch, French, French Canada, German, Italian und Polish language
+  files.
+- Updated Italian DOSBox language file.
+- Updated DOSZip from 2.50 to 3.21.
+- Better filtering of game notes text in game information reader.
+- [Fix] Changing to the game directory is not working on some newer DOSBox CVN
+  version if using PhysFS or archive file based drive mounts.
+- [Fix] Line breaks created in the program notes field due to breaking the text
+  on the right window side are not stored anymore as line breaks.
+- [Fix] Until now not the same saved games where visible when running a ScummVM
+  based game via D-Fend Reloaded and via plain ScummVM.
+
+
+Version 1.3.5 (10/02/2013)
+==========================
+- Updated Polish language file.
+- Updated DOSZip from 2.48 to 2.50.
+- Improved game information reader to receive data from the updated Mobygames
+  homepage.
+- Updated search link for Squakenet.com.
+- Now the base folder used for making folder names relative can be mounted as a
+  drive, too.
+- [Fix] The "Delete all" context menu item for screenshots, sounds and videos
+  did not work if no item was selected.
+- [Fix] When using Windows-based emulators stored in a path relative to the
+  D-Fend Reloaded program directory in portable mode, games using this emulator
+  where not displayed correctly in the "Emulation type" filter of the games
+  filter tree.
+- [Fix] Starting a game could fail if there were multiple drive mountings
+  directing to the game files folder.
+- [Fix] When trying to install a game from a real floppy drive the installation
+  support function could fail.
+
+
+Version 1.3.4 (08/26/2013)
+==========================
+- Updated Korean language file.
+- Updated French and French Canada language files.
+- Updated DOSZip from 2.44 to 2.48.
+- Added options to set sound volulme for multiple profiles at once to the
+  multiple profiles editor.
+- Setting the font properties for the preview area now will also apply to
+  the notes text input field.
+- Extracting and creating archive files can be canceled now.
+- Now also data files for which there is an user-defined interpreter can be
+  added by drag&drop.
+- The screenshot thumbnails in the preview area of the D-Fend Reloaded program
+  window will be cached now so the screenshot images will not need to be
+  scaled down each time the screenshot previews will be displayed.
+
+
+Version 1.3.3 (01/05/2013)
+==========================
+- Updated DOSZip from 2.35 to 2.44.
+- The mobygames data read can read the game description now, too.
+- Added an option to disable file checksums for multiple profiles at once to
+  the multiple profiles editor.
+- New tree structure filter section "Recently started" will list the last 50
+  games started.
+- Added a new "Recently started" section to the tray area D-Fend Reloaded icon
+  context menu listing the last 10 started games.
+- Improved the mount and imgmount command interpreter which is used to scan the
+  [autoexec] sections of imported conf files.
+- [Fix] Starting programs from Windows game profiles that need admin rights
+  did not work.
+- [Fix] When configuration additional program files only the first 20 entries
+  will be stored.
+- [Fix] The game wizard will setup a screenshots folder for Windows games now,
+  too.
+- [Fix] The function to get the current screensaver status (for disabling the
+  screensaver as long DOSBox is running) could rise an exception.
+- [Fix] Downloading cover images from mobygames failed when manually adding a
+  game and trying to download images before saving the new profile for the
+  first time.
+
+
+Version 1.3.2 (09/17/2012)
+==========================
+- Updated Italian language file.
+- Updated French and French Canada language files.
+- Updated German language file.
+- Updated DOSZip from 2.33 to 2.35.
+- Updated German and Italian DOSBox language files.
+- When downloading images from mobygames, now also screenshots will be loaded.
+  Additionally the maximum number of covers and screenshots to be download
+  per profile have been increased from 10 to 25.
+- The mobygames data read is now downloading up to 8 files parallel, which
+  results in a significant speed up when downloading cover images.
+- Now up to 50 additional program file can be specified per profile.
+- The video RAM size now can be set up via the GUI for custom DOSBox builts not
+  using the videoram key in the [vga] section, too.
+- Improved initial screen position for the quick starter window.
+- Some smaller improvements to the automatic checksum collector for templates.
+- [Fix] The uninstall dialog offered to remove the whole game folder if there
+  was only one profile next to the "DOSBox DOS" profile and this profile used
+  a program or setup file located directly in the games folder.
+- [Fix] For some auto setup templates the user game information list on the
+  game information page of the new profile wizard showed an additional empty
+  line.
+
+
+Version 1.3.1 (06/25/2012)
+==========================
+- Korean language file (thanks to Decon).
+- Updated Italian language file.
+- Updated French and French Canada language files.
+- Updated DOSZip from 2.27 to 2.33.
+- When showing the DOSBox conf file / ScummVM ini file D-Fend Reloaded will add
+  the command line parameters used when starting DOSBox / ScummVM as a comment
+  in the file.
+- The file icon of the emulator program file will be used when displaying the
+  user-defined emulators in the profile filter tree now.
+- Improved auto detection of ScummVM when installing ScummVM after installation
+  of D-Fend Reloaded.
+- [Fix] User-defined command line parameters were ignored when running ScummVM.
+- [Fix] Hiding the ScummVM console did not work on newer ScummVM versions.
+- [Fix] Error message when adding a ScummVM based game via the wizard and not
+  "Show all pages" was selected on the first page of the wizard.
+- [Fix] Changing settings on the DOSBox CVS features page of the program
+  settings dialog could damage default values for render modes etc.
+- [Fix] Some labels in the profile editor were not large enough for the Italian
+  translation.
+
+
+Version 1.3.0 (04/17/2012)
+==========================
+- Updated FreeDOS from 1.0 to 1.1 (full installer only).
+- Updated DOSZip from 2.17 to 2.27.
+- Menu item in profiles menu and profile context menu: Open file in program
+  files folder.
+- Service section of setup dialog: Reset all profiles to template.
+- New "Open DOSBox prompt in program folder" context menu and profile menu
+  item.
+- The floppy/harddisk image file creator can diretly create a profiles for
+  booting the created image file in DOSBox.
+- Now the floppy/harddisk image file creator can add Doszip to image files.
+- New option not to repack the archive file when the game quits when using an
+  archive file as a drive.
+- Improved detection whether a program is using DOS4GW or not.
+- Better disk image type auto detection when extracting files from an image file.
+- Improved checksum usage when searching for new game in the games folder.
+- [Fix] When entering numerical values in a spin input field in the profile
+  editor via keyboard the value range is not always checked properly.
+- [Fix] Creation of bootable hard disk images was broken.
+- [Fix] Trying to get the list of available MIDI devices fails if there are no
+  drive records in the default template.
+- [Fix] The edit button in the drives list context menu of the profile editor
+  opened the add drive dialog and not the edit drive dialog.
+- [Fix] Removed useless information popup when editing the capture folder for
+  a Windows game profile in the profile editor.
+- [Fix] Removed invalid ISO image warning when extracting a floppy or hard disk
+  image.
+- [Fix] When downloading a cover image from mobygames right after changing the
+  capture folder (without closing the profile editor in between), the image
+  will be stored in the old capture folder.
+- [Fix] Wrong position for the portable version info button on the DOSBox
+  page of the configuration dialog when switching from basic to advanced
+  configuration mode.
+
+
+Version 1.2.1 (10/23/2011)
+==========================
+- Added a setup option to select which filter keys to be displayed in the
+  filter tree view.
+- The Russian language file has been updated.
+- [Fix] Exception in the new game wizard when using the default template.
+- [Fix] Exception when using the "Reset all pages but this" function in the
+  profile editor to reset a profile to a template.
+- [Fix] Wrong name for "Export archive file" popup menu item.
+
+
+Version 1.2.0 (09/29/2011)
+==========================
+- Updated DOSZip from 2.08 to 2.17.
+- Added about 300 new auto setup templates.
+- New "Select by" option in the profiles export dialog: Games for which there
+  is no auto setup template.
+- New option to create package list xml files for plain archive files.
+- In the extra program files dialog of the profile editor parameters for the
+  additional program files can be entered now.
+- New function in the icons manager to add all icons from a selected folder
+  and its subfolders.
+- Setup option to allow or block multiple instances of D-Fend Reloaded at the
+  same time.
+- New option to setup the font style (bold, italic, underlined) for normal
+  games list entries.
+- D-Fend Reloaded can store up to 9 internet addresses per profile now.
+- Setup option to use the image viewer as a non-modal window.
+- New option to change pixel shader settings in the multiple profiles editor.
+- More ScummVM settings in the multiple profiles editor.
+- The modes "hardware2x" and "hardware3x" will be added automatically to the
+  scalers list when activating the pixel shader GUI.
+- New input fields on the MIDI page of the profile editor to setup MT32.
+- Now you can set up custom DOSBox settings per DOSBox installation, too.
+- Improved detection if the per profile keyboard mapper file is the same as the
+  global keyboard mapper file on the keyboard page of the profile editor.
+- Additional user-defined command line parameters can be passed to ScummVM now.
+- Now the icon manager will show icons located in sub folders of the icons
+  folder, too.
+- Some smaller improvements to the first run wizard.
+- [Fix] Incompatibility with ScummVM 1.3.x is fixed.
+- [Fix] Storing the order of user defined columns in the games list did not
+  work correctly.
+- [Fix] The package manager can handle splitted packages larger than 2 GB from
+  local sources now.
+- [Fix] The options "Video chipset" and "Video RAM" in the multiple profiles
+  editor did not work correctly.
+- [Fix] Displaying multiple bmp files in the screenshots previewer did not work
+  correctly.
+- [Fix] Opening the profile editor for an auto setup template could rise an
+  expection under some conditions.
+- [Fix] The function "Convert absolute to relative paths" from the service page
+  of the program options dialog could rise an expection under some conditions.
+- [Fix] Clicking the down button to reorder the list of user-defined emulators
+  on the "Other emulators" setup dialog page cause some settings to be
+  overwritten.
+- [Fix] The names of the user-defined emulators in the dropdown box on the
+  "Other emulators" setup dialog page were not always correct.
+- [Fix] When filtering the games list by emulation type when selecting
+  "Windows" also games using some user-defined emulators were listed.
+- [Fix] The download/copy progress dialog shows wrong percent values in the
+  caption when copying large files from local sources.
+- [Fix] When changing the program language the language of the entries in the
+  games list columns listbox did not change at once.
+- [Fix] The list available of licenses was not displayed correctly in the
+  "Select by" menu.
+- [Fix] The preferences for opening text, image and video files were not
+  respected when opening files from the data folder via the context or the
+  profile menu.
+
+
+Version 1.1.0 (02/25/2011)
+==========================
+- Updated DOSZip from 2.05 to 2.08.
+- New option in the mobygames data reader to download all images available for
+  some game.
+- Setup option to configure if history information of started games shall be
+  collected or not.
+- Support for more special ykhwong DOSBox builds features.
+- New optional games list column: Number of starts of the profile.
+- When exporting the games list you can choose which fields to export.
+- Now the package list creation and package download system can handle packages
+  larger than 2 GB by splitting them.
+- The names for the files to look for a profile name suggestion when importing
+  plain archive files (default: FILE_ID.DIZ) is configurareable now.
+- The history viewer dialog opens much faster now.
+- The games list tooltips now also tells how often the selected profile has
+  been started.
+- New setup dialog option to configure whether D-Fend Reloaded should add a
+  trailing backslash to path names when calling an external packer or not. (uha
+  needs path names without trailing backslashs.)
+- Default command line parameter values for the external packers uha and arj32
+  are included now.
+- User defined emulators will be listed as sub entries below "Emulation type"
+  in the games list filter tree.
+- A new option to filter the games list by game license is offered in the
+  filter tree.
+- Setup option to rename all media files in all profiles.
+- The "Starting DOSBox failed" dialog now also allows to change the selected
+  SDL video driver.
+- Option to reselect the last selected profile on program restart.
+- The games list can be exported as a xml file now.
+- New option in the icons library to rename all icon files to have upper or
+  lower file extensions.
+- The package manager will display the download size of the selected games now.
+- Some more new auto setup templates.
+- The package manager will open faster now.
+- Lower memory consumption on downloading large files via the package manager.
+- Tuned the game and setup file detection code.
+- [Fix] The automatic translation of the license fields in the profiles failed.
+- [Fix] Sorting the columns in the history dialog by clicking the column
+  headers did not work for all columns correctly.
+- [Fix] The second last games list column could not be moved down (to be the
+  last column) on the games list columns editor in the setup dialog.
+- [Fix] Template names and custom game information keys containing "&" can
+  cause problems.
+- [Fix] When running from a network share not connected to a drive letter
+  starting DOSBox failed.
+- [Fix] When clicking the zoom button in the video previewer while a damaged
+  video file is selected or the needed codec is missing a division by zero
+  error message appeared.
+- [Fix] Access violation when using the "Start" dialog from the tray icon menu
+  and opening a second dialog from the tray icon menu while the first dialog is
+  still open.
+
+
+Version 1.0.3 (11/15/2010)
+==========================
+- When importing plain archive files or folders D-Fend Reloaded will look for a
+  FILE_ID.DIZ file and use if existent its content to suggest a profile name.
+- Files (like text files etc.) can be used as profile specific helper programs
+  to be started before or after the main program now.
+- The physical path names for drives mounts can contain semicolons now.
+- If the user selects a custom MIDI device to be used in a profile the device
+  will be stored by name and not by id anymore so the right device will be
+  selected when using the profile on an other system, too.
+- Now the DOSBox IPX network settings can be configurated in the mutli profile
+  editor, too.
+- Support for new glide=emu mode when using a ykhwong DOSBox build.
+- [Fix] Running profiles via command line parameters or via desktop or start
+  menu shortcuts was not working.
+- [Fix] Error messages when trying to load icons larger than 256x256 pixels.
+- [Fix] A cover image downloaded from mobygames via the profile editor was not
+  shown in the image viewer area of the main window at once if the profile
+  editor was closed by clicking on "Cancel".
+
+
+Version 1.0.2 (10/25/2010)
+==========================
+- Updated DOSZip from 2.01 to 2.05.
+- About 50 new auto setup templates.
+- The French and the French (Canada) language files have been updated.
+- [Fix] When starting a new language based on "English" in the DOSBox language
+  editor the chosen default DOSBox language was used, not always English.
+- [Fix] When importing a game from a plain archive file by using an auto setup
+  template which has an icon file defined now D-Fend Reloaded will check if the
+  icon file exists and remove the icon record if not.
+- [Fix] Some temporary files were not deleted when closing D-Fend Reloaded.
+- [Fix] "Transfer profiles" dialog not large enough for Italian translation.
+
+
+Version 1.0.1 (09/13/2010)
+==========================
+- Updated DOSZip from 1.54 to 2.01.
+- A new start-up logging function can help you to find the problem if 
+  D-Fend Reloaded is not running.
+- Now the DOSBox language file editor can use the DOSBox built-in Englisch
+  language file as template.
+- Updated the png file reader library.
+- [Fix] In some cases the "DOSBox start failed" dialog could appear even if
+  DOSBox is working correctly.
+- [Fix] Access violation when unsing the "Create image" dialog.
+- [Fix] Download of multiple games packages from Sourceforge always failed.
+- [Fix] The pixel shader option on the graphics card page of the profile editor
+  was partially out of the dialog.
+- [Fix] When selecting a MIDI device to be used in a DOSBox profile the text
+  "midiconfig=id" is added to the additional MIDI settings field instead of
+  just the MIDI device id.
+- [Fix] When running D-Fend Reloaded in portable operation mode and the base
+  directory for relative path names was not set to the program directory the
+  capture folder was not stored correctly.
+- [Fix] If updated from a previous D-Fend Reloaded version the changelog tab
+  in the program information dialog may displayed an outdated, incomplete
+  DOSBox changelog.
+- [Fix] The main window was not disabled while the check for missing files
+  progress dialog was shown.
+
+
+Version 1.0.0 (07/02/2010)
+==========================
+- DOSBox 0.74 is supported and bundled with D-Fend Reloaded.
+- Updated default values to offer all values available in DOSBox 0.74.
+- The new game installation support will assist you when adding a game that
+  needs to be installed before being able to be used.
+- New function for making FreeDOS bootable images and profiles from normal
+  profiles.
+- Functions for changing saved games (cheating) using an internal, editable
+  data base or by searching for values in saved game files.
+- Updated DOSZip from 1.49 to 1.54.
+- It can be configurated from the setup dialog now when to update the packages
+  list, the data reader configuration etc.
+- Via the Help|Search for updates function now you can also search for package
+  list, data reader and cheats database updates.
+- The zip file import function also can import DBGL packages now.
+- New easier to use first run wizard.
+- If DOSBox start fails D-Fend Reloaded will show some information and will
+  offer some options to find and solve the problem.
+- Now folders can be imported like archive files via the import menu and via
+  drag&drop.
+- DOSBox language file editor.
+- New setup option when to configurate a new game completely automatically.
+- Like the genre and language names the license in game profiles can now be
+  translated on the fly so profiles created via auto setup templates etc. will
+  always be shown with translated names for the license.
+- Now multiple commands can be specified to be executed before/after DOSBox.
+- The DOSBox console window can be turned on and off on per profile now.
+- In the profile editor you can selected which physical output device to use
+  when playing MIDI music inside DOSBox.
+- In the game information data reader dialog you can specify to look for DOS
+  based games only or to look for all games.
+- The game information data reader dialog now also can change the profile name.
+- Now the game information data reader will remember which fields have been
+  activated and which have be unchecked.
+- The paths to the text editor and the media viewers are stored relatively to
+  the base folder if the programs are located in subfolders of the base folder.
+- You can create capture folders and game data folders for all profiles at the
+  same time via the service page of the setup dialog.
+- You can disable the Windows exe file warnings for single profiles now.
+- Additionally to "and", "or", "not" language specific values for this logical
+  operator can be used in the filter field.
+- The fields for DOSBox window resolution and fullscreen resolution can have
+  individual default values lists now.
+- When creating a harddisk image file from some folder content now you can
+  specify how much free space you want to have on the image.
+- Some additionally information texts in the profile editor for making it
+  easier to understand the meanings of the DOSBox options.
+- Smarter way of finding the default GUI theme for ScummVM.
+- Some more auto setup templates.
+- [Fix] The "use scan codes" option was not passed the right way to DOSBox.
+- [Fix] Downloading multiple games packages via the package manager always
+  failed.
+- [Fix] "Not" operator in games list filter not working correctly.
+- [Fix] Mounting folders as CD drives did not work on systems without a real
+  CD drive.
+- [Fix] Some smaller fixes to the multiple profile editor.
+- [Fix] Hiding the ScummVM console did not work when starting ScummVM in
+  fullscreen mode.
+- [Fix] Error message when pressing F1 while menu is opened.  
+
+
+Version 0.9.3 (03/31/2010)
+==========================
+- Czech language file (thanks to marker)
+- About 50 new auto setup templates for automatical installation of even more
+  games.
+- Some more fine tuning to the way setup files are detected when importing
+  plain archive files.
+- [Fix] Downloading icons, language files and icon sets via the package manager
+  always failed.
+
+
+Version 0.9.2 (03/19/2010)
+==========================
+- The Italian language file has been updated.
+- Updated DOSZip from 1.41 to 1.49.
+- The functions for filtering the games list by a search string can handle
+  complex search strings (including "and", "or", "not", quotes, brackets,
+  compare operators for numbers, selecting properties to check by writing
+  "genre=..." etc.) now.
+- D-Fend Reloaded will use an internal update checker for checking for
+  program updates now. This will also fix the Windows 7 issue the program
+  looses focus on start up.
+- When running an update via the update check function the update installer
+  will not ask for the installation directory anymore.
+- The codepage selection dropdown box in the profile editor will show some
+  descriptions for the codepages now.
+- Improved DOSBox directory search order (if not installed together with
+  DOSBox) on first run.
+- About 100 new auto setup templates for automatical installation of even more
+  games.
+- Some fine tuning to the way game and setup files are detected when importing
+  plain archive files.
+- D-Fend Reloaded will start a bit faster on first run now.
+- [Fix] The selected keyboard layout when defining a DOSBox installation
+  specific keyboard layout in the advanced DOSBox settings may not got saved.
+- [Fix] Setting the DOSBox background priority for multiple profiles at once
+  via the multi profile editor did not work correctly.
+- [Fix] Setting the CD volume did not work.
+- [Fix] In some conditions the Game Explorer integration during installation
+  could fail.
+- [Fix] When adding profiles via the scan games folder function the entered
+  name for the new profile was ignored when an auto setup template was
+  selected to be used for the new profile.
+- [Fix] When copying a profile or adding profiles via the scan games folder
+  function no collision check for existing capture folders was performed.
+
+
+Version 0.9.1 (02/05/2010)
+==========================
+- Brazilian Portuguese language file (thanks to Cpt.Guapo)
+- Turkish language file (thanks to Hakan ATEÞ)
+- Updated DOSZip from 1.37 to 1.41.
+- Updated the DOSBox language files for German and Italian and added a new
+  DOSBox language file for Polish.
+- About 150 new auto setup templates for automatical installation of even more
+  games. Althogether D-Fend Reloaded now has more than 1000 auto setup 
+  templates.
+- Updated the default value lists for the supported keyboard layouts and
+  codepages.
+- Added Wikipedia to the "Search for game" default links.
+- Faster filtering functions in the package manager.
+- [Fix] Drag&drop of zip files etc. to the program window sometimes did not
+  work.
+- [Fix] Access violation when uninstalling multiple games while one of the
+  profiles to be uninstalled is installed in the games list.
+- [Fix] Access violation when clicking the "Download game information" button
+  on the programm information page of the profile editor when no internet
+  connection is available.
+- [Fix] The game data reader update function did not work.
+- [Fix] When canceling a download from the package manager the program will
+  continue with the next file from the download list instead of canceling the
+  whole operation.
+- [Fix] The reset to default values function on the default values page of the
+  program settings dialog could raise an access violation when closing the
+  dialog.
+- [Fix] The select/unselect functions of dialogs like the prof file export etc.
+  did not work for profiles having multiple values in the choosen category
+  (multiple genres divided by ";" for example).
+- [Fix] When downloading multiple games via the package manager the close
+  button of the main window became enabled after the first download was
+  completed. Clicking the main window close button while the package manager
+  dialog was opened raised an access violation.
+- [Fix] The "Use as screenshot in profiles list" context menu item in the
+  "Data folder" tab was also visible if no file was selected.
+- [Fix] The "Rename all" and "Delete all" context menu entries in the
+  screenshots, sounds and video tabs were also enabled if there were no files.
+- [Fix] Some minor problems in the keyboard layout setup; in particular when
+  keyboard layout "none" is selected.
+- [Fix] Wrong filenames for downloaded language files if language file and
+  the package list directring to this language file were not in the same
+  directory on the server.
+- [Fix] Some corrections to the DOSBox keyboard layouts default values list.
+- [Fix] The update installer did not update all DOSBox language files.
+- [Fix] The uninstaller will not remove non D-Fend Reloaded files from the
+  D-Fend Reloaded installation directory without confirmation anymore.
+- [Fix] The language dropdown boxes in the setup dialog now have a tooltip hint
+  and the dropdown list is wider (so "Brazilian Portuguese" is not truncated
+  anymore).
+
+
+Version 0.9.0 (12/02/2009)
+==========================
+- Example games packages, language files, icon sets etc. can be downloaded from
+  the D-Fend Reloaded homepage via the import menu now. 
+- Via the new "Tools" button in the profiles editor you can reset any page of a
+  profile to any template.
+- Ability to add games for other emulators as Windows profiles (calling the
+  emulator program file with the game data file as parameter).
+- From the game information page of the profile editor and the profile wizard
+  game information (including a cover image) can be loaded from mobygames.com
+  directly now.
+- Faster loading of the profile and the auto setup template files.
+- Now you can optionally enter multiple values per game info field (like genre,
+  language etc.).
+- Normal drive mounts can be converted into archiv file mounts and vice versa
+  right from the mounting dialog. The commands to run the game will also be
+  changed automatically if needed.
+- You can drag links from your browser to the D-Fend Reloaded program window
+  now. D-Fend Reloaded will download and importthe zip file behind the link.
+- All captured screenshots, sounds and videos can be renamed from the context
+  menu to have an uniform name scheme.
+- D-Fend Reloaded will warn the user when importing an archive file with a name
+  of an existing profile and will prevent overwriting existing games directory
+  subdirectories when importing plain archive files.
+- When adding new profiles via the profile editor needed mounting records can
+  be added automatically now. (This was already done when adding profiles via
+  the wizard.)
+- In the multiple profiles editor sections can be collapsed and expanded (like
+  in a tree structure) to make it more clear.
+- Now image files can be used as game icons, too.
+- The algorithm used for scaling images (like screenshots) can be selected from
+  the program options dialog now.
+- D-Fend Reloaded can optionally create conf files for all profiles in the
+  games list automatically.
+- The floppy and harddisk image creator now can make harddisk images and floppy
+  disk images of all sizes bootable.
+- The make disk image from folder content function now is able to create
+  harddisk images, too.
+- When creating disk images optionally disk management utilities and a text
+  editor can be added to the image.
+- When creating bootable disk images optionally a memory manager can be added
+  to the image. Also not only the selected keyboard layout is used on the image
+  but also the codepage.
+- Some improvements to the language editor.
+- Added *.ima to the file selection dialog when selecting an image file
+  for mounting or for extracting.
+- About 300 new auto setup templates for automatic identification of even more
+  games.
+- Updated DOSZip from 1.31 to 1.37.
+- Two more sites have been added to the list of game information sites
+  (TheLegacy.de and KultPower.de).
+- The time needed on first program start for initializing the user data has
+  been improved.
+- The profile editor and the program options dialog will open a bit faster.
+- Some smaller improvements to the new profile wizard.
+- [Fix] Extra directories and extra files records (see directories page of the
+  profile editor) got damaged when using the "Convert absolute to relative 
+  paths" function in the program options dialog.
+- [Fix] When importing a plain archive file with multiple executable files
+  in it and with a matching auto setup template sometimes the wrong executable
+  file was selected.
+- [Fix] The main window hotkeys were enabled while template editor was open.
+- [Fix] Access violation then trying to add a game with a space in the filename
+  via the profile wizard.
+- [Fix] Starting games with folders mounted as CD drives failed on systems with
+  no physical CD drive.
+- [Fix] The "Run game with current configuration" from the profile editor
+  dialog did not work with ScummVM and Windows game profiles.
+- [Fix] When setting the SoundBlaser or the Gravis UltraSound base address to
+  a hexadecimal address containing letters the selected address was not stored.
+- [Fix] Erroneous window behaviour when using "Run game with current
+  configuration" from the profile editor dialog or when creating bootdisk
+  images when "Minimize when DOSBox start" was active.
+- [Fix] keybrd2.sys and keybrd3.sys needed for some languages missing on 
+  bootdisks.
+- [Fix] The select all button in the transfer programs dialog did not work.
+- [Fix] The game list hotkeys (like return, insert etc.) were not disabled when
+  entering the notes field.
+- [Fix] Wrong error message "No game file selected" when adding a profile for
+  booting an image file.
+- [Fix] Access violation if you press and hold down the F9 key.
+- [Fix] Changed the default value for virtual free space on mounted drives from
+  the DOSBox 0.72 default 105 MB to the  DOSBox 0.73 default 250 MB.
+
+
+Version 0.8.2 (08/31/2009)
+==========================
+- Faster program start.
+- Faster start of profiles on many games in the games directory.
+- [Fix] Previewer area at the bottom of them main window is not resizeable.
+- [Fix] When using the "Create multiple shortcuts" function the tooltip hints
+  for the created shortcuts can be wrong.
+- [Fix] When transfering, uninstalling, building archive files or building
+  installer packages from profiles using cue/bin CD images only the selected
+  cue file was processed; the bin file was ignored.
+- [Fix] The mounting search and replace function of the multiple profiles
+  editor did not work.
+- [Fix] The mouse wheel not working on settings page of the multiple profiles
+  editor.
+- [Fix] Sometimes a second taskbar entry appears when clicking the program
+  window while creation of an archive package is prepared.
+
+
+Version 0.8.1 (08/10/2009)
+==========================
+- [Fix] If you press the delete key in the quick search box the program asks
+  you if you want to delete the currently selected profile.
+- [Fix] Pressing F3 while the wizard dialog is visible causes an access 
+  violation when closing the dialog.
+- [Fix] The update installer did not update all DOSBox language files.
+- [Fix] The scan games folder function was not automatically adjusting the
+  mounting settings from the auto setup templates if not VirtualHD was used
+  as games folder.
+- [Fix] Program window position is lost after restoring the program window if
+  using the minimize/restore on DOSBox start option in fullscreen mode without
+  border.
+- [Fix] In portable mode the automatic profile update after program upgrade to
+  make all profiles DOSBox 0.73 compatible did not work.
+- [Fix] The restore default values for this category button on the default 
+  values page of the profile editor only worked for the first category.
+- [Fix] Sometimes the screenshot viewer displayed a wrong resolution in the
+  status bar after resizing the viewer window.
+- [Fix] Wrong value "50000" instead of "49716" in the default values list for
+  sample rate settings.
+- [Fix] Added missing value "4axis_2" to joystick types default values list.
+- [Fix] Added missing values to default values lists for SoundBlaster and GUS,
+  DMA and IRQ settings.
+- [Fix] Added missing value "none" to SoundBlaster OPL mode default values 
+  list.
+- [Fix] Removed "0" from default values list for the memory size.
+- [Fix] The "How to add profiles" info panel at the bottom of the program
+  window was not automatically removed after adding the first profile.
+
+
+Version 0.8.0 (07/28/2009)
+==========================
+
+- DOSBox 0.73 is supported and bundled with D-Fend Reloaded.
+- The user can switch between different icon sets for the toolbar, the menus
+  and the dialogs now.
+- The dialog for scanning the games folder for new games has been rewritten
+  and offers more options now.
+- Faster program start when using large game lists.
+- More settings in the multiple profiles editor.
+- New program icon and logo made by burnsflipper, the designer of the original
+  D-Fend logo.
+- New tab "Notes" at the bottom of the program window for direct access to the
+  stored game notes.
+- Now you can choose to use the game filesnames or the folder names as names
+  for the new profiles when scanning the games folder for new games.
+- Via the new multiple shortcut creation dialog you can create shortcuts for
+  more than one game at once.
+- Now the user can select the profile name, the template to use, the 
+  destination folder and the file to start when importing zip files
+  (regardless if the new game was identified by an auto setup template or not).
+- Support for user-defined interpreters (like before only for QBasic) inside
+  DOSBox.
+- Better algorithm for scaling images when displaying captured screenshots.
+- Now icons can also be added to the icon manager by dragging them to the icon
+  manager window and by scanning the games folder for new icons. Additionally
+  the icon manager will show icons added by copying them to the icons folder
+  immediately.
+- New optional start mode: Fullscreen without window border.
+- The default parent directory for the capture folders for games can be
+  configurated in the setup dialog now.
+- The icon size for the game icons in the games list in view mode "Icon" can
+  be configurated now.
+- The first start wizard has been improved and now is easier to use.
+- Now "Pause" can be chosen as DOSBox background priority.
+- The scan games folder for new games function is now also respecting the extra
+  program folders of existing profiles and is not trying to detect games in
+  this folders anymore.
+- Cleaned up menu structure (in particular the function for creating archive or
+  exe packages for multiple games have been moved from the Extras to the Export
+  menu).
+- Option to hide the menubar.
+- Faster search for DOSBox if it is not stored in the default directory.
+- [Fix] Error message when closing the profile editor dialog when editing a
+  template.
+- [Fix] If the first run wizard is closed by clicking the window close "X" the
+  settings are not stored.
+- [Fix] Now 16-bit Windows exe files are also recogniced as Windows program
+  files and the user is warned if he trys to start a 16-bit Windows program 
+  file via DOSBox.
+- [Fix] When running a profile using a helper program to be executed after the
+  main program via a shortcut the helper program was not executed.
+
+
+Version 0.7.0 (04/28/2009)
+==========================
+- Dutch language file (thanks to Tim Molderez)
+- Italian language file (thanks to Filippo Bartoli)
+- Archive files not created by D-Fend Reloaded can now also be imported.
+  (D-Fend Reloaded will try to auto detect and setup the game.)
+- Now the games folder can be scaned for new games (which will be added
+  automatically then).
+- Support for external archiving programs lets D-Fend Reloaded handle other
+  archive formats than zip and 7z.
+- New toolbar icons.
+- Many new options for automatically and manual selection of the right physical
+  CD drive to mount on DOSBox start (for example mount drive by file or folder
+  on CD or ask the user to select a drive).
+- Option to run some other program (for example a hardware setup tool) before
+  and after the main program (DOSBox or ScummVM).
+- The genre and language names in game profiles can now be translated on the
+  fly so profiles created via auto setup templates etc. will always be shown
+  with translated names for the genre and the language of the game.
+- Integration in the Vista Game Explorer.
+- Again some improvements to the long to (DOSBox) short file name converter
+  (thank you to skatz).
+- A new custom settings edit field in the profile editor for ScummVM profiles
+  allows to add any custom configuration settings to the ScummVM ini file
+  when starting a ScummVM profile.
+- Added new functions in ScummVM profile editor: Option to disable joystick
+  support, option to setup an extra path, option to setup render mode,
+  option to setup game platform and option to define custom languages for
+  games (and to setup the default languages list for the games in the setup
+  dialog).
+- Option to setup data folder automatically for new profiles in wizard.
+- Many new functions in the multiple profiles editor.
+- The program file icon of the Windows program file will be used as the default
+  icon on Windows game profiles.
+- The sound previewer and the quick starter now also can playback MIDI files.
+- Now the D-Fend Reloaded main window can (optionally) be restored when ScummVM
+  closes.
+- The D-Fend Reloaded main window can be minimized before a Windows game
+  profile is started and restored when the program quits (both optional).
+- You can define a default keyboard layout and a default codepage per DOSBox
+  installation now.
+- On the first page of the of the wizard now you can choose how many things the
+  wizard should ask you. (In the default configuration the wizard will be much
+  easier to handle if there is a auto setup template for the game.)
+- Now you can add user defined game information as columns to the games list.
+- Auto setup templates from existing profiles can now also be created via the
+  export menu.
+- Now also images from the games data folder can be used in screenshot mode in
+  the games list.
+- The column widths in the games list can be restored to the last state on
+  program start now.
+- The history dialog has been extended with some statistic functions.
+- If the translation of a long path name to a short DOSBox name fails, the
+  program will show a warning message now.
+- Support for the DOSBox CVS build features "securemode", "pixelshader",
+  "cpumode" and the new CD drive accessing modes "ioctl_dx", "ioctl_dio" and
+  "ioctl_mci".
+- Now you can also define submenus in the "Old games" custom menu.
+- The link lists for "Search for game" and "Old games" in the help menu can be
+  imported and exported now.
+- Updated DOSZip from 1.28 to 1.31.
+- Moved most program files to a "Bin" subfolder of the installation directory
+  and moved all configuration files to a "Settings" subfolder of the 
+  installation data directory. (This will make the usage of portable
+  installations easier because less files in the main program main directory
+  will make finding the DFend.exe faster.)
+- Now also icons inside program dialogs can be replaced via the Icons.ini file.
+- "Open program folder" now also available for ScummVM and Windows games.
+- [Fix] Starting games via DOSBox failed if the game file uses a long filename
+  and the DOSBox drive was mounted via a relative path name.
+- [Fix] Creation of zip archives could fail if the profile uses a drive image
+  which is located inside the (already included) games folder.
+- [Fix] Creation of installer packages or zip packages will result in to big
+  files if the game to pack uses iso images or zipped drives.
+- [Fix] The selected ScummVM save path was assigned to ScummVM correctly.
+- [Fix] Seleting "French (Canada)" as language results in an English program
+  language.
+- [Fix] When using the option "File path is relative to the DOSBox directory
+  structure" D-Fend Reloaded shows an error message when closing the profile
+  editor and when starting the profile (but then starts the profile correctly).
+- [Fix] Access violation when trying to show the "No file name" warning when
+  adding a Windows game profile and not entering a file name to start.
+- [Fix] If a prof file with the same name already exists in the destination
+  path while transfering profiles the profile file was not copied to the
+  destination correctly. (The algorithm for finding an alternative file name
+  changed the profile filename in a wrong way.)
+- [Fix] The ScummVM games list stored in the ScummVM.dat file was not always
+  read correctly on program start up.
+- [Fix] When using the restore window size on start up function sometings the
+  menu bar gets invisible.
+- [Fix] Uninstaller is not removing uninstall entry from Windows software list.
+- [Fix] In some long to short path name related error messages wrong
+  information have been displayed.
+- [Fix] The option "Close DOSBox when program closes" is not working on running
+  extra program files via the context menu.
+- [Fix] Warning message when running ScummVM based games from zip files via a
+  D-Fend Reloaded desktop shortcut.
+- [Fix] Error message when loading toolbar images not in bmp format via the
+   Icons.ini file.
+- [Fix] Transparency not working in user defined toolbar images.
+- [Fix] Reduced number of colors in screenshot preview for new screenshots
+  after returning from fullscreen DOSBox.
+- [Fix] Reduced number of colors in some png screenshots in the preview area
+  in the main window.
+- [Fix] Spelling bug in installer package nsi script.
+- [Fix] On smaller screen resolutions the D-Fend Reloaded program window
+  could be a bit to high. (The taskbar has not been subtracted from the
+  available desktop height.)
+
+
+Version 0.6.1 (10/31/2008)
+==========================
+- Improved Windows long pathname to DOSBox short pathname converter (thanks to
+  Alexander Katz).
+- The select image dialog for adding image files as harddisks in the profile
+  editor will now also show cue sheet files.
+- Smarter initial directory when opening selection dialog for text editor, wave
+  encoder and ScummVM.
+- [Fix] Opening text files in "Use default editor for file type" mode sometimes
+  did not work.
+- [Fix] Sometimes an access violation occured just after uninstalling a game.
+- [Fix] Selecting/Unselecting profiles via the "Select by..." buttons in the
+  "Build installer" dialog etc. did not work with "Not set" values.
+- [Fix] Wrong view style (icon instead of list) in the sounds and the videos
+  previewer area at the bottom of the main window.
+- [Fix] Access violation while displaying an error message if renameing a
+  screenshot is not possible (for example because a file with the new entered
+  name already exists).
+- [Fix] Execution of Windows programs could fail under some rare conditions
+  (this only affected helper programs like text editors etc. and not Windows
+  games started via the games list).
+- [Fix] Problem if virtual serial port is working as a modem in DOSBox and
+  "Listen for connections" is turned off.
+- [Fix] Screenshots, sounds and videos lists not always sorted correctly.
+
+
+Version 0.6.0 (10/20/2008)
+==========================
+- Polish language file (thanks to Adam Sosnowski)
+- Explorer-like quick starter interface for easy browsing through the games
+  folder and directly starting DOS program files and making profiles of an
+  existing DOS program file.
+- You can specify zip files as ScummVM games now. D-Fend Reloaded will
+  automatically extract the zip file, run ScummVM and repack the game folder
+  content to the zip file when ScummVM has closed.
+- The profile editor and the profile wizard now also support setting a saved
+  games path for ScummVM profiles.
+- The profile editor now supports all game specific settings known in ScummVM.
+- Now the games list can also be filtered by emulation type (DOSBox, ScummVM
+  and Windows).
+- German online help.
+- New language file "French Canada" (same as "French" but will select qwerty
+  keyboard layout instead of azerty and codepage 437 instead of 850 in DOSBox).
+- Now you can also create profiles for Windows games via the profile wizard.
+- In the template dialog now you can also edit the ScummVM default template.
+- In the profile wizard you do not need to go to the last page before the
+  "Ok" button will be activated.
+- The profile wizard will now automatically suggest a name for the new profile
+  from the selected template or the program file name. (To allow this
+  D-Fend Reloaded will not ask for the profile name on the first page of the
+  profile wizard but on the game information page.)
+- New program icon (thanks to T.B. from vogons.zetafleet.com)
+- The game data folder viewer on the bottom of the main window will now
+  automatically update its file list if the folder on harddisk changes.
+  Additionally files and folders can be renamed and deleted and new folders can
+  be created via context menu of the data folder viewer now.
+- Now you can configurate in the setup dialog which files should be moved to
+  the recycle bin and which should be deleted irrevocable when deleting files
+  from within D-Fend Reloaded.
+- New optional column "notes" in list view mode "report".
+- New setup option for configuration the appearance of the games list: Show
+  grid lines in view mode "report".
+- Option to open the capture folder in the Explorer right from the context menu
+  of the capture viewer area.
+- The player for captured sounds can also play ogg files (if there is a codec
+  installed on the system for ogg files) now.
+- The user data section on the game information page of the profile editor will
+  suggest names for keys and values from the existing profiles when adding
+  lines or changing values.
+- In the setup dialog now you can choose which text editor D-Fend Reloaded
+  should use when opening text files. Additionally you can setup to
+  automatically fix the line wraping of text files if needed when opening them.
+- In the setup dialog now you can choose which viewers/players for images,
+  sounds and videos should be used when doubleclicking a file in the captured
+  data viewer on the bottom of the main window.
+- When creating ScummVM ini files all settings from the default ScummVM
+  configuration file are also added.
+- When dragging files to the D-Fend Reloaded program window to copy them to
+  the data folder of the active profile, now you can also drag and drop
+  complete directories.
+- Now you can drop files directly to the screenshots/sounds/videos viewer or to
+  the data viewer pane (including subdirectories).
+- Smarter method of detecting the running DOSBox instances when using the
+  "Restore program window when DOSBox closes function".
+- Now you can zoom the image in the screenshot viewer and videos in the video
+  previewer by pressing + or - and by moving the mouse wheel while holding
+  Ctrl. By pressing * or 0 you can go back to 100% zoom. And by pressing escape
+  you can close the preview dialog.
+- New options "Center ScummVM window" and "Hide ScummVM console" in program
+  settings dialog.
+- When adding a drive to a profile the edit drive dialog will offer the drive
+  type used the last time when added a new drive to a profile at first in the
+  drive type dropdown box.
+- On the setup page for the screenshot view mode now you can define which
+  screenshot number to use if no explicit screenshot is defined for a game.
+- [Fix] When using some other DOSBox installation than the one in the "DOSBox"
+  subdirectory of the D-Fend Reloaded program directory as default DOSBox
+  installation, D-Fend Reloaded will reset the path at each start.
+- [Fix] The game and the setup program parameters for Windows games were
+  inverted.
+- [Fix] When switching between profiles with and without a data folders the
+  data folder tab at the bottom of the main windows could have displayed some
+  wrong content.
+- [Fix] Clicking the buttons for selecting or searching the DOSBox directory
+  and for selecting a mapper file in the "More DOSBox settings" dialog (on
+  DOSBox settings page of the program options dialog) did nothing.
+- [Fix] When creating a portable D-Fend Reloaded installation from the transfer
+  profiles dialog the mediaplr.dll file was not copyed to the destination
+  folder and so the D-Fend.exe in the destination folder could not start.
+- [Fix] In profile editor all four serial port pages showed data for first
+  serial port.
+- [Fix] The chosen music driver in ScummVM profiles was not given to ScummVM
+  when starting a profile.
+- [Fix] Until now D-Fend Reloaded tried to find the scummvm.ini file for
+  reading the default theme path etc. in the ScummVM program directory instead
+  of the path reported by ScummVM (usualy $APPDATA\ScummVM).
+- [Fix] When trying to display damaged images in the screenshot viewer area an
+  unhandled exception could occur.
+- [Fix] Wrong colors or reduction of the number of colors when exporting
+  captured screenshots.
+- [Fix] D-Fend Reloaded failed to play video files of other types than avi via
+  the captured videos player.
+- [Fix] When switching between images of the same size in the screenshot
+  previewer the statusbar was not updated.
+- [Fix] When creating a zip package for a ScummVM profile the ScummVM ini file
+  needed to use the zip file without D-Fend Reloaded was not included to it.
+- [Fix] When dragging video files to the main window they got copied into the
+  data folder instead of into the capture folder.
+- [Fix] When using the minimize to tray option and restoring the program window
+  it loses the input focus right after restore.
+- [Fix] In screenshots view mode sometimes there are wrong images associated to
+  wrong games in games list.
+- [Fix] The DOSBox language selected in the profile editor was not used when
+  starting DOSBox.
+- [Fix] Screenshots may got displayed distorted in the screenshot preview area.
+- [Fix] Function "Restore main window when DOSBox closes" will not restore the
+  D-Fend Reloaded main window if it was already minimized before DOSBox was
+  started (because of using the tray area mini starter).
+- [Fix] Added missing default values in "scaler" section of the profile editor.
+- [Fix] Current selected game is deselected after closing setup dialog.
+- [Fix] The drive type names on the "Drives" page and the priority levels on
+  the "DOSBox settings" page of the profile editor were not translateable. Also
+  the info label on the data folder panel was not translated.
+
+
+Version 0.5.0 (08/22/2008)
+==========================
+- Danish language file (thanks to Jens Peter Jensen)
+- Traditional Chinese language file (thanks to muzuiget)
+- Zip and 7z archives can be used as drives now. Additionally D-Fend Reloaded
+  can repack the changed files to the zip archive when using a PhysFS folder
+  and zip file pair.
+- You can make zip packages from installed games (just like the exe installers)
+  for long time archiving your games. The zip archive will contain all game
+  data (prof file, game files, icon, captured images/sound/videos, additional
+  data files). And of course you can import games stored in a zip package to
+  D-Fend Reloaded agian. (They can be installed via the File|Import menu or
+  even via drag&drop.)
+- D-Fend Reloaded has got an online help.
+- When uninstalling or transfering game or building installer packages the
+  image files used as drive will be respected, too.
+- You can manage multiple DOSBox installations with individual settings via the
+  setup dialog now. In the profile editor you can choose one of this predefined
+  DOSBox installations or choose an custom DOSBox path.
+- Now you can also manage your Windows based games as profiles. (When starting
+  a Windows based profile D-Fend Reloaded simply starts the given program file.
+  The benefit of this function is you can manage all your games in one GUI.)  
+- For each profile you can configurate to use another DOSBox language than the
+  language defined in the DOSBox settings.
+- You can browse through the content of the profile data folders via the new
+  "Data folder" tab in the screenshots viewer area.
+- D-Fend Reloaded can display captured videos like captured screenshots and
+  captured sounds now.
+- The new profile list view style "Screenshots" allows to browse through the
+  list of profiles by screenshots.
+- You can search for information about games via a (editable) list of web game
+  search engines from the profile editor, the "Profile" menu and the context
+  menu of a profile.
+- D-Fend Reloaded can store additionally to the program and the setup file
+  other program files (for example a level editor) which are offered to start
+  via the context menu of the profile and the profile menu.
+- Now screenshots taken by ScummVM can also be managed within D-Fend Reloaded.
+- You can specify a custom link name and a link comment in the create shortcut
+  dialog now.
+- Setup dialog option to configurate D-Fend Reloaded to run in a Wine
+  environment.
+- The disk image creator can (optional) create plain, unformated images now.
+- The profile list can be checked for missing files and directories.
+- D-Fend Reloaded will warn you, if you try to setup a Windows exe file to run
+  in DOSBox.
+- Now you can setup if the DOSBox console should stay open when an error in
+  DOSBox occures.
+- You can choose to temporary disable the screensaver when DOSBox is running.
+- The list of links to old games web sites is editable now.
+- You can change the zoom level in the screenshot dialog by a new toolbar
+  button now.
+- You can (optional) set a new screenshot folder and remove the data folder
+  record when copying a profile.
+- You can change the font style (bold, italic, underline) for displaying the
+  favorites now.
+- The view conf file option will use the default txt editor instead of always
+  using notepad.
+- Some more speed improvements when working with large profile lists.
+- [Fix] The "Run setup" toolbar button was not working.
+- [Fix] When using long folder names inside a DOSBox drive D-Fend Reloaded may
+  tried to start files in the wrong folder because Windows and DOSBox used
+  different ways of translating long to short file names. (Thanks to skatz from
+  the vogons forum for the new algorithm.)
+- [Fix] Creation of 2880KB ("extended density") floppy images failed.
+- [Fix] When "UseShortFolderNames" was turned off in the DFend.ini the loading
+  of PhysFS drives with spaces in their file oder folder names failed.
+- [Fix] Adding a new profile if the modern profile editor is activated and
+  reopen last active tab was chosen results in an access violation.
+- [Fix] The chosen ScummVM filter setting has not been saved when closing the
+  profile editor.
+- [Fix] The chosen ScummVM game language was not shown correctly when reopening
+  the profile editor again.
+- [Fix] When using the "Reopen last profile editor page" was used and the
+  "Profile" page was the last used page the profile editor showed a wrong page
+  setup of the profile page when reopening.
+- [Fix] Trying to play an invalid audio file resulted in an infinite loop of
+  error dialog boxes.
+- [Fix] The size of capture viewer area was not restored when "Restore window
+  size on program start" was activated.
+- [Fix] Caption of icon manager was not translated.
+
+
+Version 0.4.1 (05/22/2008)
+==========================
+- When using the option to minimize D-Fend Reloaded while DOSBox is running and
+  DOSBox is changing the resolution, D-Fend Reloaded will no longer rely on the
+  Windows window placement and restore its correct position itself.
+- Some smaller speed improvements when working with large profile lists.
+- [Fix] Access violation when opening a screenshot from a profile containing
+  more than one screenshot.
+- [Fix] Error message when trying to run a D-Fend Reloaded desktop game link
+  while "Minimize when DOSBox starts" is activated.
+- [Fix] When selecting the default template in the template editor the "Delete"
+  menu item was not disabled (like the toolbar icon and the item in the context
+  menu).
+- [Fix] DOSBox did not start if the given DOSBox language file did not exist.
+- [Fix] Closed some memory leaks in screenshot viewer, setup dialog and program
+  info dialog.
+
+
+Version 0.4.0 (05/14/2008)
+==========================
+- Simplified Chinese language file (thanks to muzuiget)
+- The new profile wizard has been completely redesigned. With the new auto
+  setup templates new profiles (for games known by the D-Fend Reloaded
+  database) can be setup by only entering the game name and the filename.
+- ScummVM based advantures can be configurated and listed together with the
+  DOSBox based profiles now.
+- If you define a QBasic interpreter in the setup dialog, you can define bas
+  files as normal program files for games. When executing a bas file profile
+  D-Fend Reloaded will automatically execute it in QBasic in DOSBox.
+- A new first run wizard makes setting up language and updates for new users
+  much easier.
+- The content of image files can be extracted to a folder now.
+- You can build a floppy image from the content of a folder now.
+- If you copy prof files to the "Confs" folder while D-Fend Reloaded is running
+  they will be added to the games list immediately.
+- Icons form outside the "IconLibrary" folder can now also be used as profile
+  icons (and can be transfered with the profile and included to installers just
+  like the icons in the default icons folder).
+- If you delete a profile file while D-Fend Reloaded is running it will ask you
+  if you want to restore the deleted file.
+- Now you can setup a codepage to be used in DOSBox for each profile. 
+  Additionally there is a default codepage stored in each language file which
+  will be used if the codepage is set to "default" in the profile.
+- Now you can (optionally) define a key mapper file for each profile. (If no
+  key mapper file is defined, the DOSBox default key mapper file will be used.)
+- A list of batch commands which DOSBox will run after the end of the game can
+  be defined now (some kind of complement of the Autoexec.bat commands).
+- Now you can also make installer packages from your profile templates.
+- The templates dialog now has an option to change multiple templates at once
+  (like the multi profile editor for normal profile).
+- More option to configurate low-level access to mounted CDROMs.
+- When creating floppy images you can choose to make the image bootable now.
+- The tray icon has a context menu for direct starting and adding of profiles.
+- The transfer profiles function can create a portable version of D-Fend
+  Reloaded (by copying files from the current installation and modifing the
+  configuration) in the destination folder before copying the profile data.
+- Now you can define if the path to the game and the setup exe file should be
+  interpreted absolute (in the physical file system) or relative (to the file
+  system in DOSBox).
+- Now you can configurate in the setup dialog if D-Fend Reloaded should show
+  configuration options in the profile editor which can only be used with
+  DOSBox CVS builds (like multiple floppy images per drive, PhysFS support,
+  setting the number of text mode lines, VGA chipset and video RAM, Glide
+  emulation and printer support).
+- When changeing multiple profiles, creating installers etc. now you can select
+  and unselect profiles also by any user defined information. (Until now
+  selecting was only possible by the predefined fields like language,
+  developer, year, etc.)
+- Profiles (conf and prof files), screenshots and captured sound can be
+  imported by drag&drop now. Dragging program files to the D-Fend Reloaded
+  program window will open the new profile wizard with the chosen file.
+- Within the multi profile editor you can add, change and delete user-defined
+  information fields now.
+- For each profile you can define some extra files which will be transfered,
+  uninstalled and packed into installer packages together with the other game
+  files (like it is already possible with the extra directories).
+- The profile editor will show a warning if the user trys to create a new
+  profile with no game program filename (and is not using a boot image option).
+- When opening the select game exe or select setup exe dialog from the profile
+  editor or the wizard the path of the setup exe or the game exe (if already
+  defined) will be used as initial directory instead of the games base
+  directory.
+- When a checksum error (changed or exchanged game program file) is detected,
+  D-Fend Reloaded now also offers the option to turn off checksums for the
+  profile (until now only keep old checksum or create new checksum).
+- The checksum driven game file change detection can be turned off in the setup
+  dialog now.
+- The mount dialog will show a warning if the users trys to use the same drive
+  letter for two mounted drives.
+- The mount dialog will show a warning message if the users trys to mount the
+  the root directory of a drive.
+- The dialog for playing captured game sounds has been improved: You can jump
+  to any position in the file via a slider and the captured wave sound can be
+  encoded to mp3 or ogg directly from the dialog now.
+- The screenshot view dialog has been improved: You can cycle though the
+  screenshots of a profile via two new toolbar buttons (or by using the cursor
+  keys or the mouse wheel) without closing the dialog. Additionally the zoom
+  level is set to 100% when a new image is loaded.  
+- The import conf file function now trys to make mount records from the mount
+  commands of the autoexec section.
+- Now you can setup which icons should be visible on the toolbar.
+- The tooltips in the games list now also show the last modification time of
+  each profile.
+- Some new icons in the modern and classic profile editor (thanks to Banjo).
+- [Fix] Even if you choose "Restore profile on disk with version from memory"
+  when a file conflict occures the profile on disk will not be changed and
+  the version in memory will be lost as long as you do not make any changes to
+  the profile in memory before closing D-Fend Reloaded.
+- [Fix] The boot from floppy image function did not work if you used a single
+  image file.
+- [Fix] When using D-Fend Reloaded in portable mode the path to the DOSBox
+  language file was not updated properly what could DOSBox prevent from
+  starting.
+- [Fix] The main activation of DOSBox IPX support is not written to the
+  DOSBox conf file when starting a profile with IPX support enabled.
+- [Fix] When installing D-Fend Reloaded in user directory mode (the default
+  installation mode) the templates were only created for the user account the
+  installer was run from.
+- [Fix] The column visible status was not saved when closing the setup dialog
+  if the columns were not in default order.
+- [Fix] When changing the filename of a profile all character after the first
+   "." in the new filename were removed.
+- [Fix] The capture folder settings were ignored when importing conf files.
+- [Fix] User defined fields were ignored when exporting a games list.
+- [Fix] Wrong language in dialogs after changing the program language but
+  closing the setup dialog with "Cancel".
+- [Fix] When using the "Minimize to tray" option together with "Start
+  minimized" the application is minimized to the taskbar instead of the tray
+  area on programm start-up.
+- [Fix] When adding a new profile via the wizard the information fields (genre,
+  developer, etc.) of the new profile always showed "Not set" until restart of
+  the program.
+- [Fix] Wrong default icon in the profile select dialog which opens when
+  clicking on "Template from profile" in the templates dialog.
+
+
+Version 0.3.2 (02/29/2008)
+==========================
+- French language file (thanks to Christophe Bertrand)
+- Russian language file (thanks to Alexander Katz)
+- The installer and the data package installers are now also available in all
+  five currently supported languages.
+- All available CDs can automatically be mounted at DOSBox start (optional,
+  configurateable per profile).
+- Floppy images can be written back to real floppy disks.
+- The profile files will only be updated on disk on program close if this is
+  really needed. (This makes using multiple instances of D-Fend Reloaded at the
+  same time easier.)
+- A warning message will appear if you try to run a game from a profile made
+  for some other game. (With each profile checksums for the game and the setup
+  exe will be stored automatically compared with the real exe when trying to
+  run the game.)
+- A warning message will appear if you try to run a program file which is not
+  reachable via any mounted folder.
+- The function that builds the autoexec commands to run the game now also looks
+  on mounted CDs for a path to the file and when there are overlapping mounts
+  it will use the shortest path instead of the first matching path.
+- The screenshot capture folder will be chosen automatically for new profiles
+  (until now screenshot capture folder was only setup automatically when adding
+  profiles via the wizard). This feature can be turned off in the setup dialog.
+- It can be configurated now what should be shown in the games list if there
+  are undefined values for genre, developer, etc. (by default "not set").
+- [Fix] Mounting of real CD drives does not work if no CD is in the drive when
+  starting DOSBox.
+- [Fix] Changes made to "Window resolution", "Fullscreen resolution" and
+  "Scale" in the multiple profile were not saved.
+- [Fix] The default profile cannnot be changed with the modern style profile
+  editor because when closing the dialog an "You have to define a name for the
+  new game." error occurs.
+- [Fix] In the language editor the last language string of each section was not
+  shown.
+- [Fix] The "Set default screenshot folder" button in the profile editor does
+  not detect and remove illegal characters in the profile name.  
+- [Fix] The sound prebuffer value written from the profile to the DOSBox config
+  file was wrong.
+- [Fix] The "Reopen last active profile editor page" does not work when using
+  the modern profile editor.
+- [Fix] When changing the language in the setup dialog the "window size at
+  program start" dropdown box was reset to the default value.
+- [Fix] When starting the first run wizard by deleting the DFend.ini a second
+  "DOSBox DOS" profile was created instead of reseting the existing one to the
+  default values.
+- [Fix] Pressing the "Insert" and "Delete" keys in the environment variables
+  editor table may changes the the list of environment variables in unexpected
+  ways.
+- [Fix] When browsing for a installation directory in the program installer and
+  in data packages installers always a "\D-Fend Reloaded" was added to the
+  choosen folder.
+- [Fix] When opening the multi profile editor the second tab (things to change)
+  instead the first tab (selecting profiles for change) was active.
+- [Fix] Untranslated button caption in language select dialog for language
+  editor and misspelled string in profile editor.
+
+
+Version 0.3.1 (02/18/2008)
+==========================
+- CDs can be ripped to ISO images and used as DOSBox drives.
+- Floppy disks can be ripped to IMG images and used as DOSBox drives.
+- Screenshots and captured sounds can be renamed.
+- Captured screenshots can be set as Windows wallpaper image.
+- If DOSBox is started in window mode, the DOSBox window can be centered on
+  screen.
+- [Fix] CPU cycles settings "Auto" and "Max" in the modern profile editor
+  dialog did not work.
+- [Fix] In the "Edit multiple profiles" the "Fullscreen resolution" did not
+  work.
+- [Fix] When using the "Restore window size on program start" option the games
+  list keeps empty until you click on a category on the left at program start.
+- [Fix] When pressing enter in the setup dialog shown at first program start
+  you got an "No game is selected in list." error.
+- [Fix] Choose DOSBox directory as current directory when starting DOSBox to
+  make DOSBox find files in its own directory.
+- [Fix] The "Use as default profile" option in the template profile editor did
+  not work.
+- [Fix] When changing the language in the setup dialog the "Mode" dropdown
+  box shows an empty value until you choose one of the two modes again.
+- [Fix] Default values for "Resolution" corrected.
+
+
+Version 0.3.0 (02/08/2008)
+==========================
+- Completely new designed and more clearly arranged profile editor (the classic
+  D-Fend style profile editor is still available and can be activated in the
+  setup dialog).
+- D-Fend Reloaded can look for updates on start up and via menu now.
+- Captured wave sounds for each game can be listed, saved, deleted, played and
+  encoded to mp3 (encoder not included) or ogg.
+- For each profile a DOS version number which should be reported by DOSBox
+  can be configurated.
+- You can (optional) define a custom DOSBox installation for each profile to be
+  used to start the game.
+- You can define additional information of the type key=value for each profile
+  and filter the games by this new categories.
+- Font sizes and colors and balckground colors and images in the main window
+  can be configurated.
+- The multi profile editor can change window resulution, fullscreen resolution
+  and scaling method now.
+- If a conf file on disk is changed using a text editor while D-Fend Reloaded
+  is running, it can load and keep these changes or overwrite them with the
+  copy in memory.
+- You can define for each profile to activate, deactivate or keep the status
+  of the num lock, the caps lock and the scroll lock when starting DOSBox.
+- New profile settings: Switch mouse to 2-button mode and change mouse buttons.
+- New profile settings: Sound volume for the different virtuel sound devices
+  (master, disney sound system, speaker, GUS, SoundBlaster and FM).
+- The conf file, which will be used when opening DOSBox, can be opend in a
+  text editor now.
+- Making translations of D-Fend Reloaded is now much easier with the new
+  buildin language editor.
+- The icons in the program (toolbar, menu and profile editor) are not
+  exchangeable via an ini file.
+- The profile icon can be used as the link icon when making desktop or
+  startmenu links now.
+- External image files can be added to the screenshots list via the screenshots
+  popup menu now.
+- The file names of the profile files can be changed from within the profile
+  editor now.
+- In all dialogs with a games selection list where games could be selected
+  by genre, now games can also be selected by developer, publisher, year and
+  language.
+- More view options for the games list (simple list, report, small icons,
+  icons; simple list and report with and without icons).
+- The setup dialog has two different feature sets "easy" and "advanced" now.
+- New menu item for direct D-Fend prof file import.
+- New setup option: Start maximized.
+- A new statistics window has information about the number of profiles,
+  the number of templates, the number of icons and the number of profiles
+  per genre.
+- Some more icons in the menu and the dialogs.
+- [Fix] The path comparison for making paths relative worked case sensitive,
+  so some paths abbreviations may be missed until now.
+- [Fix] The select buttons in the multiple profile change dialog had no
+  function.
+- [Fix] The "Free virtual space" value in the "Folder as hard disk" section of
+  the mount edit dialog was not saved.
+- [Fix] Changed genre, publisher, ... in the multiple profile editor did not
+  appear in the games list until a restart of D-Fend Reloaded.
+- [Fix] Changed default values in the setup dialog were may not saved.
+- [Fix] When resetting the default values in the setup dialog not all avaible
+  values were written to the lists.
+- [Fix] The setup dialog function "Make absolute to relative paths" did not
+  change the extra directories if more than one extra directory was defined.
+- [Fix] The setup dialog default values for the video card types were ignored
+  in the profile editor.
+- [Fix] Misaligend window elements when stating maximized.
+- [Fix] Corrected untranslated menu item.  
+
+
+Version 0.2.0 (01/16/2008)
+==========================
+- New dialog for changing multiple profiles at once.
+- The serial port settings can be changed via a dialog now.
+- If installed with the FreeDOS commandline tools, 4DOS can be set up as
+  commandline interpreter in profile editor.
+- If installed with the FreeDOS commandline tools, DOS32A can be used as a
+  replacement for the DOS/4GW protected mode extender.
+- Now you can specify multiple CD images for one drive mount and switch between
+  them at DOSBox runtime.
+- Now you can specify multiple floppy images for booting from floppy image
+  and switch between them at DOSBox runtime.
+- If a game has a data folder, D-Fend Reloaded can not only open this folder
+  but also open a specific file in the data folder now (selectable via a
+  directory list in form of menu).
+- Installer packages for single games can be built directly from the the
+  profile context menu.
+- The DOSBox png screenshots can be saved as jpeg, gif or bmp image files now.
+- The creation of the games list is much faster now.
+- The DOSBox program icon is used for the "DOSBox DOS" default profile.
+- The game info tooltips in the games list can be turned off and on now.
+- More icons in the menu.
+- Updated DOSBox links in the help menu.
+- Added the vogons to the "Old games" link collection.
+- [Fix] The serial port settings were ignored when starting DosBox.
+- [Fix] Long lines in "Autoexec.bat" and "Custom setting" were split into two
+  lines which can damage commandlines.
+- [Fix] Numerial values were not stored when closing profile editor if you
+  entered less digits than the edit field allows.  
+- [Fix] Added missing default value "auto" for joysticks.
+- [Fix] Fixed some spelling mistakes in the English language file.
+- [Fix] Wrong info text in DOSBox folder select dialog in setup dialog.
+- [Fix] I/O control is always shown as "No" in the drives list
+  independend of the real state of I/O control.
+
+
+Version 0.1.2 (01/04/2008)
+==========================
+
+- Spanish language file (thanks to Neville from vogons.zetafleet.com)
+- The function of the add button in the toolbar is now configurable
+  (normal add, add with wizard or popup menu for operation).
+- New setup option: Start on Windows boot (default: off)
+- New setup option: Start minimized (default: off)
+- [Fix] After changing the program language the categories list on the
+  "default values" page of the setup dialog contained the values in the
+  old and the new language.
+- [Fix] Missing translations for Shortcuts  
+- [Fix] Missing translations for menu items in the games list popup menu
+  and the screenshots popup menu
+- [Fix] Missing translation of message dialog captions and buttons
+- The program info dialog shows the names of the authors of the language files.
+- The games list can now be sorted by any column just by clicking the
+  column header.
+
+
+Version 0.1.1 (12/18/2007)
+==========================
+- More icons in treeview and in profile editor dialog
+- Changelog viewer in programinfo dialog
+- New "By genre" button in "Export|Create conf" dialog
+- The "Edit drive" dialog now opens faster
+- In the transfer dialog, the uninstall dialog and the build installer dialog
+  the "DosBox DOS" default entry is not shown but the genre of this
+  profile has been used when building the "by genre" menu.
+- Additional start menu link "Manuals folder" to access the manual and
+  game data folder.
+- More old games links in the help menu.
+- Progress dialog when deinstalling or transfering games.
+- "Auto create" button in mounting section of profile editor to create default
+  drive c: with one click.
+- New options "retry" and "ignore" when files are protected when deinstalling
+  games.
+- New buttons "Previous" and "Next" in profile editor to switch between games.
+- Now you can choose between "DirectX" and "WinDIB" als SDL videodrivers.
+  ("WinDIB" is slower than the default "DirectX" but may solve some keyboard
+  problems.)
+- New profile menu option "Add from template" allows to create new profiles
+  from templates without opening the template dialog.
+- Setup dialog language will change immediately when another language is
+  selected in the dialog.
+- [Fix] Missing space between programfile und parameters when running a game  
+- [Fix] Icon files were ignored when copying and uninstalling game and when
+  building installers.
+- [Fix] The GUS enabled/disabled setting was not correctly shown in the
+  profile editor.
+- [Fix] When copying a profile "not set" was shown in the info columns
+  (genre, ...) of the new profile.
+- [Fix] The alternative profile edit hotkey F2 was linked to profile add
+  instead of profile edit
+- [Fix] Wrong tab order in some dialogs
+
+
+Version 0.1.0 (11/08/2007)
+==========================
+- First Version at all, everything is new.

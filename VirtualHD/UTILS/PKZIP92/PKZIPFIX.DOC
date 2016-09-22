@@ -1,0 +1,76 @@
+
+
+OverView
+--------
+
+The .ZIP file format was designed for high reliability, using 4-byte
+signatures for all file headers, and redundant distributed & centralized
+directory structures.
+
+PKZIPFIX is a simple utility that takes advantage of the extra
+reliability of the .ZIP file format to reconstruct truncated or
+damaged .ZIP files.
+
+PKZIPFIX however can not create good data out of bad data!  If a
+portion of a .ZIP file has been corrupted, PKZIPFIX will allow
+recovery of the unaffected files.  Depending on how badly damaged
+the .ZIP file is however, one or more files may still extract with
+errors.
+
+
+
+Usage
+-----
+
+PKZIPFIX should be used when PKZIP or PKUNZIP inidcate that a .ZIP
+file is in error, or a .ZIP file has become damaged.  PKZIPFIX can
+also be used to extract the .ZIP file portion from a PKSFX (R) self-
+extracting file.
+
+
+
+PKZIPFIX Syntax
+---------------
+
+PKZIPFIX  ZipFile
+
+Where ZipFile is the name of the file to be recovered.  An extension
+of .ZIP will be used by default.  PKZIPFIX will attempt to recover
+ZipFile and will create a file called PKFIXED.ZIP which contains the
+reconstructed .ZIP file.
+
+The file PKFIXED.ZIP can then be extracted or listed with PKUNZIP.
+It is strongly recommended that you then use PKZIP to create a new
+.ZIP file from the files that are extracted from PKFIXED.ZIP.
+
+
+
+License
+-------
+
+You are free to use, copy and distribute PKZIPFIX for NONCOMMERCIAL use if:
+
+           No fee is charged for use, copying or distribution.
+	   
+		    It is not modified in any way.
+				
+Clubs and user groups may charge a nominal fee not to exceed ($10) for
+expenses and handling while distributing PKZIPFIX.
+
+
+
+Disclaimer
+----------
+
+PKWARE hereby disclaims all warranties relating to this software, whether
+express or implied, including without limitation any implied warranties
+of merchantability or fitness for a particular purpose. PKWARE will not
+be liable for any special, incidental, consequential, indirect or similar
+damages due to loss of data or any other reason, even if PKWARE or an
+agent of PKWARE has been advised of the possibility of such damages.  In
+no event shall PKWARE's liability for any damages ever exceed the price
+paid for the license to use software, regardless of the form of the
+claim.  The person using the software bears all risk as to the quality
+and performance of the software.
+
+

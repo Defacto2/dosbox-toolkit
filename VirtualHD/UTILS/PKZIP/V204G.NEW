@@ -1,0 +1,229 @@
+
+Please note that the only program that has functionally changed
+from version 2.04e to 2.04g is PKZIP.EXE, PKUNZIP.EXE and PKCFG.EXE.
+The other programs in this release have been changed to read version
+2.04g for consistency.  However, no functional changes have been made
+to them.
+
+
+The following changes have been made in version 2.04g of PKZIP.EXE
+from version 2.04e.
+
+1)  PKZIP's Quick format in an over-zealous effort to leave bad
+    sectors marked as bad, could in some instances leave unallocated
+    sectors (orphaned clusters) on the diskette.  This has been fixed.
+
+
+The following changes have been made in version 2.04g of PKZIP.EXE
+from version 2.04c/2.04e.
+
+1)  Using the BACKUP= option in the PKZIP.CFG file would automatically
+    turn on the SPAN option and cause PKZIP to generate a E27 or E28
+    error, or display the help screen when creating a .ZIP file
+    on non-removable media.  This has been corrected.
+
+2)  When Norton Utilities creates a volume label on a diskette, it 
+    stores trailing nulls rather than trailing spaces after the volume 
+    name, as DOS does (and expects).  A volume label created by NU can 
+    not be changed by even the LABEL command in DOS.  PKZIP uses the 
+    volume label when creating multi-disk .ZIP files, and could not 
+    change any volume label created by NU.  PKZIP has been modified to 
+    be able to deal with and change volume labels created by NU.  
+    PKUNZIP -$ was also unable to restore volume labels over NU created 
+    labels.  PKUNZIP has been modified to deal with NU volume labels as 
+    well.
+
+
+The following changes have been made in version 2.04e of
+PKZIP/PKUNZIP from version 2.04c.
+
+1) DPMI.
+
+     The DPMI support in PKZIP/PKUNZIP has been changed to work
+     around bugs and anomolies with the following DPMI drivers or
+     environments.  PKWARE would like to thank Quarterdeck Office
+     Systems and Qualitas, Inc. for their technical assistance
+     regarding DPMI.
+
+    a) PC-KWIK
+
+      According to PC-KWIK corporation's document, 'PC-KWIK
+      Technical Issues "Summer '92"':
+
+	PC-KWIK is unable to recognize memory requests from programs
+	using VCPI or DPMI protocols ... For programs [that use VCPI
+	or DPMI] it is necessary to reduce the size of the cache and
+	disable lending.
+
+      PC-KWIK has a lending feature that allows memory to be loaned
+      from the cache memory to applications.  However, PC-KWIK is
+      not aware of any memory allocated or used by DPMI, and will
+      loan this memory as well, possibly causing corruption of the
+      DPMI driver and usually resulting in a system crash or reboot.
+
+      PKWARE has tested several versions of SUPERPCK, through version
+      5.01 and running PKZIP (as well as several commercial programs
+      that use DPMI) consistently causes a system reboot or some kind
+      of protected mode error such as a page fault.  PC-KWIK Corporation
+      is aware of this problem, and is trying to correct it.
+
+      In other words, when using PC-KWIK with any program that uses DPMI,
+      including PKZIP and PKUNZIP, you should either make sure that you
+      have enough memory in your computer so that lending will not occur,
+      reduce the size of your cache, or disable PC-KWIK's lending.
+
+      Therefore, PKZIP/PKUNZIP detect for the presence of PC-KWIK
+      and default DPMI to DISABLE when PC-KWIK is installed.  This
+      can be overidden by specifying -)+ on the PKZIP or PKUNZIP
+      command line, or by placing DPMI=ENABLE in your PKZIP.CFG for
+      PKZIP or setting the environment variable PKUNZIP=-)+ for PKUNZIP.
+
+  b) QDPMI 1.00
+
+      If a program tries to use DPMI and EMS memory with QDPMI 1.00,
+      QDPMI would become unstable or crash.  PKZIP/PKUNZIP now
+      check for the presence of QDPMI 1.00 and if PKZIP/PKUNZIP
+      are using EMS memory, they do not attempt to use DPMI at all.
+
+  c) QDPMI 1.01
+
+      When a program switches to protected mode, QDPMI does not
+      'synchronize' the EMS page frame.  The result is that programs
+      can not correctly read or write any data in the EMS page frame
+      while in proteced mode.  PKZIP/PKUNZIP now check for the presence
+      of QDPMI 1.01 and will use slower real-mode code for any
+      manipulation of data in the EMS page frame rather than faster
+      protected mode code.
+
+
+  d) OS/2 2.0 DOS BOX
+
+      The OS/2 2.0 DOS box does not allow programs to allocate the
+      'DPMI private data area' in an UMB.  Doing so causes a system
+      violation error.  PKZIP/PKUNZIP now check to see if they are
+      running in the OS/2 2.0 DOS box and will not allocate the DPMI
+      private data area in an UMB.  (This is actually kind of a shame,
+      as the OS/2 DOS box (unlike the Windows DOS box) provides UMB
+      memory to DOS applications.  It should be able to allow programs
+      to store the DPMI data area in these UMB's.)
+
+  e) Windows 3.0 DOS BOX
+
+      The DPMI support in the Windows 3.0 DOS box does not always
+      seem to work correctly.  Therefore, PKZIP/PKUNZIP detect if
+      they are running in the Windows 3.0 DOS box and will not support
+      DPMI in this environment.
+
+  f) Windows 3.1 DOS BOX
+
+      The way PKZIP/PKUNZIP allocates the DPMI save/restore state
+      buffer has been changed to be more compatible with Windows 3.1.
+
+2)  The Norton AntiVirus program FALSELY reported that PKZIPFIX and
+    PKUNZIP contained the Maltese Ameoba virus.  The software DID
+    NOT contain this virus.  All files in this release have been
+    modified so as to not trigger any FALSE virus reports by the
+    Norton AntiVirus program.
+
+3)  QEMM versions 5.1x would corrupt the high word of the 32-bit
+    registers on an 80386 or 80486 CPU.  PKZIP/PKUNZIP check for
+    this condition, and will not use 32-bit instructions if QEMM
+    version 5.1x is present.
+
+4)  Apparently some peer-to-peer networks such as Novell Netware Lite
+    and others do not support canonical or fully specified filename.
+    PKZIP now uses noncanonical filenames when specifying temporary
+    filenames on a network drive to avoid this problem.
+
+5)  PKZIP would erroneously report "E28 Destination is same as temp
+    directory" when creating a new .zip file on drive A:.  This has
+    been fixed.
+
+
+6)  The keywords on/enable and off/disable are now synonymous when
+    used in the PKZIP configuration file.
+
+7)  Using EMS= options in the PKZIP configuration file would enable
+    or disable both EMS and XMS usage.  The XMS= option had no effect.
+    This has been corrected.
+
+8)  The Quick format option in PKZIP would zero out the existing FAT
+    on the disk (by design).  However, if the disk had any bad
+    sectors on it (in which case, it isn't a good idea to use that
+    disk as a backup disk anyway...) they would now be marked as
+    good.  By popular demand, PKZIP now reads the existing FAT and
+    leaves any bad sectors marked as bad.  This however, makes the
+    'Quick' format function about twice as slow as it was (although
+    still much faster than an unconditional format).  In most cases
+    however, unless there are several subdirectories on the diskette,
+    the -&w (wipe) option is faster than the -&f (format) option when
+    backing up to pre-formatted diskettes.
+
+9)  Under some cirumstances, PKZIP could possibly store the last
+    file in a multi-disk backup set incorrectly.  This has been
+    corrected.
+
+10) The volume label option in PKZIP would not work.  This has been
+    fixed.
+
+11) PKZIP/PKUNZIP now searches for a PKNOFASTCHAR variable in the
+    DOS environment.  If this variable is present, PKZIP/PKUNZIP
+    will use the slower DOS 1.x/2.x character output functions
+    rather than the 'DOS Fast Character Output' function.  This is
+    provided for compatability with some TSR's, BBS Doors and mail
+    readers etc., that redirect or capture the output of programs and
+    do not support the DOS Fast Character Output function.
+
+12) PKZIP will now accept either MAXIMUM or MAXIMAL in the
+    configuration file.
+
+13) Some people have requested that the -& backup option support the
+    DOS verify function.  Specifying -&v on the PKZIP command line
+    or BACKUP=VERIFY in the PKZIP.CFG file will turn on the DOS
+    verify flag when writing to the backup disk(s).  This makes
+    PKZIP run slower, but ensures better integrity of each diskette.
+
+14) Using the -m option with -rp in PKZIP will delete any empty
+    subdirectories that have been saved in the .ZIP file after all
+    the files have been moved into the .ZIP file.  Some people have
+    requested a way to have PKZIP leave these empty subdirectories
+    behind.  This can be accomplished by using -m- on the PKZIP
+    command line.
+
+15) It appears that some versions of NoGate's PAK program would
+    place incorrect information in the .ZIP file directories that it
+    created.  Specifically, the disk number information for where
+    files, the central directory, and the central end directory
+    started is inconsistent, causing PKUNZIP to think it was
+    extracting a multi-disk .ZIP file when it really wasn't.
+    PKUNZIP now checks for this condition, and ignores this
+    erroneous information.
+
+16) PKZIP now ignores any ZIPDATE= or -o or -k options when creating
+    multi-disk .ZIP files, rather than displaying the help screens.
+
+17) On some 80386 machines running PKZIP could leave allocated UMB's
+    behind.  This has been corrected.
+ 
+18) In some circumstances, running PKZIP with EMS memory and very low
+    free conventional memory could cause corruption of the .ZIP file.
+    This has been corrected.
+
+19) When PKZIP prompts for an encryption password, it will now ask the
+    user to enter the password twice for verification.
+
+20) PKZIP/PKUNZIP would not work under DOS 2.x.  This is because
+    DOS 2.x crashes on many int 2Fh installation check calls for
+    EMS/XMS drivers etc.  These calls work properly under DOS 3.0
+    or above.  Therefore, PKZIP/PKUNZIP detect for the presence
+    of DOS 2.x, and will not support any of the advanced features
+    including 32-bit instructions, EMS memory, XMS memory, DPMI
+    support and Netware usage.
+
+21) PKSFX could in some instances erroneously report failed AV's or
+    garble any AVEXTRA text present.  This has been fixed.
+
+22) Using PKZIP with the -o option or ZIPDATE=LATEST in the configuration
+    file would set the date of the .ZIP file to the latest dated file
+    or directory.  Directory dates are now ignored in this version.
+

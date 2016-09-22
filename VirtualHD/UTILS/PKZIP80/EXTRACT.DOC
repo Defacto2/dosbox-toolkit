@@ -1,0 +1,145 @@
+
+UnShrinking
+-----------
+
+Shrinking is a Dynamic Ziv-Lempel-Welch compression algorithm 
+with partial clearing.  The initial code size is 9 bits, and 
+the maximum code size is 13 bits.  Shrinking differs from 
+conventional Dynamic Ziv-lempel-Welch implementations in several 
+respects:
+
+1)  The code size is controlled by the compressor, and is not 
+    automatically increased when codes larger than the current 
+    code size are created (but not necessarily used).  When 
+    the decompressor encounters the code sequence 256 
+    (decimal) followed by 1, it should increase the code size 
+    read from the input stream to the next bit size.  No 
+    blocking of the codes is performed, so the next code at 
+    the increased size should be read from the input stream 
+    immediately after where the previous code at the smaller 
+    bit size was read.  Again, the decompressor should not 
+    increase the code size used until the sequence 256,1 is 
+    encountered.
+
+2)  When the table becomes full, total clearing is not 
+    performed.  Rather, when the compresser emits the code 
+    sequence 256,2 (decimal), the decompressor should clear 
+    all leaf nodes from the Ziv-Lempel tree, and continue to 
+    use the current code size.  The nodes that are cleared 
+    from the Ziv-Lempel tree are then re-used, with the lowest 
+    code value re-used first, and the highest code value 
+    re-used last.  The compressor can emit the sequence 256,2
+    at any time.
+
+
+
+Expanding
+---------
+
+The Reducing algorithm is actually a combination of two 
+distinct algorithms.  The first algorithm compresses repeated 
+byte sequences, and the second algorithm takes the compressed
+stream from the first algorithm and applies a probabilistic 
+compression method.  
+
+The probabilistic compression stores an array of 'follower 
+sets' S(j), for j=0 to 255, corresponding to each possible 
+ASCII character.  Each set contains between 0 and 32 
+characters, to be denoted as S(j)[0],...,S(j)[m], where m<32.  
+The sets are stored at the beginning of the data area for a 
+Reduced file, in reverse order, with S(255) first, and S(0) 
+last.  
+
+The sets are encoded as { N(j), S(j)[0],...,S(j)[N(j)-1] }, 
+where N(j) is the size of set S(j).  N(j) can be 0, in which 
+case the follower set for S(j) is empty.  Each N(j) value is 
+encoded in 6 bits, followed by N(j) eight bit character values 
+corresponding to S(j)[0] to S(j)[N(j)-1] respectively.  If 
+N(j) is 0, then no values for S(j) are stored, and the value 
+for N(j-1) immediately follows.
+
+Immediately after the follower sets, is the compressed data 
+stream.  The compressed data stream can be interpreted for the 
+probabilistic decompression as follows:
+
+
+let Last-Character <- 0.
+loop until done
+    if the follower set S(Last-Character) is empty then
+	read 8 bits from the input stream, and copy this
+	value to the output stream.
+    otherwise if the follower set S(Last-Character) is non-empty then
+	read 1 bit from the input stream.
+	if this bit is not zero then
+	    read 8 bits from the input stream, and copy this
+	    value to the output stream.
+	otherwise if this bit is zero then
+	    read B(N(Last-Character)) bits from the input 
+	    stream, and assign this value to I.
+	    Copy the value of S(Last-Character)[I] to the 
+	    output stream.
+	
+    assign the last value placed on the output stream to 
+    Last-Character.
+end loop
+
+
+B(N(j)) is defined as the minimal number of bits required to 
+encode the value N(j)-1.
+
+
+The decompressed stream from above can then be expanded to 
+re-create the original file as follows:
+
+
+let State <- 0.
+
+loop until done
+    read 8 bits from the input stream into C.
+    case State of
+	0:  if C is not equal to DLE (144 decimal) then
+		copy C to the output stream.
+	    otherwise if C is equal to DLE then
+		let State <- 1.
+
+	1:  if C is non-zero then
+		let V <- C.
+		let Len <- L(V)
+		let State <- F(Len).
+	    otherwise if C is zero then
+		copy the value 144 (decimal) to the output stream.
+		let State <- 0
+
+	2:  let Len <- Len + C
+	    let State <- 3.
+    
+	3:  move backwards D(V,C) bytes in the output stream 
+	    (if this position is before the start of the output 
+	    stream, then assume that all the data before the 
+	    start of the output stream is filled with zeros).
+	    copy Len+3 bytes from this position to the output stream.
+	    let State <- 0.
+    end case
+end loop
+
+
+The functions F,L, and D are dependent on the 'compression 
+factor' (see FORMAT.DOC), 1 through 4, and are defined as follows:
+
+For compression factor 1:
+    L(X) equals the lower 7 bits of X.
+    F(X) equals 2 if X equals 127 otherwise F(X) equals 3.
+    D(X,Y) equals the (upper 1 bit of X) * 256 + Y + 1.
+For compression factor 2:
+    L(X) equals the lower 6 bits of X.
+    F(X) equals 2 if X equals 63 otherwise F(X) equals 3.
+    D(X,Y) equals the (upper 2 bits of X) * 256 + Y + 1.
+For compression factor 3:
+    L(X) equals the lower 5 bits of X.
+    F(X) equals 2 if X equals 31 otherwise F(X) equals 3.
+    D(X,Y) equals the (upper 3 bits of X) * 256 + Y + 1.
+For compression factor 4:
+    L(X) equals the lower 4 bits of X.
+    F(X) equals 2 if X equals 15 otherwise F(X) equals 3.
+    D(X,Y) equals the (upper 4 bits of X) * 256 + Y + 1.
+

@@ -1,0 +1,218 @@
+
+                    $$$$$                  FFFFFFF
+                   $$   $$          $$     FF
+                   $$      RR RRR $$$$$$ FFFFFF $$  XX  XX
+                   $$      RRR      $$     FF   $$    XX
+                   $$   $$ RR       $$     FF   $$    XX
+                    $$$$$  RR        $$$   FF   $$  XX  XX
+
+                   by Eugene Toder, 2001      version 1.16
+ 
+                     ... fixing bugs by Borland, Inc ...
+
+    CRTFix is provided "AS IS". I'm not responsible for any results of using
+CRTFix. You use it on your own risk. Feel free to use or modify it as you
+wish. If you have used or modified it in an interresting way, please tell me.
+I will be glad if you send me your notes (and bug reports :) to
+                                                         eltoder@hotmail.com.
+
+ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+³ In this file ³
+ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+    1. About CRTFix.
+    2. How to use CRTFix.
+    3. What CRTFix does.
+    4. History.
+
+ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+³ About CRTFix ³
+ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+    CRTFix is a patcher that fixes bug in Borland Pascal (aka Turbo Pascal)
+CRT unit. This bug causes run-time error 200 in the very beginning of ANY
+programm that uses CRT when this program is run on fast machines (I think
+Pentium 200 and better).
+    You can use fixed version of CRT that I supply (use tpumover to insert it
+to turbo.tpl) if your version is already patched and CRTFix can't find original
+code. (This unit was patched with delay factor 200)
+
+ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+³ How to use CRTFix ³
+ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+    General syntax is:
+
+    > CRTFix <file_masks> [options]
+
+    Where file_masks are masks of files to be patched. It can be ANY executable
+or unit (*.EXE, *.OVL, *.TPU, *.TPL, *.TPP,..) made with BP/TP (ANY version, I
+hope, if you know some versions that CRTFix can not fix, please contact me). If
+you want to specify several masks devide them with spaces or semicolons. First
+mask can also include path (if you need several pathes - run CRTFix several
+times). If file mask is incomplete it'll be extended with '*.exe'.
+    For example if you want to fix all executables and units in your C:\BP\WORK
+directory use:
+
+    > CRTFix c:\bp\work\*.exe;*.tpu
+
+    Do not specify equal file masks or some files might be processed more than
+once (CRTFix won't crash or spoil your files - you'll just lose your time).
+
+You can also specify one or more of the following parameter:
+
+    /d## - set delay factor (_DELAY_) to ## or enable auto-detect if 0 is
+           specified. Low values gives more precision, high - make Delay() to
+           work correctly on fast machines. Don't be afraid of selecting wrong
+           value - patched programm will never cause run-time error 200.
+           I've got the following values for delay factor using autodetection:
+
+                    Pentium II-300          ~45
+                    Pentium II-500          ~75
+                    Duron-750               ~180
+
+           I recommend you to use autodetection, too ;) Anyway, values ~200
+           seems to work OK on most computers. Default is 0.
+    /m## - set maximal delay factor  to ## (used for auto-detection). Use this
+           option if you get warning. Default is 400.
+    /t   - test mode. Only search for CRT code in files but don not patch. All
+           other options (except log) are ignored. Defaul - No.
+    /b   - backup files before patching. Defaul - No.
+    /a   - ask before patching. You can choose: 'Yes' - patch this file, 'No'
+           - don't patch this file, 'Quit' - exit programm or 'Backup' - back
+           up this file, if you don't use /b parameter. Defaul - No.
+    /l   - write log file. In log file you can find names of all processed
+           files (unless /p is specified), position of patched code in file
+           and file status (PATCHED, BACKUPED). Defaul - No.
+    /p   - write to log only files containing CRT code. Can be used do make
+           list of patched files, or files that need patching. Defaul - No.
+    /e   - do not reapply fix (apply fix to fixed files). Defaul - No.
+    /r   - recursive search. Search in all subdirectories of searching path
+           (current directory or directory given in file mask). Defaul - No.
+    /h,/?- display help w/o error messages ;)
+
+    All options are case-insensetive. You can use - instead of /. You can
+    mix options and file masks in the way you want. For example:
+
+    > CRTFix -t *.exe /R *.tpu
+
+    After finishing CRTFix shows statistic: number of processed files, files
+containing CRT code, patched files and I/O errors. If you want to know WHAT
+files it has fixed you can use /b (because it backups only patched files) or
+/l parameters.
+    CRTFix has a trick to prevent self patching so you can run it with mask
+*.EXE without a fear. CRTFix checks files carefuly before patching them so no
+file would be spoiled (I hope so :). Of course, packed files should be unpacked
+first (look for UNP of cup386 if you have problems).
+    CRTFix can be reapplied (for example, to change delay factor) and applied
+after TPPATCH (and before 8)
+
+    Comments, suggestions, bugs - please send me mail to eltoder@hotmail.com.
+
+ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+³ What CRTFix does ³
+ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+    This section is only for curious people who know assmebler and want to
+know what causes run-time error 200 (if they don't ;) and what is my solution
+of this problem (aka Advanced Users).
+
+    As I have  said (and you probably know) on fast machines you'll get run-
+time error 200 (division by zero usually, but not in this case) in the very
+beginning of ANY BP programm that uses CRT unit. This bug is hidden in Delay()
+function startup code when it's testing CPU's speed. After dividing DX:AX
+(which is the number of passes of delay's main loop in 1/18 second) by 55
+(37h) the result doesn't fit into AX (DX:AX div 55>$FFFF) and THIS causes run-
+time error 200.
+    Of course, there are many ways of fixing this bug (you can divide DX:AX by
+110 (or more), or look for overflowing (like TPPATCH does), or do something
+else), but I've found another way. As I have said Delay() startup code runs
+Delay() main loop for 1/18 second and calculates number of passes. But on fast
+machines this number is too high. So we just need to decrease number of passes.
+In other words - increase time needed for one main loop's pass.
+    This is original CRT code:
+
+    >00009C76:  sub ax, 01       ; Substact 1 from DX:AX
+    >00009C79:  sbb dx, 00
+    >00009C7C:  jb  00009C83     ; If DX:AX is less than zero - return
+    >00009C7E:  cmp bl, es:[di]  ; If values at ES:[DI] have changed
+    >00009C81:  je  00009C76     ; return, else - continue loop
+    >00009C83:  ret
+
+    Remark. When this loop is started by startup code ES:[DI] is pointing to
+BIOS timer counter. When it's started by Delay() ES:[DI] points to some data
+in your program that doen't change.
+    I have changed this code to:
+
+    >00009C76:  dec ax           ; Substarct 1 from AX
+    >00009C77:  mov cx, _DELAY_  ; Do empty loop
+    >00009C7A:  loop 00009C7A    ; _DELAY_ times
+    >00009C7C:  je 00009C83      ; If AX is zero - return
+    >00009C7E:  cmp bl, es:[di]  ; If values at ES:[DI] have changed
+    >00009C81:  je 00009C76      ; return, else - continue loop
+    >00009C83:  ret
+
+    And that's all. This code makes loop longer (as long as you need) and it's
+fully compatible with the rest of CRT code. But it uses CX, so I had to change
+Delay() code a bit.
+
+    From:
+
+    >00009C6C:  xor dx, dx
+    >00009C6E:  call 00009C76
+
+    To:
+
+    >00009C6C: push cx
+    >00009C6D: call 00009C76
+    >00009C70: pop cx
+
+    So one pass of Delay() main loop became longer and number of passes can fit
+in AX. Delay() now works perfectly (and precise - unlike after TPPATCH)! Also
+we now have parameter _DELAY_ which can increase precision of Delay() (small
+values) or make Delay() to run correctly on fast machines (big values), but
+whatever you choose - programm will never cause run-time error 200 again.
+
+
+    And that's all folks! Have a nice day.
+
+    P.S.: CRTFix doesn't use CRT at all.
+
+ÚÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+³ History ³
+ÀÄÄÄÄÄÄÄÄÄÙ
+
+Changes to version 1.16
++ Fixed another seacrhing issue (thanks to Richard Green)
++ Fixed some autodetection issues
++ Patched version of CRT.TPU now uses delay factor 200
++ Now packed with UPX!
++ Some changes to this file
+
+Changes to version 1.15
++ Delay factor auto-detection is much faster
++ CRT code searching is significantly faster
++ Allow mulptiply file masks
++ Allow parameters in uppercase 
++ /m parameter added - maximal delay factor
++ /e parameter added - do not reapply fix
++ Increased maximal number of subdirectories for recursive search
++ Some minor changes
++ Patched version of CRT included in this package
+
+Changes to version 1.10
++ /a parameter added - ask before patching
++ /l parameter added - write log file
++ /p parameter added - write to log only files, containing CRT code
++ /r parameter added - recursive search
++ /t parameter added - test mode
++ File mask can now include path
++ File mask extension added
++ Added I/O errors and "code found" statistic
++ Now can open readonly files (preserving R/O attribute)
++ Strict parameters checking
++ Fixed search bug (CRTFix didn't find code in some (rare ;) cases)
++ Some minor changes and bugfixes
+
+Version 1.0
+! First release

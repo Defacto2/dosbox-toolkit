@@ -1,0 +1,364 @@
+
+Explanation of options for PKZIP and PKUNZIP
+--------------------------------------------
+
+General:
+
+      The PKZIP and PKUNZIP software was written from scratch, and
+      not derived from PKPAK and PKUNPAK.  While some of the
+      functions in the new software are designed to emualate those
+      of PKPAK or PKUNPAK on a functional level, they are implemented
+      differently, so there can (and will) be some differences in
+      operation.
+
+      All options for the software must be preceeded by a '-'
+      character or the MS-DOS switch character (usually '/')
+      and generally can be placed *anywhere* on the command line.
+      Most options except where noted can be combined (i.e. "-x -y"
+      or "-xy")  Each program has a default action, and can be run
+      without any options or commands.
+
+      Some functions are not fully implemented in the Beta software,
+      and I have attempted to note this.  Also, the release software
+      may sport additional features not listed here.
+
+
+Some features that didn't make it into Beta 0.80 release:
+
+      Spanning diskettes.  As detailed in FORMAT.DOC, the ZIP file
+      format is designed to span multiple disks.  However, in order
+      to meet time constraints this functionality will not be added
+      until later, perhaps in the full-screen version of the software.
+      
+      Self-extracting ZIPfiles.
+      
+      Configuration files.  PKZIP (and possibly PKUNZIP) will
+      eventually support configuration options to select certain
+      defaults for the software.  Currently, there are some
+      selections made arbitrarily in the Beta software that will
+      be user configurable in configuration files in later releases
+      of the software.
+      
+      Encryption.
+      
+      Individual file comments.
+
+    See specific options listed below for more information.
+
+
+PKZIP:
+
+    general command format:
+    
+	pkzip [options] zipfilename [filespec...]
+	
+    The default extension for the Zipfile is .ZIP if no
+    extension is specified.
+
+    If no filespecs are specified, "*.*" is assumed.  Any DOS
+    wilcarded filespecs (with paths) are allowed.  List files
+    can be used, and are specified by preceeding the filename
+    with a '@' symbol.  Entries within a list file can contain
+    paths and wildcards.  List files should work for all options
+    that take command line file specifications.
+    
+    Files are added to the ZIP in the precise order they are
+    specified.  They are extracted in the exact same order.
+    No sorting of files is performed when being added to the
+    Zipfile.
+
+    
+    Options are:
+    
+	-a		Add files to ZIP.  This is the default
+			if no other options are specified.
+
+	-b[path]	Create temporary zipfile on an alternate
+			drive and path.  If no path is specified,
+			the current drive is used.  Usefull for
+			updating zipfiles larger than half the
+			size of a floppy etc.
+
+	-c		Add file comments to individual files.
+			Not implemented in Beta 0.80.
+
+	-d		Delete the specified files from the Zipfile.
+
+	-e[a,b][n]	Extra compression.  Use a slower but more
+			efficient compression algorithm.  The 'a' and 'b'
+			options specify that extra compression is to
+			be applied to either ASCII or BINARY files.
+			"-e" is the same as "-eb".  The optional n is
+			the 'compression factor', from 1 to 4.  1 provides
+			the fastest operation, and 4 (usually) the best
+			compression.  The default factor is 2.  For binary
+			files, a value of "-eb2" usually provides good
+			performance and significantly better compression
+			over the default algorithm.  The a and b options
+			can not be mixed in the same command.  If you
+			want to enable extra compression for both ASCII
+			and BINARY files, two option are needed (e.g
+			"-ea3 -eb2")
+
+	-f		Freshen files in ZIP.  Add files to the ZIP only
+			if the file already is in the ZIP and the files
+			are also dated later then those within the ZIP.
+
+	-g		Encrypt files.  Not implemented in 0.80.
+	
+	-h		Help.
+
+	-i		Incremental add.  Add files to the ZIP only
+			if the DOS archive directory attribute is set.
+			The archive bit is then cleared after being
+			added to the ZIP.
+
+	-l		License screen.
+
+	-m		Move files to ZIP.  Delete the specified files
+			after adding to ZIP.  Can be used in conjunction
+			with the Add, Freshen, and Update options.
+
+	-p		Store relative paths with filenames in ZIPfile.
+			Meaningful only if used with the R option below.
+
+	-r		Recurse subdirectories from the specified
+			directories.  For example:
+			"pkzip source d:\*.c e:\headers\*.h" will
+			search the entire D: drive for *.c files, and
+			will search E:\HEADERS and all directories below
+			E:\HEADERS for *.h files.  An entire directory
+			tree can be zipped and restored using the P and
+			R options.  For example "pkzip -r -p stuff" will
+			zip all files in the current subdirectory, and
+			all directories below the current subdirectory.
+			PKUNZIP can then restore this directory tree
+			either in the same directory, or at any place
+			in the directory tree.  (See the D option for
+			PKUNZIP below)
+			
+			By default, the filename only will be stored,
+			unless the P option is specified as above.  If
+			the P option is used, then the relative path
+			will be stored.  For example, if the file
+			"e:\headers\prog\startup\xyz.h" was found in the
+			first example, "prog/startup/xyz.h" will be stored
+			in the ZIP.
+
+	-u		Update.  Add files to the ZIP only if they are
+			not currently within the ZIP or are dated later
+			than those within the ZIP.
+
+	-v[t]		View files in the ZIP.  "-vt" lists the files
+			in a long format with extra technical information.
+			NOTE: Although this option in the Beta 0.80
+			software displays a sorted listing by filename,
+			the files within the ZIP are not sorted and most
+			likely not in the order listed.  The order in
+			which the files are listed is completely arbitrary.
+			The release software might have user specifiable
+			options to view the Zipfile with different sort
+			or nosort options.
+
+	-z		Zipcomment.  Add a comment for the Zipfile.
+			This comment is automatically displayed by
+			PKZIP or PKUNZIP when processing the Zipfile.
+
+
+
+PKUNZIP
+-------
+
+    general command format:
+    
+	pkzip [options] zipfilename [filespec...] [output-path]
+	
+    The default extension for the Zipfile is .ZIP if no
+    extension is specified.  The Zipfilename can contain
+    wildcards.  For example, "pkunzip -t *" will test all
+    Zipfiles in the current directory.
+
+    If no filespecs are specified, "*.*" is assumed.  Any DOS
+    wilcarded filespecs (with paths) are allowed.  List files
+    can be used, and are specified by preceeding the filename
+    with a '@' symbol.  Entries within a list file can contain
+    paths and wildcards.  List files should work for all options
+    that take command line file specifications.
+    
+    The output-path specifies which drive and directory, files
+    should be extracted to.
+    
+    
+    Options are:
+    
+	-c[m]		Extract to console [with more].  More
+			is not implemented in Beta 0.80.
+
+	-d		Use pathnames stored in the ZIP and create
+			them if necessary upon extraction.  Will also
+			create the output-path if it does not exist.
+			For example, say drive C: has the following
+			directory tree:
+			
+			root----+-abc--+-dir1-
+				|      |
+				|      +-dir2-+-dir3-
+				|             |
+				+-xyz--       +-dir4-
+				|
+				+-pdq--
+			
+			If then, you were to execute
+			"pkzip -r -p a:stuff c:\abc\*.*".  You then could
+			execute "pkunzip -d a:stuff c:\pdq\newabc".  After-
+			wards, drive C: would look like:
+
+			root----+-abc--+-dir1-
+				|      |
+				|      +-dir2-+-dir3-
+				|             |
+				+-xyz--       +-dir4-
+				|
+				+-pdq--+-newabc-+-dir1-
+						|
+						+-dir2-+-dir3-
+						       |
+						       +-dir4-
+
+			All the files originally in C:\ABC and
+			its subdirectories will have been restored
+			to C:\PDQ\NEWABC, and the directory tree
+			recreated.
+
+			If this option is not specified, the filenames
+			only stored in the ZIP will be used, any pathnames
+			will be ignored.
+			
+	-e		Execute file from ZIP.  Not implemented in
+			Beta 0.80.
+
+	-g		Decryption.  Not implemented in Beta 0.80.
+
+	-h		Help.
+
+	-l		License screen.
+
+	-n		Newer.  Extract files from the ZIP only if they
+			are newer then the ones on the disk.
+			
+	-o		Overwrite existing files without query.  By
+			default the software will prompt if existing
+			files should be overwritten.
+
+	-p[a,b,c][1,2,3,4]	Extract to printer.  The A and B
+			options specify that the print device should
+			be placed explicity in either ASCII or BINARY
+			mode.  The C specifies that the data should
+			be sent to the COM port instead.  The port
+			number (LPT or COM) can also be specified.
+
+			If neither ASCII or BINARY mode is specified,
+			or ASCII mode is specified, the software will
+			send a formfeed and carriage return to the
+			print device after each file.  If no mode is
+			specified, whatever the default mode is for
+			the device will be used.  Most DOS character
+			devices are in translated ASCII (cooked) I/O mode
+			by default, but other software can place them
+			in untranslated BINARY (raw) I/O mode.
+			
+			The default device used is PRN.  If C is given
+			without a port number, COM1 will be used.
+
+			Example: "pkunzip stuff *.doc -p3" extracts
+			the .DOC files in STUFF.ZIP to LPT3.
+
+			Example: "pkunzip fonts *.fon -pbc2" extracts
+			the .FON files in FONTS.ZIP to COM2.  The COM2
+			device is placed into untranslated BINARY (raw)
+			I/O mode before extraction.
+	
+	-t		Test.  The specified files are extracted to
+			the NUL device, and the 32 bit CRC value for
+			the file is calculated.
+
+	-v		View.  View the files in the ZIP.  See note
+			for the View option for PKZIP.
+
+	-x		Extract files.  This is the default action if
+			no other option is specified.
+
+
+
+Misc
+----
+
+PKZIP will look in the DOS environment for the string "PKTMP=path"
+and will use the specified drive/path for temporary files if present.
+Under DOS 3.0 or higher, a unique file name will be used for all
+temporary files.
+
+Both PKZIP and PKUNZIP when opening files for read-only type access
+will open files in "Share Deny Write" mode under DOS 3.0 or higher.
+Also, under DOS 3.0 or higher DOS "Critical Errors" are intercepted
+and interrogated.  If an error occurs with a Locus of Network, and a
+suggested action of Retry or Delayed Retry, the software will perform
+the suggested action.  If after several retries the operation still fails,
+the default DOS error prompt will be executed.
+
+
+Errorlevels
+-----------
+
+The software returns the following exit codes:
+
+    PKZIP:	0	No error.
+		1	Bad file name or file specification.
+	 	2,3	Error in Zipfile.
+		4-11	Insufficient Memory.
+		12	No files were found to add to the ZIP,
+		        or no files were specified for deletion.
+		13	File not found.  The specified Zipfile
+			or list file was not found.
+		14	Disk full.
+		15	Zipfile is read-only and can not be modified.
+		16	Bad or illegal parameters specified.
+
+    PKUNZIP:	0	No error.
+    		1	Warning error (such as failed CRC check)
+		2,3	Error in Zipfile.
+		4-8	Insufficient Memory.
+		9	File not found.  No Zipfiles found.
+		10	Bad or illegal parameters specified.
+		50	Disk Full.
+		51	Unexpected EOF in Zipfile.
+
+
+    Please note that if testing errorlevels in a batch file
+    that DOS tests the errorlevel not for equality, but for
+    greater than or equal to.  For example, if the software
+    exits with an exit code of 10, errorlevel 10 will be true,
+    and so will errorlevel 9, errorlevel 8, and so on.
+    >>Errorlevel 0 is always true<<.  Therefore, errorlevels should
+    be tested in descending order.  For example:
+    
+    pkunzip stuff -d d:\temp
+    if errorlevel 51 goto err51
+    if errorlevel 50 goto err50
+    if errorlevel 10 goto err10
+    if errorlevel 9 goto err9
+    if errorlevel 4 goto err4
+    if errorlevel 2 goto err2
+    if errorlevel 1 goto err1
+    echo No Error
+    goto exit
+    :err51
+    echo Unexpected EOF
+    goto exit
+    :err50
+    echo Disk Full
+    goto exit
+    .
+    .
+    .
+

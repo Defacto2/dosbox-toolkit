@@ -1,0 +1,53 @@
+NOTE:
+
+  This disk contains the REGISTERED versions of PKZIP/PKUNZIP etc.
+  These files are not for distribution as Shareware.  The Shareware
+  versions of PKZIP/PKUNZIP are included on this disk in the file
+  PKZ204C.EXE.  If you distribute PKUNZIP, PKZIP, and PKSFX to friends,
+  associates, or to a computer bulletin board system (BBS), please
+  distribute the Shareware file PKZ204c.EXE rather than the individual
+  files for PKUNZIP, PKZIP and PKSFX.
+
+
+The files on this disk are:
+---------------------------
+
+readme			This file
+install.bat		Batch file for installing PKZIP onto your
+			hard disk.  Usage: install [src:] [dest:]
+
+			Example:  install a: c:
+			
+			will install the software from the A: drive
+			to the C: drive.
+
+whatsnew.204		Highlights of new features in version 2.04c
+pkzip.exe		PKZIP 2.04c REGISTERED version
+pkunzip.exe		PKUNZIP 2.04c REGISTERED version
+pkzipfix.exe		PKZIPFIX version 2.04c
+zip2exe.exe		ZIP2EXE (PKSFX) 2.04c REGISTERED version
+pkunzjr.com		PKUNZJR (PKUNZIP junior) version 2.04c
+putav.exe		PUTAV version 2.04c
+pkcfg.exe		PKCFG (PK config) version 2.04c - FREE BONUS!!
+pksfansi.com		PKSFANSI (PKSafeAnsi) 2.04c	- FREE BONUS!!
+
+The following files are in the .ZIP file DOCS.ZIP
+-------------------------------------------------
+
+addendum.doc		Update information not in the PKZIP manual.
+pksfansi.doc		Doc file for PKSafeAnsi 2.04c
+license.doc		Information on Site and Distribution licenses
+order.doc		Order form for PKZIP
+appnote.txt		Application notes for the .ZIP file format
+ombudsmn.asp		Association of Shareware Professionals Ombudsman
+			information file.
+pkzip.ico		Windows icon for PKZIP/PKUNZIP.
+authveri.frm		Authenticity Verification application form
+
+
+PKZ204C.EXE is the Shareware version of PKZIP 2.04c
+which can be distributed to BBS's etc.
+---------------------------------------------------
+
+pkz204c.exe		Shareware version of PKZIP 2.04c
+

@@ -1,0 +1,10 @@
+set helppath=a:\ 
+SWITCHES=/F /N
+MENUCOLOR=7,0
+MENUDEFAULT=0,2
+MENU You are running without loading any bootup configuration files.
+echo Edit config.sys [EDIT A:\CONFIG.SYS] & autoexec.bat [EDIT A:\AUTOEXEC.BAT]
+echo files on this disk so they contain your specific settings
+echo then delete file fdconfig.sys [DEL A:\FDCONFIG.SYS]
+0?shell=command.com /P /D
+

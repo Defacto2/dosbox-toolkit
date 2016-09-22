@@ -1,0 +1,33 @@
+NOTE:
+
+  This disk contains update patches for the REGISTERED versions of
+  PKZIP/PKUNZIP from version 2.04c to 2.04g.
+
+
+The files on this disk are:
+---------------------------
+
+readme.1st		This file
+
+update.bat		Batch file for updating PKZIP and PKUNZIP.
+			Make sure that the files from this release
+			and the .EXE files from version 2.04c are
+			in the current directory and then type UPDATE
+
+whatsnew.204		Highlights of new features in version 2.04
+v204g.new		Updates/changes in 2.04g from 2.04c/2.04e
+
+pkpatch.exe		PKPATCH program
+
+pkzip.pat		Patch files for this update
+pkunzip.pat		
+
+hints.txt		Hints and answers to frequently asked questions
+addendum.doc		Update information not in the PKZIP manual.
+license.doc		Information on Site and Distribution licenses
+order.doc		Order form for PKZIP
+appnote.txt		Application notes for the .ZIP file format
+ombudsmn.asp		Association of Shareware Professionals Ombudsman
+			information file.
+authveri.frm		Authenticity Verification application form
+

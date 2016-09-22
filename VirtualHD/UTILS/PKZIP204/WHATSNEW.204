@@ -1,0 +1,71 @@
+
+Several new features have been added to PKZIP/PKUNZIP/PKSFX
+version 2.04c.  Read the file ADDENDUM.DOC for a complete
+description of these changes and enhancements.  Highlights
+of PKZIP/PKUNZIP/PKSFX etc. version 2.04c include:
+
+-Improved Compression
+
+	PKZIP/PKUNZIP 2.04c implements a new compression algorithm
+	called Deflating.  Deflating has varying levels of compression
+	and speed available.  Both speed and compression are greatly
+	improved over previous versions of PKZIP.
+
+-Multi-Volume Archive Support/Formatting
+
+	PKZIP/PKUNZIP 2.04c has the ability to "span" a .ZIP file across
+	multiple diskettes if the final .ZIP file size would be greater
+	than a single diskette.  PKZIP 2.04c also has the ability to
+	format the destination diskettes on the fly.
+
+-XMS/EMS Usage
+
+	PKZIP/PKUNZIP 2.04c has the ability to use of EMS, UMB, and HMA
+	memory, which will allow the ability to process more files or be
+	able to run with less conventional memory.  PKZIP/PKUNZIP 2.04
+	will run in as little as 85K of conventional memory if EMS or
+	XMS memory is available.
+
+-Novell Network Aware
+
+	PKZIP 2.04c is Novell Netware "aware".  Updating or creating
+	a .ZIP file on a network drive is much faster with the network
+	support in PKZIP 2.04c.
+
+-Auto CPU type detection.
+	
+	PKZIP/PKUNZIP 2.04c will detect what type of CPU it is being run
+	on and will use instructions specifcally optimized for an 808x
+	CPU, 80386 CPU, or 80486 CPU.
+
+-DPMI support
+	
+	PKZIP/PKUNZIP 2.04c automatically detects if DPMI (DOS Protected
+	Mode Interface) support is available and will execute code in
+	32-bit protected mode for better speed.
+
+-PKCFG program
+
+	PKZIP 2.04c can be configured to best suit your needs through
+	the use of the PKCFG program.  This is only available in the
+	registered version of PKZIP.
+
+-PKSFX Junior and PKUNZIP Junior
+
+	These "Junior" programs use very little memory and are extremely
+	small.  Although they are reduced in ability, their small size
+	makes them very useful.
+
+-Password Encryption
+
+	Sensitive data files can be scrambled with password protection.
+	The security of this feature has been significantly improved in
+	PKZIP/PKUNZIP 2.04c.
+
+-Authenticy Verification
+
+	Users requiring authentication of archive files may request an
+	Authenticy Verification code.  This allows users to create .ZIP
+	files which PKUNZIP can detect tampering of.
+
+

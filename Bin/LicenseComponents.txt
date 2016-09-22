@@ -1,0 +1,65 @@
+Used as part of the D-Fend Reloaded source code:
+
+Parts of the DOSBox source code
+(for making short path names in D-Fend Reloaded the DOSBox way)
+written by the DOSBox Teams,
+translation to D-Fend Reloaded by Alexander Katz (skatz@svitonline.com)
+(http://www.dosbox.com/)
+
+Portable Network Graphics Delphi
+written by Gustavo Daud
+(http://pngdelphi.sourceforge.net/)
+
+GIF Graphics Object
+written by Anders Melander, Filip Larsen and Reinier Sterkenburg
+(http://www.torry.net/authorsmore.php?id=1034)
+
+SDeanComponents v2.60.00
+written by Sarah Dean (sdean12@sdean12.org)
+(http://www.SDean12.org/)
+
+TZipMaster 1.79
+written by Chris Vleghert and Eric W. Engler
+(http://www.delphizip.org)
+
+TSevenZip 0.7.4a
+written by Ivo Andonov and Rainer Geigenberger (SevenZipVCL@rg-software.de)
+(http://www.rg-software.de)
+
+Bitmap Resampler 01.02
+written by Anders Melander (anders@melander.dk)
+
+
+Used as binary program by D-Fend Reloaded:
+
+MTOOLs for Bochs and Win32 and/or DOS
+written by Benjamin David Lunt
+(http://www.frontiernet.net/~fys/mtools.htm)
+
+FreeDOS 1.0
+FreeDOS is a trademark of Jim Hall
+(http://www.freedos.org/)
+
+OggEnc v2.84 (libvorbis 1.2.0)
+(c) 2000-2005 Michael Smith & portions by John Edwards
+(http://www.vorbis.com/)
+
+Doszip Commander 1.41
+(c) 1996-2010 Hjort Nidudsson
+(http://sourceforge.net/projects/doszip)
+
+Dr.SAGURA Media Player
+(c) 2007 Dr. Andrei Sagura
+(http://www.sagura.com)
+
+
+Used artwork:
+
+Program icon by burnsflipper (guybrush_threepwood@Vogons)
+
+Toolbar icons of the modern icon set:
+http://www.famfamfam.com/lab/icons/mini/ and
+http://www.famfamfam.com/lab/icons/silk/
+(licensed under the creative commons attribution 2.5 license)
+
+Installer artwork by Tim Molderez (tim.molderez@telenet.be)

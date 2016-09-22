@@ -1,0 +1,77 @@
+From masaoki@hpysodk.tky.hp.com Tue Apr 20 21:16:13 EET DST 1993
+Article: 6991 of comp.compression
+From: masaoki@hpysodk.tky.hp.com (Masaoki Kobayashi)
+Date: Fri, 16 Apr 1993 02:53:01 GMT
+Subject: Re: LHA 2.55B READ.ME translation
+Message-ID: <7700001@hpysodk.tky.hp.com>
+Organization: YHP Hachioji HSTD R&D, Tokyo Japan
+Newsgroups: comp.compression
+References: <1qh8d3INNbgi@no-names.nerdc.ufl.edu>
+Lines: 66
+
+Hi folks,
+
+Following text is my translation of READ.ME inside LHA255B.EXE package.
+Although I am good at Japanese :-), I am not good at English. If you
+have any difficulty for reading my poor English, feel free to e-mail me.
+
+  Kobayashi,Masaoki
+  -- masaoki@tky.hp.com
+  -- masaoki@tky.yhp.co.jp
+
+I am glad if this would be your help!
+
+Note: I do NOT have any relationship with the author Yoshi. I cannot
+      answer any questions about him, nor ask request to him.
+
+----------------------------------------------------------------------------
+<Change from 2.13>
+
+  1. Added '-d' option which is equal to '-r2x1a2'
+  2. Changed 'p' command with '-n[1|2]' option not to print filenames
+  3. Printing filenames on extraction sometimes garbled
+  4. Sometimes hang up with 'f' command
+  5. If you stop lha with m command deleting, the results was terrible
+  6. Made pathnames upto 128 bytes including last '\0' (for DOS 5)
+  7. Use TEMP if TMP is not defined (for DOS 5)
+  8. Added '-f' option which does not check the rest disk capacity
+  9. Added extractability for new (now developing) '-lh6-' method
+
+<Change from 2.51>
+
+  1. 'f' command sometimes deleted file whose name does not match
+  2. Sometimes the progress printing was not good
+  3. Fasten file copy
+
+<Change from 2.52>
+
+  1. The process of a filename that MS-DOS can not manipulate was incorrect
+
+<Change from 2.53>
+
+  1. Bug of '-lh0-' method self extraction
+  2. New wildcard
+     ?  Arbitrary 1 character
+     *  Arbitrary string at least 0 character (except '.')
+     +  Arbitrary string at least 1 character (except '.')
+     [] One of characters inside the parenthesis
+	You can specify area like [a-z]
+  3. Changed '-i' option
+     a. For (f, d, s, e, x, t, p, l, v) commands
+	-i0     Search as case ignored
+	-i1,-i2 Search as case sensitive
+     b. For (a, u, m) commands
+	-i0     Store as all characters upper case
+	-i1     Only wildcard specified filename stored as upper case
+		(Others will be as you specified on command line)
+	-i2     Only wildcard specified filename stored as lower case
+		(Others will be as you specified on command line)
+  4. Changed temporary filename to 'lhtmp???.lzh' where ??? is hex number
+     from 000 to fff, not to match existing filename
+
+<Change from 2.54>
+
+  1. Bug fix inside wildcard expand
+  2. Sometimes temporary files remain existing on ^C (break)
+
+----------------------------------------------------------------------------

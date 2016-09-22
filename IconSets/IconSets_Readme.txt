@@ -1,0 +1,9 @@
+D-Fend Reloaded can manage multiple icon sets for the toolbar, menu and dialog icons. An icon set is nothing more than a collection of icons and an Icons.ini file saying which icon to use where. (The Icons.ini is the same one as in the "Settings" directory.) You can activate different icon sets from the program settings dialog.
+
+For each icon D-Fend Reloaded will look in the following order for custom icons:
+1.) It will look for icon definitions in the Icons.ini file in the "Settings" directory. If it find a definition there, it will use this icon.
+2.) If there is no icon file defined in the Icons.ini in the "Settings" directory, it will try to find the directory given by "IconSet=..." as a subdirectory of the "IconSets" folder in the data folder (this is "C:\Users\you\D-Fend Reloaded\IconSets\") and look there in the Icons.ini file for a definition.
+3.) If the choosen icon set subdirectory does not exist in the data folder it will look for the icon set directory in the installation directory (this is "C:\Program files\D-Fend Reloaded\IconSets"). This also means: If there is an icon set directory in the data folder and its not defining an icon file for the choosen icon D-Fend Reloaded will not look in the installation directory. If there is a icon set of the choosen name in the data folder only this one will be used!
+4.) If in all locations no icon can be found it will use the internal version for the icon.
+
+In short: You can overwrite icon sets in the program folder by adding an icon set in the data directory with the same name and be aware you have not defined any icons in the Icons.ini in the "Settings" directory because this file has the highest priority.

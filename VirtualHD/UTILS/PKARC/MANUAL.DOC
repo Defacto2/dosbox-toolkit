@@ -1,0 +1,2156 @@
+
+
+
+
+
+
+                                                                  |
+                                                                  |
+                                                                  |
+                                                         PKware   |
+                                                                  |
+                                    The file compression system   |
+                                                          where   |
+                                         SPEED and SMALL SPACES   |
+                                          make a BIG difference   |
+                                                                  |
+                                                                  |
+                                                                  |
+                                                                  |
+                                                          PKARC   |
+                                                         PKXARC   |
+                                                          PKSFX   |
+                                                        PKARCJR   |
+                                                       PKXARCJR   |
+                                                                  |
+                                                                  |
+
+
+
+
+
+
+
+
+         Upgrade Version 3.6 of PKware File Compression Programs 
+
+       ______________________________________________________________
+       |                                                            |
+       |                 Previous Users of PKware                   |
+       |                         NOTICE                             |
+       |                Difference in Installation                  |
+       |                                                            |
+       |    PKARC and PKXARC (including JR versions) are now        |
+       |    EXE files instead of COM files.                         |
+       |                                                            |
+       |    You MUST delete, or remove from your system, all the    |
+       |    old program files BEFORE proceeding.                    |
+       |____________________________________________________________|
+ 
+
+
+
+                    9 Files are included in PK36.EXE
+
+
+      PKARC.EXE  Main archiving program
+     PKXARC.EXE  Main extraction program
+
+    PKARCJR.EXE  Archiving program for limited memory
+   PKXARCJR.EXE  Extraction program for limited memory
+
+    MAKESFX.COM  Starts the process of creating self-extracting files
+
+     README.DOC  Read FIRST !  
+      ORDER.DOC  Registration information and order form
+     MANUAL.DOC  Reference manual for PKware File Compression Programs
+    APPNOTE.TXT  Technical background material
+           
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                    i
+
+                          UPGRADE ENHANCEMENTS
+
+              Version 3.6 PKware File Compression Programs
+
+
+
+ 1.  FAST !  PKARC is now up to 25% faster
+
+             PKXARC is now up to 10% faster 
+
+ 2.  You can add 3,095 files to an archive in one sweep.
+
+ 3.  Special limited-disk-size handling to enable the update of archive
+     files which are larger than 50% of your floppy disk storage area.
+
+ 4.  Added flexibility to the MOVE option by combining it with other
+     update and freshen options.
+
+ 5.  A  List Files  feature has been added to further automate the
+     archiving and file reconstruction process.
+
+ 6.  Your choice of having PKARC stop when it encounters a "can't find"
+     file situation, or having it make a notation on the screen and then
+     proceeding to the next step.
+
+ 7.  Improved network support.
+
+ 8.  The addition of the MORE command for the PKARC verbose file listing
+     which provides pausing after each screen of information.  
+
+ 9.  The addition of the MORE command for PKXARC which provides pausing
+     after each screen of information during the "extract file to the
+     screen" process.
+     
+10.  New printer options for PKXARC.
+
+11.  A new  -n  option which saves time by reconstructing only the most
+     recent version of the file to be extracted when another same-named
+     file already resides on your disk.
+
+12.  Additional information about the archiving process is displayed
+     which includes the version number and program.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                   ii
+
+                     PKware File Compression System
+
+                            Table of Contents
+
+
+ 1.  SUPER QUICK
+     A.  UNarcing a File from a BBS Archive . . . . . . . . . 1
+     B.  Use of PKware in Telecommunications - BBS  . . . . . 1
+
+ 2.  Introduction to File Compression
+     A.  File Compression . . . . . . . . . . . . . . . . . . 2
+     B.  Two Related Programs - PKARC & PKXARC  . . . . . . . 2
+     C.  Three Special Programs 
+             - PKSFX, PKARCJR & PKXARCJR  . . . . . . . . . . 2
+     D.  File Compression Terms . . . . . . . . . . . . . . . 3
+     E.  Using PKware with Hard Disk and 
+             Floppy Disk Systems  . . . . . . . . . . . . . . 4
+     F.  General Rules and DEFAULT Settings . . . . . . . . . 5
+
+ 3.  PKARC - compress files into archive files
+     A.  QUICK START - make an ARCHIVE file . . . . . . . . . 7
+     B.  Command Structures Used in AREA 2  . . . . . . . . . 8
+     C.  Description of Archiving Commands  . . . . . . . . . 9
+
+ 4.  PKXARC - reconstruct & extract archive files
+     A.  QUICK START - reconstruct an ARCHIVE file  . . . . .13
+     B.  Full PKXARC Command Structure CHART  . . . . . . . .14
+     C   Description of Extraction Commands . . . . . . . . .15
+
+ 5.  Special Handling Procedures
+     A.  Creating a Pre-Select File List  . . . . . . . . . .17
+     B.  Password Protection  . . . . . . . . . . . . . . . .18
+     C.  Revealing File Compression Method  . . . . . . . . .19
+     D.  LAN (local area network) Support . . . . . . . . . .20
+     E.  Configuration File Considerations  . . . . . . . . .20
+     F.  Batch File and Other Programming . . . . . . . . . .21
+     G.  RAM Disk . . . . . . . . . . . . . . . . . . . . . .21
+     H.  Using PKARC in Limited Memory  . . . . . . . . . . .22
+     I.  Compatibility with other File Compression Programs
+         1)  Compatibility  . . . . . . . . . . . . . . . . .24
+         2)  Archive Time & Date  . . . . . . . . . . . . . .24
+         3)  Disabling Squashing  . . . . . . . . . . . . . .24
+     J.  Error Messages
+         1)  PKARC - File Compression . . . . . . . . . . . .25
+         2)  PKXARC - File Extraction & Reconstruction  . . .27
+
+ 6.  PKXFX - Self-Extraction Utility  . . . . . . . . . . . .29
+
+ 7.  Registration and Background
+     A.  Technical Support  . . . . . . . . . . . . . . . . .30
+     B.  Registration . . . . . . . . . . . . . . . . . . . .31
+
+
+
+
+
+
+
+
+
+                                                                  |
+                                                                  |
+                                                                  |
+                                                      SUPER QUICK |
+                                                                  |
+                               UNarcing a File from a BBS Archive |
+                                                                  |
+                                                                  |
+                                                                  |
+                                                                  |
+                                                                  |
+                                                                  |
+
+_________________________________________________________________________
+|                                                                       |
+|                              QUICK START                              |
+|                                                                       |
+|        UNarcing or Reconstructing an ARCHIVE File from a BBS          |
+|                                                                       |
+|      A BBS is a Computer Bulletin Board Service.  People who use      |
+|      this type of service can acquire programs or other information   |
+|      in the form of ARCHIVE files.  These files are picked up via     |
+|      a modem.  In order to use them, they must be RECONSTRUCTED       |
+|      (UNarced) through the use of PKXARC.                             |
+|                                                                       |
+|      Follow this pattern to UNarc your files:                         |
+|                                                                       |
+|                                                                       |
+|            C:>PKXARC   A:AnyFile.ARC   C:                             |
+|               _______  _____________   ___                            |
+|                 |         |             |                             |
+|                 |         |             DESTINATION of your choice    | 
+|                 |         |                                           |
+|                 |         the NAME and LOCATION of the archive file   |
+|                 |         > Use any MS-DOS file notation              |
+|                 |                                                     |
+|                 the PROGRAM command                                   |
+|                 >  The program MUST be located at the prompt position |
+|                        or...                                          |
+|                 >  The program can be located elsewhere through the   |
+|                    PATH= setting                                      |
+|_______________________________________________________________________|
+
+
+                Use of PKware in Telecommunications - BBS
+
+
+Compressed or ARCHIVED files pack a lot of information into a small space. 
+PKware file compression methods are the standard used by many successful
+BBS systems across the country.
+
+Archive files created through PKware assure you of the highest level of
+file accuracy.  PKware compressed files are the most compact, meaning they
+take less telecommunications time to deliver, PLUS PKware is FAST! 
+According to benchmarks published in major computer magazines, you will be
+able to manipulate your compressed files hundreds of times faster with
+PKware as compared to similar programs on the market.  PKware provides YOU
+with the highest standards of the industry.
+
+Partial registration for PKware is $20 and complete registration is $45. 
+Complete registration includes a diskette and printed manual for the next
+version of the software when it becomes available.
+
+Registration Information is on page 31, or send a check to:
+
+                              PKware, Inc.
+                           7032 Ardara Avenue
+                           Glendale, WI  53209
+
+
+                                  - 1 -
+
+
+
+
+
+
+                                                                  |
+                                                                  |
+                                                                  |
+                                 Introduction to File Compression |
+                                                                  |
+                                                 File Compression |
+                            Two Related Programs - PKARC & PKXARC |
+                     Special Programs - PKSFX, PKARCJR & PKXARCJR |
+                                           File Compression Terms |
+                              Use of Hard and Floppy Disk Systems |
+                               General rules and DEFAULT Settings |
+                                                                  |
+                                                                  |
+                                                                  |
+
+                    Introduction to File Compression
+
+File Compression
+
+     The term "compression" means to reduce in size.   Computer file
+     compression means that by using PKware programs, files are quickly
+     reduced in size and thereby take up less storage space.  This
+     process, sometimes called ARCing, creates ARCHIVE files.  
+
+     Archive files have three distinct benefits:
+
+         1.  They use less disk space than normal files.  Archive filing
+             increases the life and storage availability of your expensive
+             hard disk.
+
+         2.  Many individual files can be stuffed into a single archive
+             file.  This makes file group identification, copying, and
+             transporting faster and easier.
+
+         3.  Archived files travel faster via modem which reduces
+             telecommunication transmission and reception.  Many BBS
+             (computer bulletin board services) use PKware archive files
+             as their standard.  This enables the BBS to store more files
+             and you to have easier access to them by way of speedier
+             communications.
+
+Two Related PKware Programs - PKARC & PKXARC
+
+     Together, PKARC and PKXARC handle all of your file compression needs.
+
+     PKARC is the program that compresses files.  This shrinking process
+     is often referred to as archiving or ARCing and it results in the
+     creation of an ARCHIVE file.  Terms you will see during the compress-
+     ing process are Stored, Packed, Squeezed, Crunched and Squashed. 
+     PKARC also handles all ARCHIVE file maintenance including adding and
+     deleting files, as well as reporting on technical information from
+     within the archive.
+
+     PKXARC (note the added X in the title) is the program that
+     reconstructs or extracts archived files.  A shorthand word for this
+     process is UNarcing.  In addition to UNarcing a complete archive
+     file, it can selectively release individual files, and show files on
+     the screen for fast viewing, or print them out on a printer.
+
+Three Special Programs - PKSFX - PKARCJR & PKXARCJR
+
+     There are times you must give archived files to people who do not
+     have PKware programs, or who have not yet learned how to use them. 
+     PKSFX creates a "self-extracting" file.  This means that the archive
+     can be reconstructed WITHOUT using PKXARC.  The people who receive
+     the archives you have created will be able to use them immediately.
+
+     The JR series of PKware does everything that PKARC and PKXARC does,
+     however, they were designed to work within a limited memory area. 
+     This is of particular importance to programmers who use PKware within
+     their own program or creations.
+
+                                  - 2 -
+
+File Compression Terms
+
+     FILE COMPRESSION is the process of reducing a file's size.  Sometimes
+     called ARCing or compressing.
+
+     FILE means the SINGLE name that identifies information on your floppy
+     disk or hard drive.
+
+     ARCHIVE FILE holds information that has been reduced in size for
+     better storage.  Sometimes called an ARC or ARCed file.
+
+     An ARCHIVE FILE can be made up of either one big file OR several
+     files bunched together under one file name.
+
+     A file with the extension ARC    FileName.ARC    is a SINGLE file
+     that contains from one to many independent files stuffed inside.
+
+ ______________________________________________________________________
+ |                                                                    |
+ |        An ARC file contains SEVERAL files or one BIG file          |
+ |                                                                    |
+ |                                                                    |
+ |    Suitcase.ARC    contains -->  Pants.Txt  Tie.Txt  Sox.Wks       |
+ |                                                                    |
+ |    Big.ARC    contains -->  Huge.Wks                               |
+ |                             This is a very BIG worksheet that      |
+ |                             has been shrunk in size for better     |
+ |                             storage and faster telecommunications. |
+ |____________________________________________________________________|
+
+
+     FILE RECONSTRUCTION  or  FILE EXTRACTION  refers to the process of
+     recreating files that have been previously compressed or ARCed. 
+     People also refer to this as OPENING UP FILES or UNarcing.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                  - 3 -
+
+             Using PKware with Hard and Floppy Disk Systems
+
+PKware works BEST on a hard disk system.  
+
+ 1.  Even though you are making files smaller, the process used to shrink
+     them can BRIEFLY DOUBLE the storage space you need.  The process
+     creates a NEW archive which will be used as a REPLACEMENT for the old
+     version.  Both the OLD and the NEW versions will be on your disk
+     until just prior to the program's final stages.
+
+ 2.  When you UNarc (reconstruct) a file, the amount of space needed to
+     hold that file can double.  A large hard disk drive normally insures
+     that enough storage area is available.
+
+Many ARCed (compressed) files are stored on floppy disks.  The limit to
+floppy storage is the number of characters your floppy system will hold:
+
+     Standard double density floppy     360K
+     High density floppy                1.2 meg 
+     3-1/2" floppy                      .7 or 1.4 meg 
+
+You may have problems either ADDING files to an archive stored on a floppy
+disk, or UNarcing files to a floppy disk system when the number of
+characters in the archive file is more than 50% of the available storage
+space of one floppy.  Consider a standard floppy disk system:
+   ____________________________________________________________________
+   |                                                                  |
+   |                  Standard Floppy Disk Drive of 360K              |
+   |                                                                  |
+   |  A:> BigFile.ARC  has 250,000 characters                         |
+   |                                                                  |
+   |           1.  In order to ADD files to BigFile.ARC, you need     |
+   |               500,000 of space.  The extra space is used to      |
+   |               hold a NEW updated archive created BEFORE the old  |
+   |               archive is deleted.                                |
+   |                                                                  |
+   |           2.  The reconstructed (UNarced) BigFile might require  |
+   |               400,000 of space.                                  |
+   |                                                                  |
+   |  B:>  ...   (The LIMIT it can expand to is 360,000 characters)   |
+   |__________________________________________________________________|
+
+There are a number of ways to avoid the limitations.  A thorough knowledge
+of PKware Programs will show you how to:
+
+     1.  Selectively RECONSTRUCTING files from an archive.  Instead of
+         UNarcing everything at once, you can view file size information
+         and then select SPECIFIC FILES to be reconstructed (UNarced) to a
+         floppy.  (See pages 1, 14)
+
+     2.  Create the archive file on your second disk drive so that you
+         have the full 360K available to you.  (See page 7)
+
+     3.  Use of the special  -b  command which routes the NEW file to a
+         larger disk drive during the archiving process then copies it
+         back to the floppy upon completion.  (See page 22)
+
+                                  - 4 -
+
+                   General Rules and DEFAULT Settings
+
+
+ 1.  PKware programs MUST be located in:
+
+     A.  The drive you are working on, OR . . .
+
+     B.  Any directory accessible through the PATH= setting.
+
+         C:> PATH=C:/Utils
+
+         In this example, PKware is in the Utils Directory.  The computer
+         will find and execute the program even though you are in a
+         different directory or drive.  Consult your MS-DOS documentation.
+
+     C.  Any directory through the use of PATH notation if you are using
+         MS-DOS 3.0 or later.
+
+
+         C:>B:PKARC  a  OldFile.ARC  *.*      PKARC is located on the
+                                              B:> drive
+
+         C:>\UTILS\PKARC  v  Stuff.ARC        PKarc is located in \UTILS
+                                              as indicated in the PATH
+                                              notation
+
+ 2.  All PKware program commands are typed at the prompt.
+
+
+ 3.  Typed information can be in CAPS, lower case, or a mixture.
+       ____________________________________________________________
+       |                                                          |
+       | IMPORTANT:  In FUTURE versions of PKware, the commands   |
+       |             must be typed in lower case.                 |
+       |__________________________________________________________|
+
+
+ 4.  The DEFAULT is  *.*  or ALL FILES when specific files are not named.
+
+
+ 5.  It is NOT necessary to type the extension  .ARC  when processing an
+     archive file.  This extension is used in this documentation for
+     clarity.
+
+
+ 6.  A   HELP SCREEN  is displayed when you type the program name at the
+     prompt then hit carriage return/enter.
+
+            C:>PKARC      enter       gives you HELP
+            C:>PKXARC     "            "    "    "
+
+
+
+
+
+
+
+                                  - 5 -
+
+ 7.  The notation  *  or  *.ARC  will UNarc all archive files within a
+     given area.
+
+
+ 8.  During the UNarcing process, the notation *.* will tell PKXARC to try
+     to reconstruct ALL files whether archives or not.  This would waste
+     time, but will not damage any files.
+
+
+ 9.  The default area for the work-in-progress archive is on the same
+     drive as the original archive.  As this can cause a space shortage on
+     a floppy disk, the -b option is recommended.  (See page 4 on disk
+     space use, and page 22 on the -b option)
+
+
+10.  The archiving function will STOP if specific, pre-specified files are
+     not found.  This default can be changed in the configuration file to
+     the RELAXED mode which will make a notation on the screen regarding
+     file absence, then will continue processing.  (See page 20)
+
+
+11.  All MS-DOS file handling procedures can be used:
+
+               Filename.ext          Full file name designations
+
+                  *Name.ext          Names with wild card markers 
+                      *.ext         
+               Filename.*
+                      *.*
+               File?ame.ext
+
+             A:filename.ext          Disk drive and file name
+
+             C:\Lotus\March\*.*      Disk drive and PATH locations
+
+     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                  - 6 -
+
+
+
+
+
+                                                                  |
+                                                                  |
+                                                                  |
+                        PKARC - Compress files into Archive Files |
+                                                                  |
+                               QUICK START - Make an ARCHIVE File |
+                                                Command Structure |
+                                                                  |
+                                                                  |
+                                                                  |
+
+_________________________________________________________________________
+|                                                                       |
+|                              QUICK START                              |
+|                                                                       |
+|                      How to ARC (compress) files                      |
+|                                                                       |
+|    Use  PKARC  to reduce or compress the size of your files.          |
+|    All compressed files are stored in an ARCHIVE file.  The           |
+|    benefits of ARCing are:                                            |
+|                                                                       |
+|       >  Better use of disk storage area                              |
+|       >  Faster telecommunication file transfer via a modem           |
+|       >  Collecting numerous files under a SINGLE FILE NAME           |
+|                                                                       |
+|    PKARC uses 4 AREAS typed at the prompt:                            |
+|                                                                       |
+|    1.  The actual program name         PKARC                          |
+|                                                                       | 
+|    2.  The COMMAND                     a  (alphabet letter command)   |
+|                                                 a = add files         |
+|                                                                       |
+|    3.  The name YOU give your          NewFile  and  LOCATION         |
+|        ARCHIVE file.  NO extension.                                   |
+|                                                                       |
+|    4.  The files that get stuffed      any MS-DOS file notation       |
+|        into the NewFile                                               |
+|                                                                       |
+|                 1      2      3         4    <--- AREAS               |
+|             C:>PKARC   a   A:NewFile   *.*                            |
+|               ______   _   _________   ___                            |
+|                 |      |      |         |                             |
+|                 |      |      |       goes INTO the ARC file          |
+|                 |      |      NAME and LOCATION of the ARCHIVE file   |
+|                 |      NECESSARY alphabet letter COMMAND              |
+|                 the PROGRAM                                           |
+|                                                                       |
+|                        This will create a file named    NewFile.ARC   |
+|                                                                       |
+|                        The  .ARC  extension is added automatically    |
+|                        when the program has been completed.           |
+|                                                                       |
+|    Patterns to guide you:                                             |
+|                                                                       |
+|         C:>PKARC  a  NewFile   Checks.Wks  Money.Wks  June.Txt        |
+|                                ________________________________       |
+|                                               |                       |
+|                       Three files to be stuffed into NewFile which    |
+|                       will result in NewFile.ARC on the C:> drive.    |
+|                                                                       |
+|         C:>PKARC  a  A:NewFile   *.Wks  *.Txt  \LOTUS\Graph.Pix       |
+|                                  ______________________________       |
+|                                                |                      |
+|                         All files with the extension .WKS and .TXT    |
+|                         plus a single file named Graph.PIX will be    |
+|                         packed into NewFile.ARC on the A:> drive.     |
+|_______________________________________________________________________|
+
+                                  - 7 -
+       TABLE:  Commands used in AREA 2 of PKARC Archiving Process
+
+    AREAS -->              1    2     3      4
+                      C:>PKARC  a  NewFile  *.*
+_______________________________________________________________________
+        |.....Prompting  Commands.....|                  |   **View    
+Create  |                             |                  | Information
+  or    |   Make LABEL Descriptions   | *Archive         |       
+Add to  |                     Files & | Password         | Tech-       
+Archive |  Files    Archive   Archive | Protect   Delete | nical   File
+________|_____________________________|__________________|_____________
+        |          |        |         |         |        |       | 
+   /    |    c     |   x    |  cx     |     /   |    d   |   v   |  vc
+   a    |    ac    |   ax   |  acx    |   __g   |    /   |   /   |  / 
+   u    |    uc    |   ux   |  ucx    |   __g   |    /   |   /   |  / 
+   f    |    fc    |   fx   |  fcx    |   __g   |    /   |   /   |  / 
+   i    |    ic    |   ix   |  icx    |   __g   |    /   |   /   |  /
+   m    |    mc    |   mx   |  mcx    |   __g   |    /   |   /   |  / 
+   mu   |    muc   |   mux  |  mucx   |   __g   |    /   |   /   |  / 
+   mf   |    mfc   |   mfx  |  mfcx   |   __g   |    /   |   /   |  /  
+________|__________|________|_________|_________|________|_______|____
+
+     *NOTE:  g - When selected, Password option MUST be combined with
+                 commands from ANY cell in Row 2-8, Column 1-4
+
+    **NOTE:  vm & vcm  -  creates a MORE prompt.  The list of file
+                 information will stop scrolling when the screen is
+                 filled and waits until you ask for MORE.
+
+Creating, Adding To and/or Updating ARC Files
+     a - Add files to a newly created or existing ARCHIVE
+     u - Update existing files with most recently dated files, PLUS add
+            new files to an EXISTING archive
+     f - Update ONLY existing files in an archive from most recent date
+     i - Back up ONLY the files that WEREN'T backed up the last time
+     m - Add files to a new OR existing archive with AUTOMATIC DELETION
+            of the original source files (A TIME SAVER)
+    mu - Combination of   m & u  features.  Updates existing files with
+            most recently dated files, adds new files to EXISTING
+            archive, then automatically DELETES original source files
+    mf - Combination of   m & f  features.  Updates ONLY existing files
+            in an archive from most recent date, then automatically
+            DELETES original source files
+
+Labeling (describing) ARC File and Contents
+     x - Label the ARCHIVE file
+     c - Label the INDIVIDUAL FILES within the archive
+
+Create a password protected ARCHIVE or individual files within ARCHIVE
+     g - Create password protection
+
+Delete an individual or a range of files from WITHIN an ARCHIVE
+     d - Delete files from within an archive
+
+Viewing file background information
+     v - View technical information about archive
+    vc - View file information within archive
+                                                                    Page 8
+
+          How Each PKARC Area 2 Command Archiving Option Works 
+
+
+REFER To Page 7   "Quick Start" for setup patterns
+         Page 5   "General Rules and DEFAULT Settings"
+         Page 8   "TABLE:  Commands used in AREA 2 of PKARC Archiving
+                   Process"
+
+SIZE         An archive can hold any number of files subject to the
+FACTORS      storage size of your disk.  You NEED unused storage space at
+             least equal to the size of the existing archive in order to
+             complete any updating process.  (See page 4 & 22 for a
+             complete description.)
+
+                 250K Archive needs   250K for ACTUAL storage
+                                      250K for the UPDATING process
+
+             No more than 24 PATHS can be specified during a single
+             session.  This includes PATHS within all List Files as well
+             as on the command line.
+
+             The actual List File (page 17) is limited to 32K.  This does
+             NOT limit the size of the files it selects.
+
+             Although a single archive can hold an UNLIMITED number of
+             files, the maximum number of files for one archiving session
+             is 3,977 for PKARC and 2,425 for PKARCJR.  The session can be
+             repeated over and over again.
+
+COMMANDS
+       _________________________________________________________________
+       |                                                               |
+       |  The commands CAN be combined.  The sequence is found on      |  
+       |                                                               |
+       |     TABLE: Commands used in AREA 2 of PKARC Archiving         |
+       |            Process                  Page 8                    |
+       |                                                               |
+       |  The DEFAULT setting will STOP archiving if a specified file  |
+       |  is NOT found.  See page 20 to change to the RELAXED mode.    |
+       |_______________________________________________________________|
+
+
+a - Add files to an archive
+
+        Add files to either a NEWLY CREATED or EXISTING archive file.  
+        Same-name files will overwrite those already in the archive
+        regardless of which has the latest date. 
+
+        A:>PKARC  a  Arrange   Flowers.Txt  Pictures.Wks  Pots.Dbs
+
+            Once the program is finished creating a new archive, the
+            extension  .ARC  will be added to the word "Arrange" making it 
+            Arrange.ARC
+
+
+
+
+                                  - 9 -
+
+u - Update existing files with most recent time & date, PLUS add new
+    files to an EXISTING archive
+
+        Although similar to the   a - Add   command, it has an update
+        SAFEGUARD.  It will overwrite existing archived files ONLY if the
+        selected files have the most recent time and date.  It will also
+        add new files to the archive.
+                         
+        C:>PKARC  u  OldFile.ARC   *.Txt  Money.Wks  A:Funds.Wks         
+
+
+f - Update ONLY existing files in an archive with most recent time & date
+
+        Limited to working with files that ALREADY exist within an ar-
+        chive.  It will overwrite existing archived files ONLY if the
+        selected files have the most recent time and date.  It will NOT
+        add new files.
+
+        C:>PKARC  f  Picky.ARC  *.*
+
+            PKARC will automatically select only the files listed within
+            Picky.ARC from the range noted as *.*
+
+i - Selective BACKUP feature
+
+        Add only files to the archive that WERE NOT backed up the last
+        time.  The notation "No files found" means that everything had
+        been previously backed up.
+
+
+m - Add files to a new OR existing archive then automatically DELETE
+    the original or source file
+
+        Similar to the  a - Add  command except that it automatically
+        deletes the original files.  This is a REAL TIME SAVER, for
+        example, when compressing an entire directory.  The  m  option
+        stuffs all your files into a single archive, then deletes the
+        surrounding files.
+
+        The deletion is completed after the program verifies archiving
+        accuracy.  If an error does occur, such as DISK FULL, the original
+        files will NOT be deleted.
+
+        C:\DBASE >PKARC  m  tiny.ARC  *.dbf
+
+            In this example, all the database files will be archived into
+            tiny.ARC and then will be erased from the /DBASE directory.
+
+mu - Combination of  m & u  features  
+
+        Does everything the  u  command does plus automatically deletes
+        the source files involved in the transaction.
+
+
+
+
+
+                                 - 10 -
+
+mf - Combination of  m & f  features
+
+        Does everything the  f  command does plus automatically deletes
+        the source files involved in the transaction.
+
+
+x - Label (describe) the actual ARChive file - you will be prompted for
+                                               a description
+
+        Will prompt you to create a 32 character description of an archive
+        file.  
+
+            1.  Describe new archive
+            2.  Describe existing archive
+            3.  Change the description on an existing archive
+
+        The  x  can be used alone on an EXISTING archive file or in
+        COMBINATION with any of the 5 add/update commands as well as with
+        the "c - label individual files".  See chart on page 8 for
+        patterns.
+
+
+c - Label (describe) individual files WITHIN an archive - you will be
+                                                          prompted for 
+                                                          a description
+
+        Will prompt you to create a 32 character description of a file
+        found within an archive file.  
+
+            1.  Describe all newly added files
+            2.  Describe all existing files
+            3.  Change the description on all existing files
+            4.  Select SPECIFIC existing files for description
+
+        The  c  can be used alone on an EXISTING archive file, or
+        COMBINATION with any of the 5 add/update commands as well as
+        with the "x - label archive file".
+        
+
+g - Create a password protected ARCHIVE file or protect INDIVIDUAL
+    files within an archive file
+
+    SEE   "Password Protection Procedures"  page 18.
+        
+
+d - Delete individual or a range of files from WITHIN an ARCHIVE
+
+        Will delete a single or multiple files within an archive using
+        any of the MS-DOS file handling descriptions.  You will see the
+        name of the file on the screen as it is being deleted.
+
+        C:>PKARC  d  OldFile.ARC   Garbage.Txt  Useless.Dbf
+
+            In this sample, Garbage.Txt and Useless.Dbf were deleted
+            from the numerous files found on OldFile.ARC
+
+
+                                - 11 -
+
+v - View technical information about archive
+
+        The following information will be displayed about EACH file
+        found inside of the archive:
+
+            Filename       Name of the file
+            Length         ORIGINAL length of the file 
+            Method         Type of file compression used
+            Size           Reduced or compressed size of the file
+            Ratio          Percent reduction in file size
+            Date           Actual date of the file
+            Time           Actual time of the file
+            CRC            Notation indicating the CRC numeric value
+            Total Files    Number of files inside the archive
+            Total Length   Total of the original size of all the files
+            Total Size     Total compressed size of the archive
+            Total Ratio    Percent of reduction of all files combined
+
+
+vc - View FILE information within archive
+
+        The following information will be displayed about EACH file
+        found inside of the archive:
+
+            Filename       Name of the individual file
+            Comment        The description made through the  x & c
+                           commands
+                           NOTE:  If no description was made, this area
+                           will appear blank.
+            Date           Actual date of the file
+            Time           Actual time of the file
+            CRC            Notation indicating the CRC numeric value
+            Total Files    Number of files inside the archive
+            Total Length   Total of the original size of all the files
+            Total Size     Total compressed size of the archive
+            Total Ratio    Percent of reduction of all the files
+                           combined
+
+
+vm  and  vcm   The same as  v  and  c  with the MORE command added
+
+    MORE    Information will flow on to the screen and will STOP when
+            the display area is filled.  You will be prompted to
+            request MORE information.
+    
+               Spacebar      - gives you next screen full
+               Enter         - plays out line-by-line
+               ESC           - will abort this file and jump to display
+                               the NEXT file in sequence
+               Ctrl + C  or  - Quit (abort) the process
+               Ctrl + Break
+
+
+
+
+
+
+                                - 12 -
+
+
+
+
+
+                                                                  |
+                                                                  |
+                                                                  |
+                     PKXARC - Reconstruct & Extract Archive Files |
+                                                                  |
+                        QUICK START - Reconstruct an ARCHIVE File |
+                                                Command Structure |
+                                                                  |
+                                                                  |
+                                                                  |
+
+
+_________________________________________________________________________
+|                                                                       |
+|                              QUICK START                              |
+|                                                                       |
+|                How to UNarc (reconstruct) an ARCHIVE File             |
+|                                                                       |
+|                      --> modified instructions <--                    |
+|                                                                       |
+|      An ARCHIVE file is one which holds a lot of information in       |
+|      a greatly reduced space.  Use the PKXARC program to UNarc,       |
+|      or reconstruct an archive file.                                  |
+|                                                                       |
+|                                                                       |
+|      PKXARC uses a MINIMUM of 3 areas typed at the prompt:            |
+|                                                                       |
+|          1.  The actual program name         PKXARC                   |
+|                                                                       |
+|          2.  The ARC file name               AnyFile.ARC              |
+|                                                                       |
+|          3.  The destination where you       Optional                 |
+|              want your information to                                 |
+|              be located                                               |
+|                                                                       |
+|                 1           2        3    <--- AREAS                  |
+|            C:>PKXARC   AnyFile.ARC   A:                               |
+|               _______  ___________  ___                               |
+|                 |         |          |                                |
+|                 |         |          DESTINATION (not necessary if    | 
+|                 |         |          the program is started in the    |
+|                 |         |          file destination area)           |
+|                 |         |                                           |
+|                 |         the NAME and LOCATION of the archive file   |
+|                 |                                                     |
+|                 the PROGRAM command                                   |
+|                                                                       |
+|       Patterns to guide you:                                          |
+|                                                                       |
+|         C:>PKXARC   A:AnyFile.ARC                                     |
+|                                                                       |
+|                            The file is located in the A:> drive       |
+|                            and will be expanded onto the C:> drive.   |
+|                                                                       |
+|                            NOTE that Area 3, the destination, is      |
+|                            NOT mentioned.  Your files will be         |
+|                            placed in the SAME area as you start       |
+|                            PKARC by "default."                        |
+|                                                                       |
+|         C:>PKXARC  \Collect\AnyFile.ARC  A:                           |
+|                                                                       |
+|                             This illustrates a MS-DOS file            |
+|                             designation using the PATH location.      |
+|                             The file will be reconstructed onto       |
+|                             the  A:>  drive.                          |
+|                                                                       |
+|_______________________________________________________________________|
+
+
+                                 - 13 -
+_________________________________________________________________________
+|                                                                       |
+|       Complete File RECONSTRUCTION or EXTRACTION Command Structure    |
+|                       Including OPTIONAL Areas                        |
+|                                                                       |
+|                                                                       |
+|  PKXARC can use up to 5 AREAS typed at the prompt:                    |
+|                                                                       |
+|            1.  Actual program name       PKXARC                       |
+|                                                                       |
+|  Optional  2.  Command                   DEFAULT or alpha letter      |
+|                                          preceded with a dash  -r     |
+|                                                                       |
+|            3.  The ARC file name         AnyFile.ARC                  |
+|                                                                       |
+|  Optional  4.  File destination          DEFAULT or your selection    |
+|                                                                       |
+|  Optional  5.  Selected files to UNarc   DEFAULT or any MS-DOS        |
+|                from within the archive   file notation                |
+|                file                                                   |
+|                                                                       |
+|          1     2        3         4            5            <--AREAS  |
+|     C:>PKXARC  -r  B:OldFile.ARC  A:  Forest.Pix  Trees.Dbf           |
+|        ______  __  _____________  __  _____________________           |
+|        |       |   |              |   |                               |
+|        |       |   |              |   SELECTED files to reconstruct   |
+|        |       |   |              |                                   |
+|        |       |   |              DESTINATION of reconstructed files  |
+|        |       |   |                                                  |
+|        |       |   NAME and LOCATION of the archive file              |
+|        |       |                                                      |
+|        |       letter COMMAND preceded by a DASH                      |
+|        |                                                              |
+|        the PROGRAM command                                            |
+|                                                                       |
+|                                                                       |
+|            DEFAULTS by AREA:                                          |
+|                                                                       |
+|            Area 2   A prompt will appear if the file you are          |
+|                     reconstructing ALSO appears on disk.  The         |
+|                     prompt will ask "Overwrite?" and you select       |
+|                     yes or no.                                        |
+|                                                                       |
+|            Area 3   It is NOT necessary to type the  .ARC  extension. |
+|                                                                       |
+|            Area 4   The destination will be the location where        |
+|                     the program is started.                           |
+|                                                                       |
+|            Area 5   ALL files will be UNarced or reconstructed.       |
+|                                                                       |
+|_______________________________________________________________________|
+
+
+
+
+
+
+
+                                 - 14 -
+
+                  Complete COMMAND Structure for AREA 2
+             PKXARC - Archive Reconstruction and Extraction 
+                                 
+              ______           
+              |    |   
+       1      | 2  |        3       4            5            <--AREAS 
+     ______   | __ |   ___________  __  _____________________
+              |    |     
+  C:>PKXARC   | -r |   OldFile.ARC  A:  Forest.Pix  Trees.Dbf      
+              |    |    
+              |    |___________________
+              |                       |
+              | Optional COMMAND area | 
+              |_______________________| 
+
+
+DEFAULTS     See page 14  "Complete File RECONSTRUCTION or EXTRACTION
+             Command Structure Including Optional Areas"
+
+             See page 5  "General Rules & DEFAULT Settings"
+
+
+SIZE         Files can be extracted up to the available storage on your
+FACTORS      disk.
+
+             Only 240 files can be specified from a List File (page 17)
+             within one sweep.
+
+
+OPTIONAL COMMANDS:
+
+-r   =   Files will be extracted without prompting and WILL AUTOMATICALLY
+         OVERWRITE any other same-named files found in that area on the
+         disk.  It will turn off the "overwrite" default.  
+
+
+-n   =   Files will be extracted with an OVERWRITING SAFEGUARD.  It will
+         NOT allow an older version of a file in an archive to overwrite a
+         newer version on disk as defined by the time and date created.  
+
+-c   =   Extracts files to the screen only.  The files flow non-stop.
+
+
+-cm  =   Same as  -c  and adds the command MORE.  Information will flow on
+         to the screen and will STOP when the display area is filled.  You
+         will be prompted to request MORE information.
+     
+                Spacebar      - gives you next screen full
+                Enter         - plays out line-by-line
+                ESC           - will abort this file and jump to display
+                                the NEXT file in sequence
+               Ctrl + C  or   - Quit (abort) the process
+               Ctrl + Break
+
+
+-t   =   Displays whether an archive is good or has been corrupted. 
+
+                                 - 15 -
+
+-v   =   Lists (prints out on the screen) the contents of an archive from
+         within the PKXARC program.  See PKARC Chart on page 8, and
+         indepth explanation on page 12 for a MORE COMPLETE content and
+         information listing.
+
+
+-vv  =   Displays the ARCHIVE PROGRAM AND VERSION that created the archive
+         file. 
+
+
+-g   =   Extract password protected archive.  CARE must be taken to insure
+         proper retrieval of your files.
+
+         SEE   "Password Protection Procedures" page 18 for instructions.
+
+
+-p   =   Extracts files and sends them to the printer for printing.  It
+         will NOT change the printer device mode from prior setting and
+         WILL default to whatever was used last (see  -pa  and  -pb ). 
+
+
+-pa  =   Same as  -p  but specifically sets printer device to the ASCII
+         mode.  This is commonly used to print text.  It will form feed
+         after each file.
+
+
+-pb  =   Same as  -p  but specifically sets printer device to BINARY mode. 
+         This corresponds to the COPY command commonly used to send fonts
+         or graphics to a laser printer.  It will NOT form feed after each
+         file.
+
+                                                                        
+ _________________________________________________________________________
+ |                                                                       |
+ |                  Printing from an ARCHIVE File                        |
+ |                                                                       |
+ |         Comparison of  MS-DOS COPY  to  PKXARC -pb command            |
+ |                                                                       |
+ |                                                                       |
+ |        MS-DOS copy command                                            |
+ |        |                                                              |
+ |        |                                                              |
+ |  C:>COPY  Pretty.Pix  lpt1; /b           Sending graphics directly    |
+ |                                          to the printer from MS-DOS   |
+ |        Functions like the COPY command                                |
+ |              |                                                        |
+ |              |                                                        |
+ |  C:>PKXARC -pb Picture.ARC               Sending ARCHIVED graphics    |
+ |                                          directly to the printer      |
+ |                                                                       |
+ |                                                                       |
+ |  C:>PKXARC -pb Picture.ARC  @PixList     Sending a SELECTION of       |
+ |                                          graphics directly to the     |
+ |                                          printer                      |
+ |_______________________________________________________________________|
+
+
+                                 - 16 -
+
+
+
+
+
+
+                                                                  |
+                                                                  |
+                                                                  |
+                                      Special Handling Procedures |
+                                                                  |
+                                  Creating a Pre-Select File List |
+                                              Password Protection |
+                                Revealing File Compression Method |
+                                                              LAN |
+                                               Configuration File |
+                                 Batch File and Other Programming |
+                                                         RAM Disk |
+                                    Using PKARC in Limited Memory |
+                                                   Error Messages |
+                                                                  |
+                                                                  |
+                                                                  |
+                                                                  |
+
+
+
+                    Creating a Pre-Selected File List
+
+
+Create List Files to record file selections you use frequently.
+
+With PKARC:  Can be used with any commands except the View Technical and
+             File Information commands. See Command Structure Chart page
+             8, Col 7 & 8   PATH directions can be used inside the list.
+
+With PKXARC: Can be used with ANY default or optional command.  No PATH
+             location can be used inside the list.
+
+             __________________________________________________          
+             |                                                |    
+             |                 CREATE LIST                    |
+             |                                                |           
+             |   1.  Create the list using a word processor   |         
+             |       or text editor.                          |         
+             |                                                |           
+             |   2.  Type in the names of the files you       |         
+             |       select using any MS-DOS file notation.   |         
+             |                                                |           
+             |   3.  The  @  symbol is needed to indicate     |        
+             |       directory (PATH) changes.                |         
+             |                                                |
+             |   4.  RESTRICTION:  See SIZE FACTOR for        |
+             |       PKARC (page 9) and PKXARC (page 15)      |
+             |                                                |           
+             |                                List With       |
+             |    List Without            Directory Notation  |
+             |  Directory Notation          (files follow)    |
+             |                                                |           
+             |    Group      <--file name-->  NewGroup        |      
+             |                                                |         
+             |    Letters.Txt   <-inside->    @c:\LOTUS       |       
+             |    Reports.*                   Account-?.Wks   |       
+             |    Account-?.Wks               Monthly.*       |       
+             |                                @c:\DBASE       |           
+             |                                Address.Dbf     |     
+             |________________________________________________|
+
+How to Use the List:
+
+     The List File is preceded by the @ symbol.  If the List File is
+     not in the directory, the @ symbol is put BEFORE the PATH 
+     designation.
+
+     The List File can be mixed with other selections.
+
+            C:>PKXARC  -r  NewFile.ARC   @Group  
+
+            C:>PKXARC  AnyFile.ARC   Today.Txt  @Group  @Data
+
+            C:>PKARC  fc  MoreFile  @Group  @\LOTUS\Accounts
+
+            C:>PKARC  a  OldFile   *.Dbf  @OldStuff
+
+                                 - 17 -
+
+                           Password Protection
+
+
+Password Protection keeps your files LOCKED.  It is important that you
+follow EXACT procedures to insure that you can retrieve your files when
+you want them.  
+
+PKARC and PKXARC contain NO record of your password.  The protection is
+provided through a mathematical matching process contained in the CRC
+check. 
+
+WARNING:  Without the correct password, you file is garbled and CANNOT be
+retrieved.
+
+Refer to Command Reference Table for PKARC, page 8 for further
+information.
+
+                                                                         
+            _________________________________________________            
+            |                                               |           
+            |       CREATE a Password Protected File        |           
+            |                                               |           
+            |    Password can contain up to 63 letters      |
+            |                                               |
+            |  1.  Use the PKARC program.                   |           
+            |                                               |           
+            |  2.  Use the  g  option in combination with   |           
+            |      other options.  (Page 8)                 |           
+            |                                               |           
+            |  3.  NO SPACE between any options.            |           
+            |                                               |           
+            |  4.  NO SPACE between  g  and your password.  |           
+            |                                               |
+            |                  Placement of PASSWORD        |
+            |                  |                            |           
+            |                  |                            |           
+            |      C:>PKARC  agSECRET  NewFile  *.*         |           
+            |                                               |           
+            |      C:>PKARC  mfcxgSECRET  NewFile  *.*      |           
+            |_______________________________________________|           
+
+            _________________________________________________ 
+            |                                               |           
+            |        UNarc a Password Protected File        |           
+            |                                               |           
+            |  1.  Use the PKXARC program.                  |           
+            |                                               |           
+            |  2.  Use the  -g  option by ITSELF.           |           
+            |                                               |           
+            |  3.  NO SPACE between  -g  and your password. |           
+            |                                               |           
+            |                    Placement of PASSWORD      |
+            |                    |                          |           
+            |                    |                          |           
+            |       C:>PKXARC  -gSECRET  NewFile.ARC        |           
+            |_______________________________________________|           
+
+                                 - 18 -
+                 Revealing the File Compression Method
+
+
+
+
+PKXARC is used in conjunction with the  -vv  Area 2 Command Option
+
+
+-vv  =   Will display the ARCHIVE PROGRAM AND VERSION that the selected
+         archive was created by.
+
+
+             C:>PKXARC  -vv   VeryOld.ARC
+
+
+             You Will See       What It Means
+
+             PK 1.1             Made by PKARC version 1.1
+             PK 1.2             Made by PKARC version 1.2
+             PK 2.0             Made by PKARC version 2.0
+             PK 3.5             Made by PKARC version 3.5
+             PK 3.6             Made by PKARC version 3.6
+             PK >=2.0           Probably made by a version of PKARC of
+                                  at least 2.0
+             PK >3.6            Probably made by a version of PKARC
+                                  later than 3.6
+             SEA ARC            Probably made by SEA's ARC program
+             ???                Unknown
+             
+       ___________________________________________________________
+       |                                                         |
+       |   NOTE:   It is NOT always possible to discover the     |
+       |           exact method used to develop the archive.     |
+       |                                                         |
+       |           -vv  is meant as a guide, but is not an       |
+       |           absolute reference.                           |
+       |_________________________________________________________|
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                 - 19 -
+
+                        LAN - Local Area Network
+
+PKXARC automatically opens all archives with SHARE "deny write access"
+under DOS 3.0 or above, so that files can be read concurrently by other
+tasks.   PKARC uses a UNIQUE filename for all temporary files created. 
+This allows PKARC to be run by concurrent programs or on a network drive
+without any file contention or conflict.
+
+PKARC 3.6 can be forced to use fixed names for temporary files under DOS
+3.0 and above by adding the line  TEMPNAMES=FIXED  to the configuration
+file.  Care should be taken when using this option to make sure that
+either the current directory or the directory pointed to by the PKARCTMP
+environment variable (see below) is on a local drive, to prevent any file
+contention when PKARC is run concurrently on multiple networked machines.
+
+
+            PKARC Archiving Configuration File Considerations
+
+
+The config file MUST be set as an environmental string.  Two settings can
+reside in the PKARC.CFG file which are:
+
+         ARCCOPY=C:\        Discussion on page 22
+
+         FILECHECK=NORMAL    |__ choose either   
+                  =RELAXED   |
+
+         The default is "normal" which means that the program STOPS if it
+         does not find a specified file.  The "relaxed" mode will simply
+         make a notation on the screen that a file is NOT FOUND and will
+         continue the process of archiving.  (See pages 6 and 9)
+
+Two ENVIRONMENTAL VARIABLES can also be set.  This will speed up the time
+it takes to execute the program.
+
+     C:>SET  PKARC.CFG=C:\UTILS      --->  In this case, PKARC.CFG is
+                                           located in \UTILS directory.
+                                           Use the location of your
+                                           choice.
+
+     C:>SET  PKARCTMP=D:             --->  This speeds up the program     
+                      |                    operation DEFAULT by directing
+                      |                    the mechanics of PKARC to a
+                      RAM disk.            RAM disk.
+                      Drive Notation 
+                      your choice.         NOTE:  This has NOTHING to do
+                                           with the creation of the "new"
+                                           archive file during the add or
+                                           upgrade process.
+
+
+
+
+
+
+
+
+                                 - 20 -
+
+   Use of PKware in Batch File and Other Programs Where RAM is Limited 
+
+
+The amount of RAM memory needed is as follows:
+
+     PKARC   -   125K                  PKARCJR   -  90K
+     PKXARC  -    92K                  PKXARCJR  -  68K
+     PKSFX   -    71K
+
+Number of files that can be handled during ONE sweep:
+
+     PKARC  3,977 files in archive    PKARCJR  2,425 files in archive
+
+There is NO limit to the amount of files an archive can hold outside of
+available disk space.
+
+The JR series of PKware does everything that the standard series does
+except that it requires less memory, executes somewhat slower, and holds
+1,552 fewer files in a single archive.  The JR series is excellent to use
+in a smaller computer, environments using programs similar to DesqView,
+Double DOS, Software Carousal, or linked with other programs developed in
+dBase, Clipper, FoxBase, C, etc.
+ 
+You can test if PKXARC experienced an error by using the DOS error level
+variable.  PKXARC returns zero error level if no errors have occurred.  If
+an error has occurred, PKXARC will display the following error codes:
+
+     Abort Exit Codes
+         2 - out of memory
+         3 - no archives found to extract
+         4 - can't open archive file
+         5 - read error on archive
+         6 - internal table overflow
+         7 - disk full
+
+     Non-Abort (warning) Exit Codes
+         1 - bad CRC, file is not an archive, unknown compression method,
+             can't create a file, squeeze table is invalid or no files
+             found to extract.
+
+You can test if PKARC has aborted with an error using the DOS error level
+variable.  PKARC returns a non-zero error level if an error occurred, and
+a zero error level for normal termination.
+
+
+                      Use of a RAM Disk with PKARC
+
+PKARC swaps information on and off disk memory as it runs.  This process
+is NOT the same as the physical creation of the NEW archive.  The default
+drive for this program activity is the drive from which the program was
+executed.  You can speed up performance as well as gain disk space by
+telling PKARC which drive and/or subdirectory to use through a DOS
+environmental strings.  (See page 20)  All routing can be directed to your
+RAM Disk.
+
+          C:>PKARCTMP=D:   --->  where "D:" stands for the RAM disk
+
+                                 - 21 -
+
+                       Limited Disk Storage Space
+                    Creating or Adding to an Archive
+
+PKARC creates a NEW pre-archive file every time you add information to an
+existing one.  When the updating is completed, the old archive is
+automatically deleted and the pre-archive file is substituted.  
+
+Available disk storage space must be at minimum EQUAL TO or bigger than
+the old archive.  If this is not available, the program will stop.
+
+Space is not a problem on a hard disk.  It does pose restrictions on a
+floppy disk.
+
+You can route the creation of the pre-archive to another disk drive
+through the combination of three activities:
+
+     1.  The  -b  command option
+     2.  The creation of a PKARC.CFG config file which routes temporary
+         files.
+     3.  The setting of a MS-DOS environmental string.
+
+The routing will cause more time to be used during the pre-archive
+process, however, you can use it to successfully avoid floppy disk
+limitations.
+
+       ___________________________________________________________
+       |                                                         |
+       |     -b  Command - Pre-Archive File Routing Set Up       |
+       |                                                         |
+       |   Overrides the DEFAULT setting which places the        |
+       |   pre-archive file in the SAME area as where the        |
+       |   original archive exists.                              |
+       |                                                         |
+       |                                                         |
+       |   1.  A PKARC.CFG file MUST be created and placed in    |
+       |       the area of your choice.                          |
+       |                                                         |
+       |             PKARC.CFG      <---config file NAME         |
+       |                                                         |
+       |             ARCCOPY=C:\    <---config file CONTENTS     |
+       |                     |                                   |
+       |                     |                                   |
+       |                     Your CHOICE of location             |
+       |                                                         |
+       |                                                         |
+       |   2.  A MS-DOS environmental string must be set for the |
+       |       config file.                                      |
+       |                                                         |
+       |       C:>SET  PKARC.CFG=C:\UTILS   In this case, the    |
+       |                         ________   config file is in    |
+       |                           |        the \UTILS directory |
+       |                           |                             |
+       |                           AREA of your choice           |
+       |                                                         |
+       |_________________________________________________________|
+                                                          continued ...
+
+                                 - 22 -
+
+                       Limited Disk Storage Space
+               Creating or Adding to an Archive, continued
+
+
+
+How to Use the  -b  Command:
+
+     There are normally 4 AREAS that are typed on the command line.  The 
+     -b  command immediately FOLLOWS the PROGRAM NAME. 
+
+            1           2        3           4      <--Areas
+         C:>PKARC  -b   a   A:OldFile.ARC   *.*
+                   ___
+                    |
+                    |
+                    Place -b in this position
+
+       _____________________________________________________________
+       |                                                           |
+       |                   Use of  -b  Command                     |
+       |                                                           |
+       |   1.  NO MENTION of the  -b  will DEFAULT to normal.      |
+       |                                                           |
+       |   2.  -b  by itself will invoke the SET UP as found in    |
+       |       the config file.  If the config file isn't there,   |
+       |       it will default to the CURRENT drive and directory. |
+       |                                                           |
+       |   3.  -bc:  will OVERRIDE either the set up or default    |
+       |       and cause the pre-archive file to be written to     |
+       |       the drive of your choice.  A RAM disk can be an     |
+       |       option.                                             |
+       |                                                           |
+       |                 -bc:                                      |
+       |                   |                                       |
+       |                   |                                       |
+       |                   Disk Drive location                     |
+       |___________________________________________________________|
+
+                                                                          
+                         How An ARCHIVE is Made
+                                                                          
+      PKARC creates a temporary archive file that has an extension        
+      of .$$$  such as in  OldFile.$$$  during the archiving              
+      process.  OldFile.$$$ is the upgraded version of OldFile.ARC        
+                                                                          
+      When all of your files have been successfully ARCed, the            
+      old archive is deleted and the file with the extension .$$$         
+      is simply renamed with a new extension .ARC                         
+                                                                          
+      It is FASTER to rename the temporary archive file than to           
+      copy it from one disk drive to another.  The FASTEST way to         
+      create your archive files is to do so from your largest disk 
+      drive.  The -b option is used only when your space is limited.
+
+
+
+
+                                 - 23 -
+
+      Compatibility of PKware with Other File Compression Programs
+
+PKware is upwardly compatible with all its own upgrades as well as with
+most other file compression programs.  You can UNarc almost all of the
+archive files that have been created.
+
+There may be times when you need to CREATE an archive that is compatible
+to one which can be read by SEA's ARChiving program.  This means you will
+use LESS features to maintain compatibility.
+
+         C:>PKARC  otc   a   OldFile.ARC   *.*  
+                   ___
+                    |
+                    |
+                    This option, which IMMEDIATELY follows the program
+                    name, will create an archive file that is compatible
+                    with SEA's ARC.
+
+
+                           Archive Time & Date
+
+By default, whenever an archive is created or updated, PKARC will set the
+date of the archive file to the LAST TIME it was manipulated.  It is
+possible to change the default so that the archive file date will be that
+of the LATEST FILE WITHIN the archive.
+
+The string  ARCHTIME=LATEST  in the PKARC.CFG file will direct the program
+to set the archive file date to match the date of the latest file within
+the archive.
+
+The option  -ot  can be used IN PLACE OF the configuration file:
+
+            C:>PKARC  -ot  a  OldFile.ARC
+
+If you do have the alternative dating procedure set up in your configura-
+tion file, you can OVERRIDE it with the  -nt  option:
+
+            C:>PKARC  -nt  a  BigFile.ARC
+
+
+                           Disabling Squashing
+
+PKARC employs a compression technique known as Squashing.  Most archive
+programs can extract squashed files.  Older archive programs, or archive
+programs for some computers, may not support this method.  Squashing can
+be disabled in PKARC by placing  SQUASH=DISABLE  in the PKARC.CFG file.
+
+If you have placed the  SQUASH=DISABLE  string in your configuration file,
+you can disable it using the  -oc  option:
+
+            C:>PKARC  -oc  a  MoreFile.ARC
+
+You can also invoke the  -nt  option to OVERRIDE any directions in the
+configuration file so that Squashing is used.
+
+           C:>PKARC  -nt  a  Ordinary.ARC
+
+                                 - 24 -
+
+                             Error Messages
+
+                  PKARC - File Compression / Archiving
+
+
+Insufficient memory
+
+     There is not enough free RAM memory to run PKARC.  Try using PKARCJR
+     which uses less RAM memory.
+
+Insufficient memory for List Files
+
+     There is not enough free RAM memory to run PKARC.  The physical "File
+     List" file exceeds the RAM memory of your computer.  Break the large
+     "File List" into several small "File Lists."
+
+No archive specified
+     
+     The name of the archive file  (a file with an ARC extension) was not
+     keyed correctly OR not keyed in at all.
+
+No files specified for deletion
+
+     SPECIFIC names must be given for file deletion.  
+
+Can't find the "file/s specified"
+
+     The specified file or files can not be found and archiving will not
+     proceed.  The program will be aborted.
+
+     NOTE:  If you choose the RELAXED method in your PKware config file,
+     you will get the same warning, however, the program will CONTINUE. 
+     (See page 20)
+
+No file(s) found
+
+     No files were found to add or update to the archive.
+
+Can't create file "specified"
+
+     The specified file can not be created.
+     1.  The output directory has been incorrectly keyed
+     2.  The output directory does not exist
+     3.  The directory is full
+     4.  The number of FILES specified in your computer's Config.Sys is
+         too small.  The minimum should be  FILES=12.
+
+Too many files
+
+     The standard archive can store 3,977 files at a time.  PKARCJR can
+     store 2,425.
+
+Too many paths
+
+     A limit of 24 different drive and/or PATH specifiers can be used at a
+     time.
+
+                                 - 25 -
+                 PKARC - File Compression / Archiving
+
+                        Error Messages, continued
+
+
+"Specified archive file" - Error in Archive 
+
+     1.  Although a file with the extension ARC is on the disk, it is not
+         a true archive.
+
+     2.  The name of the archive was mis-keyed
+
+     3.  The archive was damaged or corrupted
+
+Can't open "specified archive file"
+
+     1.  The File Command Options (page 8) work only on an existing
+         archive.
+
+     2.  The archive name may be misspelled.
+     
+Disk full
+
+     The disk you are working on is full.  You will be told specific
+     information about which disk area is full: 
+
+                    Drive   Path   File Location
+
+"Specified archive file" is read-only!
+
+     The displayed archive file is a read-only or system file.  No
+     modification (add, update, delete, etc.) is possible.
+
+Can't open config file:  PKARC.CFG
+
+     The environment string PKARC.CFG= is incorrect, or a file error
+     occurred while opening the configuration file.
+
+
+Insufficient disk space for updated archive -- "specified archive file"
+
+     Only happens when the -b option is used during addition or upgrading
+     of files.  Although your file might have been successfully compiled
+     on a large disk drive, there may not be enough space on the small
+     drive to hold the increased size of the archive.
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                 - 26 -
+               PKXARC - File Reconstruction / Extraction
+
+                             Error Messages
+
+
+Warning!  File "selected" already exists!  overwrite (y/n)?
+
+     A file to be extracted from the archive already exists on disk.
+         Answer   Y    "selected file"  will overwrite what is on disk
+                  N     "        "      will NOT overwrite what is on disk
+
+     Use of the  -r  option will avoid this warning.
+
+
+Unknown packing method for:  "selected file"
+
+     The file is compressed or encoded in an unknown way.  The archive is
+     either CORRUPT or requires a LATER VERSION of PKXARC for proper
+     extraction.
+
+
+Warning!  File "selected" fails CRC check
+
+     The file is probably corrupt.  The Cyclic Redundancy Check
+     calculation did not match the stored value.
+
+
+"Selected archive file" - error in archive 
+
+     The file selected is either not an archive or is corrupt.
+
+
+Can't find "selected archive file"
+
+     The selected archive file cannot be found.  This could be caused by a
+     typing error or the actual absence of a file.
+
+
+No files found
+
+     The select file/s within an archive do not exist or have been
+     miskeyed.
+
+
+Can't create:  "selected file"
+
+     The output DIRECTORY is either INVALID or FULL.  Check your directory
+     name and/or whether or not it has been created. 
+
+
+File has invalid decode tree
+
+     The file is corrupt.
+
+
+
+
+
+                                 - 27 -
+
+Disk full
+
+     You will be told specific information about which disk area is full:
+     Drive   Path   File Location
+
+
+Internal table overflow
+
+     The file is corrupt.
+
+
+Insufficient memory
+
+     There is not enough free RAM memory to run PKXARC.  Try using
+     PKXARCJR which uses less RAM memory.
+
+
+
+     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                 - 28 -
+
+
+
+
+
+
+                                                                  |
+                                                                  |
+                                                                  |
+                                  PKSFX - Self-Extraction Utility |
+                                                                  |
+                                                                  |
+                                                                  |
+
+
+                     PKSFX - Self-Extraction Utility
+
+
+Archives can be reconstructed without PKXARC through the use of Self-
+Extraction methods.  This is handy for those times when you simply need to
+transfer compressed files to a person who may not be familiar with
+archiving.
+
+
+    ___________________________________________________________________
+    |                                                                 |
+    |                    Creating the PKSFX.PGM                       |
+    |                                                                 |
+    |       The self-extracting utility must be created prior to      |
+    |       the FIRST time you use it.                                |
+    |                                                                 |
+    |       In the SAME directory as your file PK36.EXE, type         |
+    |       the following:                                            |
+    |                                                                 |
+    |                C:>MAKESFX                                       |
+    |                                                                 |
+    |        You will be prompted through the steps.                  |
+    |_________________________________________________________________|
+
+
+    ___________________________________________________________________
+    |                                                                 |
+    |              Creating a SELF-EXTRACTING Archive                 |
+    |                                                                 |
+    |                                                                 |
+    |    1.  Create the archive file with PKARC.                      |
+    |                                                                 |
+    |    2.  Copy the archive file as follows:                        |
+    |                                                                 |
+    |     C:>COPY/b  PKSFX.PGM  +  OldFile.ARC   NewName.EXE          |
+    |        ______  _________  _  ___________   ___________          |
+    |         |       |         |   |              |                  |
+    |         |       |         |   |              |                  |
+    |        DOS     PROGRAM    |   Existing       Name YOU give      |
+    |        Command            |   archive file   to the self-       |
+    |                           |                  extracting file    |
+    |                           type + sign        with EXE extension |
+    |_________________________________________________________________|
+
+
+             PKSFX.PGM can be used in conjunction with ALL
+             of the PKXARC commands. 
+
+
+
+
+
+
+
+
+
+
+                                 - 29 -
+
+
+
+
+
+
+                                                                  |
+                                                                  |
+                                                                  |
+                                      Registration and Background |
+                                                                  |
+                                                                  |
+                                                                  |
+
+
+                            Technical Support
+
+
+If you have any further questions or comments about PKware File
+Compression programs, contact:
+
+         Mail
+
+             PKware, Inc.
+             7032 Ardara Avenue
+             Glendale, WI  53209
+
+         BBS by Modem - 24 hour support 
+
+             1 - 414 - 352-7176
+
+         Voice
+
+             1 - 414 - 352-3670
+
+
+
+
+                      Other Background Information
+
+
+Phil Katz is a registered member of the Association of Shareware
+Professionals.
+
+Special thanks goes to...
+
+     Karen Little for writing the PKware User's Manual.  An additional
+     thanks to Bob Mahoney of Exec-PC BBS, Rob Greenberg, Joe Vincent,
+     Alan Losoff, and everyone else who has generously contributed their
+     time toward this endeavor.
+
+                                            Phil Katz
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                 - 30 -
+
+
+    ___________________________________________________________________
+    |                                                                 |
+    |                         REGISTRATION                            |
+    |                                                                 |
+    |   If you find PKARC, PKXARC, and PKSFX fast, easy, and con-     |
+    |   venient to use, a partial registration of $20 would be        |
+    |   appreciated.                                                  |
+    |                                                                 |
+    |   A $45 or more FULL REGISTRATION includes a diskette and       |
+    |   preprinted manual for the next version of the software when   |
+    |   it becomes available.                                         |
+    |                                                                 |
+    |   Please state the current version number of the software you   |
+    |   are presently using.  Send registrations to:                  |
+    |                                                                 |
+    |                       PKware, Inc.                              |
+    |                       7032 Ardara Avenue                        |
+    |                       Glendale, WI  53209                       |
+    |_________________________________________________________________|
+
+
+                            Software License
+
+PKARC, PKXARC   Copyright 1986-1988 PKWARE Inc.  All Rights Reserved.
+PKSFX           Copyright 1987-1988 PKWARE Inc.  All Rights Reserved.
+
+You are free to use, copy and distribute PKARC, PKXARC, and PKSFX for
+NONCOMMERCIAL use if:
+
+           No fee is charged for use, copying or distribution.
+
+                     It is not modified in any way.
+
+
+Clubs and user groups may charge a nominal fee for expenses and handling
+while distributing PKARC, PKXARC, and PKSFX.
+
+Site licenses, commercial licenses and custom versions of PKARC, PKXARC,
+and PKSFX are available.  Consult the file ORDER.DOC for more information
+or write or call PKware for more information.
+
+
+    ___________________________________________________________________
+    |                                                                 |
+    |                           WARRANTY                              |
+    |                                                                 |
+    |   PKware, Inc. makes no warranties, expressed or implied,       |
+    |   including, but not limited to, merchantability or fitness     |
+    |   for any particular purpose.  In no event shall PKware, Inc.   |
+    |   be liable for indirect or consequential damages arising from  |
+    |   the use of the software programs.                             |
+    |_________________________________________________________________|
+
+
+
+
+                                 - 31 -
+                Disk Drive location                     |
+       |___________________________________________________________|
+
+      

@@ -1,0 +1,197 @@
+
+                            LHA.EXE ver 2.13
+
+                            recent revisions
+
+                               July 20, 1991
+
+        
+------------------------------------------------------------------------
+ HISTORY OF REVISIONS, after optimized with Assembler.
+------------------------------------------------------------------------
+  ver 2.13 
+      Extracting with /m2 option should creates new extensions with
+      the same FILENAMEs. LHA changed the FILENAME in some cases. 
+                                                          20 Jul 91
+
+  ver 2.13c Test version
+      Key-board buffer is flushed when LHA asks [Y/N].
+      Added /s option to suppress "Skipped FILENAME.EXT newer or.."
+      message.
+      VZ editor failed to memorize console outputs of LHA with
+      /l0 option. An additonal routine specific to VZ editor.
+                                                          13 Jul 91
+
+  ver 2.12b Test Version.
+      LHA sometimes failed to recognize 2 bytes Kanji-code.
+      Ignore Ctrl-C press while 'Copying TMP to ARC...."
+      Chnged error-level return 1 when LHA failed to create files.
+      LHA used to return error-level 0.                    3 Jul 91
+
+  ver 2.12a Test Version.
+      LHA recognized erroneously parent directory name '..' as '_.'
+      With option /i2, LHA now stores pathnames in underscore.
+                                                           15 Apr 91
+
+  ver 2.12 
+      '/-' option has now takes three values [0|1|2] so that only
+      the letter '@' is recognized as the firsst charcter of a
+      file name. The motivation for the change is to let Environmental
+      string enable to set responce file. The limitation on the number
+      of environmetal sstrings, 64, is removed. In the process of
+      dearchiving with wildcard specification, LHA sometimes forgot
+      the number of files dearchived. In some cases, SFX file aborts
+      without warning message. LHA.doc has certain missing informations,
+      like /a switch of SFX, and so on.
+                                                           21 Mar 91
+
+
+  ver 2.11
+      When a group of archives are specified with wild card, and when 
+      LHA fails to find specified file name in some of them, LHA 
+      neglects further search with 'e','x','p' and with 's' options.
+      With detecting Disk Full warning, in some cases LHA leaves the 
+      old archive with the name LHTMP)1(.LZH. If there is a certain path 
+      names with 2 bytes (Japanese KANJI) characters, LHA archives in 
+      strange path name with /i0 option.  The SFX routine may corrupt 
+      after auto-execution.  These bugs were fixed.
+                                                            3 Mar 91
+
+  ver 2.10
+      The first general public release since LH113c in mid-1989.
+
+      In some cases, even with the /i0 switch, path names in
+      under_score were recorded.  This bug was fixed.  In the making-
+      SFX routine, /m1 option could not shut up asking [Y/N].  With 
+      applying the 't' command to the archive having extension LZH, 
+      LHA checks for the bytes padded before the files.  You can now 
+      specify extensions for the files to be archived with no compres-
+      sion if using the '/z' option, to distinguish the original and 
+      the one which is archived.
+                                                           24 Feb 91
+
+------------------------------------------------------------------------
+
+  ver 2.06
+      You can add or delete files from an executable SFX.EXE while 
+      preserving the SFX feature.  LHA also accepts a file names like
+      FILE.TAR.Z, with more than two 'periods' inside the file name
+      made on other OS. The display routine for 'm' and 'u' is fixed.
+      There were files on which LHA would hang without compressing.
+      LHA sometimes failed to check 'disk full' and caused a FAT
+      allocation error.  These bugs were fixed.
+
+                                                           16 Feb 91
+
+  ver 2.05b
+      The routine making SFX had a minor bug.  Fixed.
+
+                                                            7 Feb 91
+
+  ver 2.05a
+      The environmental variable is correctly set to LHA from LH. 
+      Removed a bug when some extra code is appended after the end of 
+      the archive.  Display for the 'u','m' commands and 'Skipped' 
+      file warnings are showed explicitly.  The time stamp works
+      after 2038 A.D.  Changed the /@ option to /- following GNU's 
+      convention.  The /a option for attributes when dearchiving, 
+      is corrected. Previously checks whether a new archive can be 
+      created.  Under the environment 'APPEND' command of MS-DOS 
+      was issued, some files could not be opened. This bug was fixed.
+
+      When there are no files to be archived, LHA will exit with
+      ERRORLEVEL=2.  When some of the file names are not actually
+      used, LHA warns against the filename, with ERRORLEVEL=1.  
+
+                                                            6 Feb 91
+
+  ver 2.05
+      Changed the name of the program to LHA.  (IBM is using LH for
+      DOS 5.0, etc. as "Load High.")  Fixed a bug in the compression
+      process.  A bug in memory management with 4KB dictionary is
+      fixed.  LHA now checks strictly the end of the archive.  A new
+      checking routine is included to know the end of compression
+      with corrupt files.
+
+      New '/@' option is added.  English BETA version (LHA205) is
+      released.
+                                                            1 Jan 91
+
+------------------------------------------------------------------------
+
+  ver 2.04a
+      Fixed a bug in the display if using the /o option.
+      Fixed a bug in the CRC checks right after testing authenticity.
+
+      A new improvement in the compression speed.
+                                                           20 Jan 91
+
+  ver 2.04
+      LH displays the state of action.   An additional information
+      option /l is available.   LH recognizes '@' written in the 
+      response file as the first letter of the file name.
+
+      LH never removes the temporary working file when LH can't
+      execute the entire process.  LH had a bug which erased them on
+      some occasions.  Temporary files are named 'LHTMP)1(.LZH' and
+      'LHTMP)2(.LZH'.  Fixed bug LH may take a header of level 2 for 
+      the end of archive.  Fixed bug that caused some confusion when 
+      printing more than one file with the 'p' command.  The routine 
+      to compute the room that is left on a disk is corrected for 
+      the older DOS version 2.xx..
+
+      The buffer size was extended, decreasing the number of disk
+      accesses used.
+                                                           18 Jan 91
+
+  ver 2.03a
+      Some improvements in the SFX header size, with some bugs fixed.
+
+                                                            4 Jan 90
+  ver 2.03
+      A new SFX routine was added.
+                                                            3 Jan 90
+
+  ver 2.02f
+      Fixed a bug in archiving files when LH was unable to compress.
+                                                           29 Dec 90
+
+  ver 2.02e
+      Bug in ompression routine is fixed.  LH prevents panic even 
+      if some of the decoding information is not present. The stack
+      size is changed to the default value of the "LSIC" compiler.
+
+                                                           27 Dec 90
+  ver 2.02d
+      LH breaks off immediately after the first hit of ^C.  Dear-
+      chiving routine of '*.LZS' files is made straight.  LH
+      changed attribute with option /a0.   Fixed a serious bug if
+      using the 'f' command.
+                                                           25 Dec 90
+
+  ver 2.02c
+      Bug fixed for checking disk full when LH is archiving.   Made
+      'x' command equivalent to 'e' command with option /x1m1.
+
+                                                            3 Dec 90
+  ver 2.02b
+      Made its first public appearance in the accompanying disk
+      of C-Magazine.   LH changed the routine to suppress the extra
+      ^M, when LH makes an output with DOS redirection.
+
+                                                           21 Nov 90
+ ver 2.02a
+      The first version of LH-series with some routines in .ASM
+      machine code.   LH starts to check its' own authenticity from
+      this version on.
+                                                           18 Nov 90
+
+------------------------------------------------------------------------
+
+               NIFTY-Serve  SDI00506 | PFF00253  Haruyasu Yoshizaki
+               ASCII-pcs    pcs02846             Yoshi
+               PC-VAN       FEM12376             Haruyasu Yoshizaki
+
+------------------------------------------------------------------------
+
+                              - end -

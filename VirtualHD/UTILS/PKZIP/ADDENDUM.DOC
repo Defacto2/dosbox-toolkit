@@ -1,0 +1,517 @@
+
+    ADDENDUM to PKZIP 2 Manual
+    --------------------------
+
+    This file contains the most up-to-date information, additions and
+    changes to the PKZIP version 2 manual.
+
+
+      AUTHENTICITY VERIFICATION FEATURE
+      ---------------------------------
+
+	The Authenticity Verification information you receive from PKWARE
+	will include two AV Serial Numbers and one checksum.  The Serial
+	Numbers and checksum include BOTH letters and numbers.  ALL 
+	LETTERS are LOWER CASE, with the exception of the letter L.  The 
+	letter L will be printed in upper case to avoid confusion with 
+	the number one.
+
+	After both Serial Numbers are entered using the PUTAV.EXE, the
+	program will return a checksum value.  This checksum must match
+	the one provided by PKWARE.  If the checksums do not match, then
+	the installation was not performed correctly and PUTAV.EXE should
+	be run again to ensure that the Serial Numbers and Name were
+	entered correctly.
+
+	If you run PUTAV.EXE and you encounter the error, "WRONG VERSION
+	OF PKZIP.EXE", verify that you are running PUTAV on the
+	REGISTERED version of PKZIP.EXE.
+	
+
+      AVEXTRA.TXT
+      -----------
+
+	With the PKZIP 2 Authenticity Verification feature, additional
+	text can be displayed on subsequent lines following the
+	verification message.  An ASCII text file named AVEXTRA.TXT is
+	created containing the additional text you want displayed.  When
+	the AVEXTRA.TXT file is in the current directory when you use the
+	"PKZIP -!" option, PKZIP will add this text to the .ZIP file and
+	PKUNZIP will display it after the normal Authenticity
+	Verification message.  The Authenticity Verification feature is
+	available only to registered users of PKZIP.
+
+
+      SELF-EXTRACTING FILES ACROSS MULTIPLE DISKETTES
+      -----------------------------------------------
+
+	PKZIP 2 has the ability to compress a large .ZIP file across
+	multiple diskettes.
+
+	Self-extracting files CAN NOT span multiple disks.  This would
+	make the PKSFX code extremely large.
+
+
+	A simple batch file can be created that would uncompress across
+	multiple diskettes.  All that would be required is to have the
+	batch file follow this procedure:
+
+
+	1.  Create a batch file called install.bat
+	2.  Edit install.bat and in that file have the following line:
+
+		  pkunzip -d a:program c:\test
+
+	This batch file would create the directory C:\TEST on your
+	computer and then unzip the file called PROGRAM.ZIP into the c:\test
+	directory.  PKUNZIP will prompt the user to enter the diskettes
+	in the extraction order.
+
+
+      PKCFG.EXE
+      ---------
+
+      * PKCFG.EXE is only included in the registered version of PKZIP.
+
+	PKZIP.EXE can have many of its features configured with a
+	configuration file called PKZIP.CFG.  This configuration file can
+	be located in either your current directory, a directory
+	specified with the environment variable PKZIP.CFG, or in the
+	directory that PKZIP.EXE is located.  PKZIP.EXE will search for the
+	configuration in each location in the order listed above.  This
+	means that you may have a default configuration file that is
+	easily overridden by using a configuration file in either of the
+	first two locations.  Any option that is set in the configuration
+	file may be overridden from the command line.  The configuration
+	file may be created manually with a text editor.
+
+	The PKCFG.EXE program will look for an existing configuration file
+	in the same locations and order that PKZIP.EXE would look.  If the
+	PKCFG.EXE program finds an existing configuration file it will load
+	it. The existing configuration values will be shown in the place of
+	the defaults.  A list of options will be displayed on the screen,
+	and a highlighted cursor indicates the option that you can
+	modify.
+
+
+      PK SAFE ANSI
+      -----------
+
+      * PKSFANSI.COM is only included in the registered version of PKZIP.
+	
+	Another program included with registration of PKZIP 2 is called
+	PKSFANSI.COM.  PKSFANSI is a terminate and stay resident program
+	that disables ANSI keyboard key Reassignments, thereby preventing
+	ANSI "bombs" embedded in any text file (such as README files) or
+	output by any program.  Normally, ANSI sequences that redefine
+	the keyboard could be hidden inside ANY text file or program, and
+	could be executed completely unnoticed until it is too late.
+	PKSFANSI intercepts calls to the ANSI.SYS or other ANSI device
+	drivers, and filters out any keyboard reassignments, while
+	allowing other ANSI sequences through unaltered.  If a keyboard
+	reassignment is attempted, PKSFANSI will intercept the sequence
+	and discard it.  PKSFANSI will also BEEP to alert you that a
+	reassignment was attempted.
+
+
+	PKSFANSI requires less than 1K bytes resident RAM, and should
+	work with any ANSI driver, such as the standard ANSI.SYS driver,
+	NANSI, ZANSI, DVANSI, etc.  Note that if you use a memory
+	resident ANSI driver, such as the DESQview DVANSI.COM driver,
+	PKSFANSI should be loaded after the ANSI driver is loaded.
+
+
+      Using PKZIP and DPMI
+      --------------------
+
+	If you experience difficulties when using PKZIP in a DOS window
+	under Windows, use the -) option to disable DPMI support.  If
+	this eliminates the problem, you may default this option for
+	PKZIP by using the configuration file (see manual for details).
+	With PKUNZIP, this option may be set as an environment variable
+	(see below for details).
+
+
+      PKUNZIP as an Environment Variable
+      ----------------------------------
+
+	PKUNZIP includes the ability to use an environment variable as a 
+	continuation of the command line.  An option, or number of options 
+	may be specified by an environment variable.  PKUNZIP will treat 
+	the variables as if they were passed on the command line.
+
+		 example: set PKUNZIP=-)
+
+	  This example would disable DPMI usage.
+
+	Note that since the PKUNZIP environment variable is a 
+	continuation of the command line; it will supersede any 
+	preceding option on the command line.
+
+
+      Minimum DOS Requirements for SPANNING & FORMATTING
+      --------------------------------------------------
+
+	For PKZIP 2 to span multiple disks with a .ZIP file, DOS 3.0 or
+	greater is required.
+
+	To be able to format diskettes on-the-fly, DOS 3.2 or greater is
+	required.
+
+
+      PKUNZJR.COM & PKSFX Junior
+      --------------------------
+
+	When using PKUNZJR or PKSFX Junior, remember to end your output
+	path with a : or a \.  Because the PKUNZJR and PKSFX Junior were
+	designed to be as small as possible, please note that they
+	perform minimal error checking.
+
+
+      CHANGE TO "MOVE" OPTION
+      -----------------------
+
+	When using the -m option in PKZIP.EXE PKZIP will now remove the
+	directories and subdirectories after the compression process has
+	been completed. This feature is turned on by default. If you
+	wish PKZIP not to remove the directories/subdirectories, use a
+	-m- option to disable this feature.
+
+
+      PKNOFASTCHAR= Environment Variable
+      ---------------------------------
+
+	This tells PKZIP/PKUNZIP to use the slow DOS 1.x/2.x character
+	output function calls rather than the 'DOS Fast Character
+	Output' function.  This option is designed for compatability with
+	TSR's or BBS doors etc. that do not intercept the DOS Fast
+	Character Output function.
+
+
+      ERROR MESSAGES
+      --------------
+
+	This is an addendum to the ERROR MESSAGES found in the manual.
+
+	PKZIP: (E[19-23] and E29) Insufficient Memory
+
+	PKZIP: (E26) DOS 3.0 or later needed to span disks
+	PKZIP: (E26) DOS 3.2 or later needed to format disks
+
+	PKZIP: (E28) Destination for .ZIP file is same as temporary file
+	PKZIP: (E28) Source and destination is the same
+
+	PKZIP: (W07) Warning! Bad System Track
+
+	PKZIP: (W08) Warning! Can't write FAT
+
+	PKZIP: (W09) Warning! Can't write root directory
+
+	PKZIP: (W10) Warning! Can't write boot sector
+
+	ZIP2EXE: (E09) Can't create ouput file
+
+	ZIP2EXE: (W01) Warning! The file already exists, overwrite (y/n)?
+
+	PKSFX: Warnings numbers are the same as PKUNZIP 
+	       [9-18,20,21,23,24]
+
+	PKSFX: (E02,E03) Error in .EXE file
+
+
+	PKSFXJR: No numbers are printed by PKSFXJR. The manual states
+		 that PKSFXJR will report error numbers, but this is
+		 incorrect. It will print only a message, no number
+		 is printed. The errorlevel will be returned to DOS
+		 however.
+
+
+				SUMMARY
+				-------
+	PKZIP:
+
+	0       No Error
+	1       Bad file name or file specification
+	2,3     Error in .ZIP file
+	4-11    Insufficient Memory
+	12      No files were found to add to the .ZIP, or no files
+		were specified for deletion
+	13      File not found. The specified .ZIP file or list file
+		was not found
+	14      Insufficient disk space for .ZIP comment
+		  or
+		Insufficient disk space for update file
+		  or
+		Disk Full, file XXXXX
+	15      .ZIP file is read-only and can not be modified
+	16      Bad or illegal parameters specified. (help screen displayed)
+	17      Too many files
+	18      Could not open file
+	19-23,29 Insufficient Memory
+	26      DOS 3.2 or later needed to span disks
+	28      Destination for .ZIP is same as temporary file
+		  or
+		Source and destination is the same
+	255     User pressed control-c or control-break
+
+	ZIP2EXE:
+
+	0       No error
+	1       Error in .ZIP file
+	2       Error in .ZIP file, use PKZIPFIX
+	3-4     Insufficient memory to process file
+	6       Bad or illegal parameters specified. (help screen displayed)
+	7       Can't open Source file
+	8       Error in .ZIP file
+	9       Disk full writing target file during EXE to ZIP process
+	11      Disk full writing target file during ZIP to EXE process
+	12      .ZIP file being converted contains a file compressed with
+		a method not supported by the version of PKSFX being
+		attached by ZIP2EXE
+	13      User answered "No" in response to an "overwrite(y/n)?" prompt
+ 
+
+	PKSFX:
+
+	1       Warning error such as:
+		File fails CRC check, Unknown compression method.
+	2,3     Can't find .EXE file
+	4-8     Insufficient memory
+	9       Unable to locate listfile
+	10      Bad or illegal parameters specified. (help screen displayed)
+	12      User aborted at comment pausing, "Extract now (y/n)?" prompt
+	2,3,13  Error in .EXE file
+	50      Disk full
+
+
+      NOTES
+      -----
+
+	Note, the -x option in PKUNZIP now is used to specify files
+	      to eXclude.  As stated in the PKUNZIP 1.1 documenation, use
+	      of '-x' to mean eXtract would not be supported in future
+	      versions of PKUNZIP.  The -e option of PKUNZIP specifies
+	      extraction.
+
+	Note, the -o and -k, as well as the ZIPDATE= options in the
+	      pkzip.cfg file, will be ignored when used with the -& option.
+
+	Note, PKZIP requires 206K of memory if no EMS or XMS is available,
+	      and 108K if enough EMS/XMS is available.
+
+	Note, In the PKZIP manual, it states that the -o option will set
+	      .ZIP file date to oldest file in .ZIP file. This should read
+	      set .ZIP file date to latest, not oldest.
+
+	Note, Page 76 of the PKZIP manual incorrectly lists the default 
+	      value of view as Long. The default value of view is normal.
+
+	Note, When using either the -&l or -&u, both of these options 
+	      will format the destination diskette(s).
+
+
+      PKZIP BACKUP GUIDE
+      ------------------
+
+	PKZIP can now create .ZIP files that exceed the size of a floppy
+	disk.  You can use PKZIP to backup your entire hard disk and
+	unlike most backup programs, PKZIP can use disks formatted by
+	DOS, or it can format the disk for you.  PKZIP can optionally
+	erase all files on the destination disk(s), or leave those files
+	intact.  PKZIP can optionally quick format the destination
+	disk(s), or do a normal (unconditional) format.  A quick format
+	erases the information on the disk without formatting each
+	track, greatly reducing the time required to format a disk.
+
+
+	Option    Description
+	--------------------------------------------------------------------
+	  -&      Span disks if necessary.
+
+	You must specify this option if you wish to create a .ZIP file
+	on multiple disks.  If this option is not specified and you
+	exceed the capacity of a floppy disk, a DISK FULL error message
+	will result.
+
+	  -&f     Format the destination disk.
+
+	PKZIP will format the destination disk(s) if you specify this
+	option.  If the disk has been formatted previously, a quick
+	format will be performed, otherwise a full format will be
+	performed.
+
+	  -&fl    The destination disk is to be formatted to low density.
+
+	If you plan to use low density disks in a high density disk
+	drive, this option is required.  For example, if you have a 1.44
+	meg floppy disk drive, and plan to zip to 720K disks and your
+	disks are not formatted, you must specify this option.  If your
+	disk drive is a 360K or 720K drive, this option is not required.
+	If any information was previously contained on the disk, it will
+	be erased.
+
+
+	  -&u     Unconditionally (always) format the disk.
+
+	Always format the disk before being used.  A full format will be
+	used, a quick format will never be performed.  If any information
+	was previously contained on the disk, it will be erased.
+
+	  -&ul    Unconditionally (always) format a low density disk in a
+		  high density disk drive.
+
+
+	Always format the disk before being used.  A full format will be
+	used, a quick format will never be performed. If any information
+	was previously contained on the disk, it will be erased.
+
+	  -&w     Wipe the disk.  (Erase all files and subdirectories)
+
+	This is similar to -&f, except the files are deleted, rather than
+	formatting the disk.  This is for usage with non floppy removable
+	devices, such as Bernoulli boxes.
+
+	  -&s[d:] Include subdirectories in zipping process (similar to
+		  -rp \*.*).
+
+	  -&v     Turn on DOS verify when spanning. This may also be set
+		  by using BACKUP=verify in the pkzip.cfg file.
+
+
+	This option tells PKZIP that you wish to backup the entire disk
+	drive.  The current disk drive will be used if no disk drive is
+	specifed.  You do not need to specify the -rp option (recurse and
+	store pathnames).  If you also specify files on another disk
+	drive, these files will be compressed, as well as all files on the
+	default drive.  (Please see following examples.)
+
+	All options are case insensitive, but this may change in future
+	versions.  We suggest you USE LOWER CASE LETTERS FOR FUTURE
+	COMPATIBILITY.  The -&l option must be specified with -&u or -&f.
+
+	* Note:   If you create a .ZIP file with the same name as exists
+	  on a disk set, you do not need to use the WIPE or FORMAT
+	  options.  PKZIP will create a new .ZIP file with the same name;
+	  this method is faster.
+
+	* Note:   All the PKZIP Configuration File options can be
+	  overridden on the command line by specifying the option and a
+	  '-'.  For example, -&f- will override "BACKUP=FORMAT" in the
+	  Configuration File and turn off formatting.
+
+	* Note:   When using PKUNZIP.EXE to restore a from a spanned
+	  backup set, it is most efficient to start by inserting the
+	  last diskette.
+
+	* Note:   If you would like to use PKZIP.EXE for full and
+		  incremental backups, use the -a+ for the full backup.
+		  This will turn off the archive attribute after the
+		  files have been compressed.  Then to perform a
+		  incremental backup, use the -i option.  This will
+		  compress only files that have changed since they
+		  were last backed up.
+
+
+	Examples
+	--------
+
+	Command Line              Description
+	-----------------------------------------------------------------
+	pkzip a:zipfile -&        Zip the current directory to drive A:, and
+				  span disks if necessary.  The files
+				  currently on drive A: will not be affected.
+
+	C:\>pkzip a:zipfile -&s   Zip all files on drive C: to the A: drive.
+
+	C:\>pkzip b:zipfile -&s d:\sd\*.*  Zip all files on drive C:
+					   (the current drive), and all files
+					   in the D:\SD directory to the B:
+					   drive.
+
+	C:\>pkzip a:zipfile -&s d:\*.BAT   Zip all the files on drive C: and
+					   all .BAT files on drive D: to the
+					   A: drive.
+
+
+	pkzip a:zipfile -&f -rp            Zip the current directory and its
+					   subdirectories to drive A:, and
+					   format each disk.  A quick format
+					   will be performed if possible,
+					   which is much faster than a
+					   unconditional format.
+
+	pkzip a:zipfile -&u -rp            Same as above, except the disk
+					   will be unconditionally formatted.
+
+	pkzip a:zipfile -&fl               Zip the current directory to drive
+					   A:, and format each disk to low
+					   density.  This option only applies
+					   to users using a 360K floppy disk
+					   in a 1.2 meg drive, or users using
+					   a 720K floppy disk in a 1.44 meg
+					   drive.  A quick format will be
+					   performed if possible, which is
+					   much faster than a unconditional
+					   format.
+
+	pkzip a:zipfile -&ul               Same as above, except the disk
+					   will be unconditionally formatted
+					   (do not quick format).
+
+	pkzip a:zipfile -&w -rp            Zip the current directory and its
+					   subdirectories to drive A:, and
+					   wipe each disk.  All files and
+					   subdirectories will be erased from
+					   the A: drive.  The disk will not
+					   be formatted or quick formatted.
+
+
+	pkzip a:zipfile -&fs               Zip the current disk drive
+					   (including subdirectories) to drive
+					   A:, and format each disk.  If the
+					   destination disk has previously
+					   been formatted, a quick format will
+					   be performed.  Otherwise, an
+					   unconditional format will be
+					   performed.
+
+
+      New Options For the PKZIP.CFG Configuration File
+      ------------------------------------------------
+	The keyword BACKUP=  can be followed by the following keywords:
+
+	  SPAN            The -& option is enabled.  If this keyword is not
+			  specified, the following options will only be
+			  enabled when -& is specified on the command line.
+			  Same as -&.
+
+	  UNCONDITIONAL   Format the disk unconditionally.  Same as -&u.
+
+
+	  LOW             Using low density disks.  Same as -&l
+
+	  FORMAT          Format the disks.  Same as -&f.
+
+	  WIPE            Wipe the disks.  Same as -&w.
+
+	  FULL            Do a full backup.  Same as -&s.
+
+	  VERIFY          Turn on DOS verify when spanning. Same as -&v
+
+	Examples                             Same as
+	--------------------------------------------------------
+	  BACKUP=SPAN FORMAT                   -&f
+	  BACKUP=SPAN FORMAT UNCONDITIONAL     -&u
+	  BACKUP=LOW VERIFY SPAN               -&lv
+	  BACKUP=FORMAT WIPE         Illegal -- WIPE and FORMAT are exclusive.
+	  BACKUP=FULL                          -&s
+	  BACKUP=FULL  WIPE                    -&sw
+
+
+
+    PKWARE, PKZIP, PKUNZIP and PKSFX are registered trademarks of PKWARE,
+    Inc. PKSFANSI and PKCFG are trademarks of PKWARE, Inc.
+
+    Trademarks of other companies mentioned appear for identification
+    purposes only and are the property of their respective companies.
+

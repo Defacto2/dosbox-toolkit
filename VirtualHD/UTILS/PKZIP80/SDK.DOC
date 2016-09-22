@@ -1,0 +1,32 @@
+
+
+    Welcome to the Software Development Kit and Beta software release for 
+PKZIP and PKUNZIP data compression software.  If you wish to report any 
+bugs in the software, please use the enclosed form in the file BUGREP.DOC.
+The estimated release date for this software is January 31, 1989, so please
+return any bug reports before that date if possible.
+
+    The file README.1ST contains a complete description of all the files 
+included in the development kit.
+
+    This is NOT information on: 1) Full-screen, menu-driven versions
+of the software or 2) Libraries of compression routines for incorporation
+into other applications.  These things are under development and you will 
+be notified as information becomes available.
+
+
+    I would like to expressly thank David Schwaderer who has generously 
+contributed his expertise in CRC calculations to the software.  I would 
+also like to thank Graeme McRae who's principles for repeated string 
+elimination, as used in his SCRNCH (tm) program, were licensed and
+incorporated into the software and Bill Tullis, who coined the name "ZIP".
+
+    In addition, I would like to thank all those (too numerous to mention)
+that have supported PKWARE in the past through letters, messages, and 
+registrations, and will embrace this new, next-generation in compression 
+technology.
+
+
+
+					>Phil Katz>
+

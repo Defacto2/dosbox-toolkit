@@ -1,0 +1,76 @@
+ 
+                          Arc2Zip Version 1.00 Beta
+ 
+ 
+   This small utility has been developed to provide an easy means to convert
+any and all existing ".ARC" files to the ".ZIP" format. It will convert files
+in the current directory only. You should use the "-d" option to remove the old
+".ARC" files after the conversion. You can also choose the type of compression,
+as well as which Archiver program to use to un-pack existing files.
+ 
+   The author of this package is NOT affiliated with any particular company, &
+has written the program ONLY to perform the conversion on his board. It was so
+useful that he decided to make it available to all sysops.
+ 
+ 
+Syntax is:  Arc2Zip [-Arguments]
+ 
+Options are:
+ 
+   -m  -> create "CONVERT.TMP" directory if necessary
+   -c  -> CONVERT .Arc files to .Zip files
+   -a  -> Use Pkxarc commands to unarc
+   -p  -> use PkUnPak commands to unarc [default]
+   -d  -> Delete OLD .Arc file when converted
+   -q  -> QUIET mode (limited output)
+   -1  -> Compression type 1 [Fastest]
+   -2  -> Compression type 2 [default]
+   -3  -> Compression type 3
+   -4  -> Compression type 4 [Slowest - but smallest!]
+ 
+ 
+John H. Bergman
+ 
+AUTHORIZED DISTRIBUTION POINTS:
+
+Power Plus BBS: (305) 721-0960 (John Bergman)
+
+AV-Sync Atlanta (404) 320-6202 (Bill Tullis)
+                This version is a FREE DL on AV-Sync.
+                The PK Development KIT is also a free DL.
+
+The "DEVELOPMENT VERSION" of PKZIP/UNZIP is in no way a final
+product! Many features are not implemented. We strongly suggest 
+registration of the program in order to take advantage of its
+extensive offerings on OFFICIAL release.
+
+Please look for more developments from both sources as well as others.
+GO FOR IT! The SWITCH IS ON (as they say).
+
+******* NOTE !! **********>   This is a BETA version!
+
+If any changes are made from the BETA releae to the official release,
+an new version of ARC2ZIP will appear, and it may NOT be version 3.
+This is a ploy to thwart those who would destroy the original program.
+
+The next version will be clearly labeled, and placed at all proper 
+and trusted distribution points.
+
+Registration for PKWare products:       PKWARE, INC. 
+                                        7545 Port Washington Rd.
+                                        Suite 205
+                                        Glendale, WI. 53217
+   
+                                        Voice: (414) 352-3670
+
+DISCLAIMER: Neither the author of the ARC2ZIP series or its' distributors are
+            affiliated with PKWare or its entities. This is an outside
+            project, not sanctioned by PKWare, Inc. 
+            No warranties are given for the usefulness of the program by any
+            individual or concern. The user shall be responsible in determining
+            the practicle application of these programs and updates.
+
+WARNING:    The Official release of the "ZIP" series may have an effect on 
+            "ARC2ZIP". Please consult future versions for best results.
+
+

@@ -1,0 +1,21 @@
+
+
+This diskette contains the file PKZ204c.EXE.  Type
+
+PKZ204c
+
+followed by pressing the Enter key to create the program and
+documentation files for PKUNZIP, PKZIP, and PKSFX version 2.04c
+To print the documentation files after running PKZ204c, type
+
+COPY *.DOC PRN
+
+followed by the return key.
+
+
+If you distribute PKUNZIP, PKZIP, and PKSFX to friends, associates, 
+or to a computer bulletin board system (BBS), please distribute the 
+file PKZ204c.EXE rather than the individual files for PKUNZIP, PKZIP
+and PKSFX.
+
+

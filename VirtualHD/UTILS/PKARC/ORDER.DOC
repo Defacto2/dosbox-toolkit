@@ -1,0 +1,239 @@
+Features of PKARC FAST! Archive Create/Update Utility,
+	    PKXARC FAST! Archive Extract Utility and
+	    PKSFX FAST! Self-Extract Utility:
+
+  o PKARC can compress your files to increase disk storage capacity
+    and reduce modem transmission time.  PKARC can typically compress
+    files better than any other comparible archive utility.
+
+  o PKARC can place many files into one archive file, reducing the
+    number of files needed to be stored on diskettes or a hard disk.
+    The files within each archive can be listed in alphabetical
+    order, and the exact number of files in each archive displayed.
+    Each archive and each file within an archive can be given a
+    comment up to 32 characters in length, allowing for easy
+    self-documenting archives.  Using PKFIND, all archive files on a
+    diskette or hard disk can be easily searched for specific files.
+
+  o PKARC employs several differnt state-of-the-art data compression
+    algorithms, and uses the most optimal method for each file.  The
+    result of the compression is an average savings in disk space of
+    40-60%, with spreadsheet and database files oftentimes compressing to
+    1/10th of their original size or less.  In addition to doubling disk
+    storage capacity, this can reduce modem transmission time in half!
+
+  o PKARC and PKXARC have full archive maintenance functions and 
+    advanced features, such as file encryption, configuartion 
+    options, and multitasking & network support.  Data intregity
+    is ensured by a 16 bit CRC.
+
+  o PKSFX converts an archive file into an executable file that
+    automatically extracts and decompresses your files when run,
+    creating convenient self-extracting archives.
+
+  o PKARC, PKXARC, and PKSFX are written in C, with highly optimized
+    assembly language routines, making them the FASTEST archive programs
+    available anywhere.
+
+  o PKARC, PKXARC, and PKSFX will run on any MS-DOS computer using MS-DOS
+    version 2.0 or above, and require only 90K of free memory to run.
+
+  o PKARC, PKXARC, and PKSFX are not copy protected.
+
+
+Features of PKFIND:
+        
+  o PKFIND File Finder Plus works like some other "whereis" type 
+    programs, except with an important Plus.  The Plus is that PKFIND 
+    will not only search all the directories on your diskette or hard 
+    disk like other "whereis" programs, but PKFIND will search 
+    through archive files too.  Once PKFIND finds the desired file, 
+    PKFIND can automatically change to the subdirectory where the 
+    file was found!  PKFIND will allow you to find any file, archived 
+    or not, simply and easily.
+        
+  o PKFIND will run on any MS-DOS machine running MS-DOS version 2.0
+    or above, and requires only 32K of free memory to run.
+            
+  o PKFIND is not copy protected.
+
+
+                                                       PKWARE, Inc. 1988
+                            ORDER FORM__________
+
+
+TO:                           FROM:
+
+PKWARE, Inc.                  Name: __________________________________
+7032 Ardara Avenue
+Glendale, WI 53209       (Company): __________________________________
+
+414-352-3670 Voice         (Title): __________________________________
+414-352-7176 BBS
+			   Address: __________________________________
+Today's          
+date: ___________       City,State: __________________________________
+                                                              Zip Code
+		      Phone Number: (______)___________________
+
+
+PKARC, PKXARC, and PKSFX  Current Version: 3.6
+  * Diskette with programs and documentation ...... $45.          ______
+
+  * Commercial site license for the use of PKARC, PKXARC & PKSFX.
+     2 to  9 computers ..... at $35 each    # computers ___x 35   ______
+    10 to 24 computers ..... at $30 each    # computers ___x 30   ______
+    25 to 49 computers ..... at $25 each    # computers ___x 25   ______
+    50 to 99 computers ..... at $20 each    # computers ___x 20   ______
+    100 or more computers .. $2000 one time fee                   ______
+
+PKFIND                    Current Version: 1.1
+  * Diskette with program and documentation ......... $20.        ______
+
+  * Commercial site license for the use of PKFIND.
+     2 to  9 computers ..... at $16 each    # computers ___x 16   ______
+    10 to 24 computers ..... at $12 each    # computers ___x 12   ______
+    25 to 49 computers ..... at $10 each    # computers ___x 10   ______
+    50 to 99 computers ..... at $8  each    # computers ___x  8   ______
+    100 or more computers .. $800 one time fee                    ______
+
+Please add $3.50 for shipping and handling.                 $5.00 / 3.50
+(Please add $5.00 for overseas orders.)
+
+Wisconsin residents add 5% sales tax.                             ______
+
+					Total enclosed            ______
+
+Diskette format (choose one)    5.25" disk ____    3.5" disk ____
+(A 5.25" diskette will be sent unless otherwise specified)
+
+Terms:  Check drawn on a U.S. bank in U.S. funds.
+	International bank or postal money order in U.S. funds.
+	Purchase orders accepted from larger corporations.
+
+All foreign orders must be prepaid.___________________________________
+
+* Includes one free upgrade of the software, when available.
+
+
+
+                                                       PKWARE, Inc. 1988
+Information on Site & Commercial Licenses and Custom Versions
+-------------------------------------------------------------
+
+
+Corporate Site License
+
+    This is a license for use of the software within your 
+    company, and is not transferable.  This allows internal use 
+    and copying of the software by as many users/machines as 
+    contracted for.  (See the order form for Site License price 
+    schedule).  An unlimited Site License allows unlimited 
+    copying of the software for internal use by your company.  
+    Distribution, repackaging, or reselling of the software to 
+    third parties is not allowed.
+
+
+Distribution License
+
+    This allows distribution of the software with commercial 
+    software that is manufactured by your company.  This license 
+    is non-exclusive and non-transferable.  Please complete and 
+    return the application for a distribution license on the 
+    reverse side of this form.  Once we receive the completed 
+    application you will be sent a quote for a one time 
+    Distribution License fee.
+    
+    This license is not necessary for clubs or users groups 
+    distributing the software on a ShareWare basis providing that 
+    the entire PKARC/PKXARC/PKSFX package with accompanying 
+    documentation files is included in the distribution and no 
+    more than a nominal fee (not to exceed $10) is charged for 
+    such distribution.
+
+
+Custom Versions of the Software
+
+    If you require any modifications or changes to the software, 
+    please include detailed information describing all changes 
+    you are interested in.  Customization fees will be based on 
+    the extent of modifications required to the software so that 
+    it performs as you describe.  Depending on the changes 
+    requested, please allow up to four weeks for custom versions 
+    of the software.
+
+
+Availability of Source Code
+
+    It is the policy of PKWARE Inc. not to release source code 
+    for its products.
+
+
+
+
+
+
+
+
+
+                                                       PKWARE, Inc. 1988
+		Application for Distribution License
+		------------------------------------
+
+
+
+Name:       __________________________________
+
+(Company):  __________________________________
+
+(Title):    __________________________________
+
+Address:    __________________________________
+
+City,State: __________________________________
+                                      Zip Code
+Phone #:    (_____)___________________
+
+Today's date: ________________________________
+
+
+
+Please complete as best as possible:
+
+
+1)  I am interested in distributing the program(s) PKXARC ___
+    PKARC ___ PKSFX ___ (check all that apply).
+
+
+2)  In what quantity do you estimate distributing the software 
+    indicated above?  __________ copies.  This is per year ___ or 
+    one time ___ (check only one).
+
+
+3)  If you are interested in distributing PKXARC or PKSFX to save 
+    diskettes required to distribute your software, how many 
+    disks does your software package require without 
+    compression _____, and how many disks are required if the 
+    software is distributed in compressed form _____?
+
+
+4)  Please describe the intended usage of the PKWARE programs 
+    indicicated in question 1.  If possible, please describe the 
+    software package(s) that you intend to distribute with the 
+    PKWARE programs and their price.  Also, list below any other 
+    relevant information:
+
+
+
+
+
+
+
+
+5)  Your company is incorporated in what State/Country _________________
+
+
+
+
+                                                       PKWARE, Inc. 1988
+

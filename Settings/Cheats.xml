@@ -1,0 +1,1111 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE CheatDB SYSTEM "http://dfendreloaded.sourceforge.net/Packages/Cheats.dtd">
+<CheatDB Version="2">
+  <GameRecord Name="Dark Side of Xeen">
+    <Action Name="Money" FileMask="DARK??.SAV">
+      <ChangeAddress Addresses="$39FB;$39FF;$3A03;$3A07" Bytes="4" NewValue="$FFFFFFFF"/>
+    </Action>
+    <Action Name="Level" FileMask="DARK??.SAV">
+      <ChangeAddress Addresses="3605;3607;3609;3611;3613;3615;3617;3620;3959;3961;3963;3965;3967;3969;3971;3974;4313;4315;4317;4319;4321;4323;4325;4328;4667;4669;4671;4673;4675;4677;4679;4682;5021;5023;5025;5027;5029;5031;5033;5036;5375;5377;5379;5381;5383;5385;5387;5390;5729;5731;5733;5735;5737;5739;5741;5744;6083;6085;6087;6089;6091;6093;6095;6098;6437;6439;6441;6443;6445;6447;6449;6452;6791;6793;6795;6797;6799;6801;6803;6806;7145;7147;7149;7151;7153;7155;7157;7160;7499;7501;7503;7505;7507;7509;7511;7514;7853;7855;7857;7859;7861;7863;7865;7868;8207;8209;8211;8213;8215;8217;8219;8222;8561;8563;8565;8567;8569;8571;8573;8576;8915;8917;8919;8921;8923;8925;8927;8930;9269;9271;9273;9275;9277;9279;9281;9284;9623;9625;9627;9629;9631;9633;9635;9638;9977;9979;9981;9983;9985;9987;9989;9992;10331;10333;10335;10337;10339;10341;10343;10346;10685;10687;10689;10691;10693;10695;10697;10700;11039;11041;11043;11045;11047;11049;11051;11054;11393;11395;11397;11399;11401;11403;11405;11408;11747;11749;11751;11753;11755;11757;11759;11762;12101;12103;12105;12107;12109;12111;12113;12116;12455;12457;12459;12461;12463;12465;12467;12470;12809;12811;12813;12815;12817;12819;12821;12824;13163;13165;13167;13169;13171;13173;13175;13178;13517;13519;13521;13523;13525;13527;13529;13532;13871;13873;13875;13877;13879;13881;13883;13886" Bytes="2" NewValue="$FFFF"/>
+    </Action>
+    <Action Name="Position" FileMask="DARK??.SAV">
+      <Internal Nr="1"/>
+    </Action>
+  </GameRecord>
+  <GameRecord Name="Dune 2">
+    <Action Name="Harkonnen" FileMask="_SAVE???.DAT">
+      <ChangeAddress Addresses="$186" Bytes="2" NewValue="64000"/>
+    </Action>
+    <Action Name="Ordos" FileMask="_SAVE???.DAT">
+      <ChangeAddress Addresses="$1C8" Bytes="2" NewValue="64000"/>
+    </Action>
+    <Action Name="Artreidis" FileMask="_SAVE???.DAT">
+      <ChangeAddress Addresses="$1C8" Bytes="2" NewValue="64000"/>
+    </Action>
+  </GameRecord>
+  <GameRecord Name="Privateer">
+    <Action Name="Money" FileMask="*.SAV">
+      <Internal Nr="2"/>
+    </Action>
+    <Action Name="Ship" FileMask="*.SAV">
+      <Internal Nr="7"/>
+    </Action>
+    <Action Name="Position" FileMask="*.SAV">
+      <Internal Nr="8"/>
+    </Action>
+  </GameRecord>
+  <GameRecord Name="Rings of Medusa">
+    <Action Name="Money" FileMask="*.ROM">
+      <ChangeAddress Addresses="$3BC7;$3BC8;$3BC9" Bytes="1" NewValue="$FF"/>
+      <ChangeAddress Addresses="$3BCA" Bytes="1" NewValue="$6F"/>
+    </Action>
+    <Action Name="Army" FileMask="*.ROM">
+      <ChangeAddress Addresses="$A0E;$A0F;$A10;$A12;$A13;$A14;$A16;$A17;$A18;$A1A;$A1B;$A1C;$A1E;$A1F;$A20;$A22;$A23;$A24;$A26;$A27;$A28" Bytes="1" NewValue="$FF"/>
+      <ChangeAddress Addresses="$9BA" Bytes="1" NewValue="$F9"/>
+      <ChangeAddress Addresses="$9BB;$9BC" Bytes="1" NewValue="$FF"/>
+      <ChangeAddress Addresses="$9BD" Bytes="1" NewValue="$06"/>
+    </Action>
+  </GameRecord>
+  <GameRecord Name="SimCity 2000">
+    <Action Name="Money" FileMask="*.SC2">
+      <Internal Nr="3"/>
+    </Action>
+  </GameRecord>
+  <GameRecord Name="Tie-Fighter">
+    <Action Name="Points" FileMask="*.TFR">
+      <ChangeAddressWithDialog Addresses="$4" Bytes="2" DefaultValueAddress="$4" Prompt="Points (0-65535)"/>
+    </Action>
+    <Action Name="Experience" FileMask="*.TFR">
+      <ChangeAddressWithDialog Addresses="$8" Bytes="2" DefaultValueAddress="$8" Prompt="Experience (0-65535)"/>
+    </Action>
+    <Action Name="Rang" FileMask="*.TFR">
+      <ChangeAddressWithDialog Addresses="$2" Bytes="1" DefaultValueAddress="$2" Prompt="Rang (0=Cadet, 1=Officer, 2=Leutnant, 3=Captain, 4=Commander, 5=General)" MaxValue="5"/>
+    </Action>
+    <Action Name="All battles" FileMask="*.TFR">
+      <ChangeAddress Addresses="$268" Bytes="1" NewValue="9"/>
+      <ChangeAddress Addresses="$269;$26A;$26B;$26C;$26D;$26E;$26F" Bytes="1" NewValue="3"/>
+      <ChangeAddress Addresses="$27E" Bytes="1" NewValue="5"/>
+      <ChangeAddress Addresses="$27F" Bytes="1" NewValue="4"/>
+      <ChangeAddress Addresses="$280;$281" Bytes="1" NewValue="5"/>
+    </Action>
+  </GameRecord>
+  <GameRecord Name="Patrizier">
+    <Action Name="Money" FileMask="*.PSD">
+      <ChangeAddress Addresses="$213;$214;$215" Bytes="1" NewValue="255"/>
+      <ChangeAddress Addresses="$216" Bytes="1" NewValue="100"/>
+    </Action>
+  </GameRecord>
+  <GameRecord Name="Ultima 8">
+    <Action Name="Cheatmode" FileMask="AVATAR.*">
+      <ChangeAddress Addresses="$2A;$2B" Bytes="1" NewValue="1"/>
+    </Action>
+  </GameRecord>
+  <GameRecord Name="Betrayal at Krondor">
+    <Action Name="Money" FileMask="*.GAM">
+      <ChangeAddress Addresses="$66" Bytes="4" NewValue="$6FFFFF"/>
+    </Action>
+    <Action Name="Characters" FileMask="*.GAM">
+      <Internal Nr="4"/>
+    </Action>
+  </GameRecord>
+  <GameRecord Name="Strike Commander TO1">
+    <Action Name="Money" FileMask="*.TO1">
+      <ChangeAddress Addresses="$191;$18D" Bytes="2" NewValue="0"/>
+      <ChangeAddress Addresses="$18A" Bytes="1" NewValue="255"/>
+      <ChangeAddress Addresses="$18B" Bytes="1" NewValue="$5F"/>
+    </Action>
+    <Action Name="Weapons" FileMask="*.TO1">
+      <ChangeAddress Addresses="$16F;$171;$173;$175;$177;$179;$17B;$17D;$17F" Bytes="1" NewValue="255"/>
+    </Action>
+  </GameRecord>
+  <GameRecord Name="Advanted Tennis">
+    <Action Name="Parameter" FileMask="*.PLY">
+      <Internal Nr="5"/>
+    </Action>
+  </GameRecord>
+  <GameRecord Name="SimCity">
+    <Action Name="Money" FileMask="*.CTY">
+      <ChangeAddress Addresses="$C24" Bytes="1" NewValue="$5F"/>
+      <ChangeAddress Addresses="$C25;$C26;$C27" Bytes="1" NewValue="255"/>
+    </Action>
+  </GameRecord>
+  <GameRecord Name="Das Schwarze Auge">
+    <Action Name="Characters/Money" FileMask="*.CHR">
+      <ChangeAddress Addresses="$1C" Bytes="2" NewValue="$FFFF"/>
+    </Action>
+    <Action Name="Characters/Properties" FileMask="*.CHR">
+      <ChangeAddress Addresses="$24;$25;$27;$28;$2A;$2B;$2D;$2E;$30;$31;$33;$34;$36;$37" Bytes="1" NewValue="18"/>
+      <ChangeAddress Addresses="$39;$3A;$3C;$3D;$3F;$40;$42;$43;$45;$46;$48;$49;$4B;$4C" Bytes="1" NewValue="2"/>
+    </Action>
+    <Action Name="Characters/Life energy" FileMask="*.CHR">
+      <ChangeAddressWithDialog Addresses="$4E,$50" Bytes="1" DefaultValue="99" Prompt="Life energy (0-99)" MaxValue="99"/>
+    </Action>
+    <Action Name="Characters/Astral energy" FileMask="*.CHR">
+      <ChangeAddressWithDialog Addresses="$4E,$50" Bytes="1" DefaultValue="99" Prompt="Astral energy (0-99)" MaxValue="99"/>
+    </Action>
+    <Action Name="Characters/Talents" FileMask="*.CHR">
+      <ChangeAddress Addresses="$0F8;$0F9;$0FA;$0FB;$0FC;$0FD;$0FE;$0FF;$100;$101;$102;$103;$104;$105;$106;$107;$108;$109;$10A;$10B;$10C;$10D;$10E;$10F;$110;$111;$112;$113;$114;$115;$116;$117;$118;$119;$11A;$11B;$11C;$11D;$11E;$11F;$120;$121;$122;$123;$124;$125;$126;$127;$128;$129;$12A;$12B" Bytes="1" NewValue="18"/>
+    </Action>
+    <Action Name="Characters/Magic power" FileMask="*.CHR">
+      <ChangeAddress Addresses="$12E;$12F;$130;$131;$132;$133;$134;$135;$136;$137;$138;$139;$13A;$13B;$13C;$13D;$13E;$13F;$140;$141;$142;$143;$144;$145;$146;$147;$148;$149;$14A;$14B;$14C;$14D;$14E;$14F;$150;$151;$152;$153;$154;$155;$156;$157;$158;$159;$15A;$15B;$15C;$15D;$15E;$15F;$160;$161;$162;$163;$164;$165;$166;$167;$168;$169;$16A;$16B;$16C;$16D;$16E;$16F;$170;$171;$172;$173;$174;$175;$176;$177;$178;$179;$17A;$17B;$17C;$17D;$17E;$17F;$180;$181;$182;$183" Bytes="1" NewValue="18"/>
+    </Action>
+    <Action Name="Characters/Experience points" FileMask="*.CHR">
+      <ChangeAddressWithDialog Addresses="$18" Bytes="4" DefaultValue="1500" Prompt="Experience (0-1500)" MinValue="0" MaxValue="1500"/>
+    </Action>
+    <Action Name="Characters/Body size" FileMask="*.CHR">
+      <ChangeAddressWithDialog Addresses="$13" Bytes="1" DefaultValue="250" Prompt="Body size (1-255)" MinValue="1"/>
+    </Action>
+    <Action Name="Characters/Level" FileMask="*.CHR">
+      <ChangeAddressWithDialog Addresses="$17" Bytes="1" DefaultValue="10" Prompt="Level (0-255)"/>
+    </Action>
+    <Action Name="Characters/Attack/Parade" FileMask="*.CHR">
+      <ChangeAddressWithDialog Addresses="$57,$58,$59,$5A,$5B,$5C,$5D,$5E,$5F,$60,$61,$62,$63,$64,$65" Bytes="1" DefaultValue="12" Prompt="AT/PA (0-127)" MaxValue="127"/>
+    </Action>
+    <Action Name="Saved games/Money" FileMask="SPIEL_?_.">
+      <ChangeAddress Addresses="-$28A0;-$21D6;-$1B0C;-$1442;-$0D78;-$06AE" Bytes="2" NewValue="$FFFF"/>
+    </Action>
+    <Action Name="Saved games/Properties" FileMask="SPIEL_?_.">
+      <ChangeAddress Addresses="-$2898;-$2897;-$2895;-$2894;-$2892;-$2891;-$288F;-$288E;-$288C;-$288B;-$2889;-$2888;-$2886;-$2885;-$21CE;-$21CD;-$21CB;-$21CA;-$21C8;-$21C7;-$21C5;-$21C4;-$21C2;-$21C1;-$21BF;-$21BE;-$21BC;-$21BB;-$1B04;-$1B03;-$1B01;-$1B00;-$1AFE;-$1AFD;-$1AFB;-$1AFA;-$1AF8;-$1AF7;-$1AF5;-$1AF4;-$1AF2;-$1AF1;-$143A;-$1439;-$1437;-$1436;-$1434;-$1433;-$1431;-$1430;-$142E;-$142D;-$142B;-$142A;-$1428;-$1427;-$0D70;-$0D6F;-$0D6D;-$0D6C;-$0D6A;-$0D69;-$0D67;-$0D66;-$0D64;-$0D63;-$0D61;-$0D60;-$0D5E;-$0D5D;-$06A6;-$06A5;-$06A3;-$06A2;-$06A0;-$069F;-$069D;-$069C;-$069A;-$0699;-$0697;-$0696;-$0694;-$0693" Bytes="1" NewValue="127"/>
+      <ChangeAddress Addresses="-$2883;-$2882;-$2880;-$287F;-$287D;-$287C;-$287A;-$2879;-$2877;-$2876;-$2874;-$2873;-$2871;-$2870;-$21B9;-$21B8;-$21B6;-$21B5;-$21B3;-$21B2;-$21B0;-$21AF;-$21AD;-$21AC;-$21AA;-$21A9;-$21A7;-$21A6;-$1AEF;-$1AEE;-$1AEC;-$1AEB;-$1AE9;-$1AE8;-$1AE6;-$1AE5;-$1AE3;-$1AE2;-$1AE0;-$1ADF;-$1ADD;-$1ADC;-$1425;-$1424;-$1422;-$1421;-$141F;-$141E;-$141C;-$141B;-$1419;-$1418;-$1416;-$1415;-$1413;-$1412;-$0D5B;-$0D5A;-$0D58;-$0D57;-$0D55;-$0D54;-$0D52;-$0D51;-$0D4F;-$0D4E;-$0D4C;-$0D4B;-$0D49;-$0D48;-$0691;-$0690;-$068E;-$068D;-$068B;-$068A;-$0688;-$0687;-$0685;-$0684;-$0682;-$0681;-$067F;-$067E" Bytes="1" NewValue="2"/>
+    </Action>
+    <Action Name="Spielstand/Life energy" FileMask="SPIEL_?_.">
+      <ChangeAddressWithDialog Addresses="-$286E;-$286C;-$21A4;-$21A2;-$1ADA;-$1AD8;-$1410;-$140E;-$0D46;-$0D44;-$067C;-$067A" Bytes="1" DefaultValue="99" Prompt="Life energy (0-255)"/>
+    </Action>
+    <Action Name="Saved games/Astral energy" FileMask="SPIEL_?_.">
+      <ChangeAddressWithDialog Addresses="-$286A;-$2868;-$21A0;-$219E;-$1AD6;-$1AD4;-$140C;-$140A;-$0D42;-$0D40;-$0678;-$0676" Bytes="1" DefaultValue="99" Prompt="Astral energy (0-255)"/>
+    </Action>
+    <Action Name="Saved games/Talents" FileMask="SPIEL_?_.">
+      <ChangeAddress Addresses="-$27C4;-$27C3;-$27C2;-$27C1;-$27C0;-$27BF;-$27BE;-$27BD;-$27BC;-$27BB;-$27BA;-$27B9;-$27B8;-$27B7;-$27B6;-$27B5;-$27B4;-$27B3;-$27B2;-$27B1;-$27B0;-$27AF;-$27AE;-$27AD;-$27AC;-$27AB;-$27AA;-$27A9;-$27A8;-$27A7;-$27A6;-$27A5;-$27A4;-$27A3;-$27A2;-$27A1;-$27A0;-$279F;-$279E;-$279D;-$279C;-$279B;-$279A;-$2799;-$2798;-$2797;-$2796;-$2795;-$2794;-$2793;-$2792;-$2791;-$20FA;-$20F9;-$20F8;-$20F7;-$20F6;-$20F5;-$20F4;-$20F3;-$20F2;-$20F1;-$20F0;-$20EF;-$20EE;-$20ED;-$20EC;-$20EB;-$20EA;-$20E9;-$20E8;-$20E7;-$20E6;-$20E5;-$20E4;-$20E3;-$20E2;-$20E1;-$20E0;-$20DF;-$20DE;-$20DD;-$20DC;-$20DB;-$20DA;-$20D9;-$20D8;-$20D7;-$20D6;-$20D5;-$20D4;-$20D3;-$20D2;-$20D1;-$20D0;-$20CF;-$20CE;-$20CD;-$20CC;-$20CB;-$20CA;-$20C9;-$20C8;-$20C7;-$1A30;-$1A2F;-$1A2E;-$1A2D;-$1A2C;-$1A2B;-$1A2A;-$1A29;-$1A28;-$1A27;-$1A26;-$1A25;-$1A24;-$1A23;-$1A22;-$1A21;-$1A20;-$1A1F;-$1A1E;-$1A1D;-$1A1C;-$1A1B;-$1A1A;-$1A19;-$1A18;-$1A17;-$1A16;-$1A15;-$1A14;-$1A13;-$1A12;-$1A11;-$1A10;-$1A0F;-$1A0E;-$1A0D;-$1A0C;-$1A0B;-$1A0A;-$1A09;-$1A08;-$1A07;-$1A06;-$1A05;-$1A04;-$1A03;-$1A02;-$1A01;-$1A00;-$19FF;-$19FE;-$19FD;-$1366;-$1365;-$1364;-$1363;-$1362;-$1361;-$1360;-$135F;-$135E;-$135D;-$135C;-$135B;-$135A;-$1359;-$1358;-$1357;-$1356;-$1355;-$1354;-$1353;-$1352;-$1351;-$1350;-$134F;-$134E;-$134D;-$134C;-$134B;-$134A;-$1349;-$1348;-$1347;-$1346;-$1345;-$1344;-$1343;-$1342;-$1341;-$1340;-$133F;-$133E;-$133D;-$133C;-$133B;-$133A;-$1339;-$1338;-$1337;-$1336;-$1335;-$1334;-$1333;-$0C9C;-$0C9B;-$0C9A;-$0C99;-$0C98;-$0C97;-$0C96;-$0C95;-$0C94;-$0C93;-$0C92;-$0C91;-$0C90;-$0C8F;-$0C8E;-$0C8D;-$0C8C;-$0C8B;-$0C8A;-$0C89;-$0C88;-$0C87;-$0C86;-$0C85;-$0C84;-$0C83;-$0C82;-$0C81;-$0C80;-$0C7F;-$0C7E;-$0C7D;-$0C7C;-$0C7B;-$0C7A;-$0C79;-$0C78;-$0C77;-$0C76;-$0C75;-$0C74;-$0C73;-$0C72;-$0C71;-$0C70;-$0C6F;-$0C6E;-$0C6D;-$0C6C;-$0C6B;-$0C6A;-$0C69;-$05D2;-$05D1;-$05D0;-$05CF;-$05CE;-$05CD;-$05CC;-$05CB;-$05CA;-$05C9;-$05C8;-$05C7;-$05C6;-$05C5;-$05C4;-$05C3;-$05C2;-$05C1;-$05C0;-$05BF;-$05BE;-$05BD;-$05BC;-$05BB;-$05BA;-$05B9;-$05B8;-$05B7;-$05B6;-$05B5;-$05B4;-$05B3;-$05B2;-$05B1;-$05B0;-$05AF;-$05AE;-$05AD;-$05AC;-$05AB;-$05AA;-$05A9;-$05A8;-$05A7;-$05A6;-$05A5;-$05A4;-$05A3;-$05A2;-$05A1;-$05A0;-$059F" Bytes="1" NewValue="18"/>
+    </Action>
+    <Action Name="Saved games/Magic power" FileMask="SPIEL_?_.">
+      <ChangeAddress Addresses="-$278E;-$278D;-$278C;-$278B;-$278A;-$2789;-$2788;-$2787;-$2786;-$2785;-$2784;-$2783;-$2782;-$2781;-$2780;-$277F;-$277E;-$277D;-$277C;-$277B;-$277A;-$2779;-$2778;-$2777;-$2776;-$2775;-$2774;-$2773;-$2772;-$2771;-$2770;-$276F;-$276E;-$276D;-$276C;-$276B;-$276A;-$2769;-$2768;-$2767;-$2766;-$2765;-$2764;-$2763;-$2762;-$2761;-$2760;-$275F;-$275E;-$275D;-$275C;-$275B;-$275A;-$2759;-$2758;-$2757;-$2756;-$2755;-$2754;-$2753;-$2752;-$2751;-$2750;-$274F;-$274E;-$274D;-$274C;-$274B;-$274A;-$2749;-$2748;-$2747;-$2746;-$2745;-$2744;-$2743;-$2742;-$2741;-$2740;-$273F;-$273E;-$273D;-$273C;-$273B;-$273A;-$2739;-$20C4;-$20C3;-$20C2;-$20C1;-$20C0;-$20BF;-$20BE;-$20BD;-$20BC;-$20BB;-$20BA;-$20B9;-$20B8;-$20B7;-$20B6;-$20B5;-$20B4;-$20B3;-$20B2;-$20B1;-$20B0;-$20AF;-$20AE;-$20AD;-$20AC;-$20AB;-$20AA;-$20A9;-$20A8;-$20A7;-$20A6;-$20A5;-$20A4;-$20A3;-$20A2;-$20A1;-$20A0;-$209F;-$209E;-$209D;-$209C;-$209B;-$209A;-$2099;-$2098;-$2097;-$2096;-$2095;-$2094;-$2093;-$2092;-$2091;-$2090;-$208F;-$208E;-$208D;-$208C;-$208B;-$208A;-$2089;-$2088;-$2087;-$2086;-$2085;-$2084;-$2083;-$2082;-$2081;-$2080;-$207F;-$207E;-$207D;-$207C;-$207B;-$207A;-$2079;-$2078;-$2077;-$2076;-$2075;-$2074;-$2073;-$2072;-$2071;-$2070;-$206F;-$19FA;-$19F9;-$19F8;-$19F7;-$19F6;-$19F5;-$19F4;-$19F3;-$19F2;-$19F1;-$19F0;-$19EF;-$19EE;-$19ED;-$19EC;-$19EB;-$19EA;-$19E9;-$19E8;-$19E7;-$19E6;-$19E5;-$19E4;-$19E3;-$19E2;-$19E1;-$19E0;-$19DF;-$19DE;-$19DD;-$19DC;-$19DB;-$19DA;-$19D9;-$19D8;-$19D7;-$19D6;-$19D5;-$19D4;-$19D3;-$19D2;-$19D1;-$19D0;-$19CF;-$19CE;-$19CD;-$19CC;-$19CB;-$19CA;-$19C9;-$19C8;-$19C7;-$19C6;-$19C5;-$19C4;-$19C3;-$19C2;-$19C1;-$19C0;-$19BF;-$19BE;-$19BD;-$19BC;-$19BB;-$19BA;-$19B9;-$19B8;-$19B7;-$19B6;-$19B5;-$19B4;-$19B3;-$19B2;-$19B1;-$19B0;-$19AF;-$19AE;-$19AD;-$19AC;-$19AB;-$19AA;-$19A9;-$19A8;-$19A7;-$19A6;-$19A5;-$1330;-$132F;-$132E;-$132D;-$132C;-$132B;-$132A;-$1329;-$1328;-$1327;-$1326;-$1325;-$1324;-$1323;-$1322;-$1321;-$1320;-$131F;-$131E;-$131D;-$131C;-$131B;-$131A;-$1319;-$1318;-$1317;-$1316;-$1315;-$1314;-$1313;-$1312;-$1311;-$1310;-$130F;-$130E;-$130D;-$130C;-$130B;-$130A;-$1309;-$1308;-$1307;-$1306;-$1305;-$1304;-$1303;-$1302;-$1301;-$1300;-$12FF;-$12FE;-$12FD;-$12FC;-$12FB;-$12FA;-$12F9;-$12F8;-$12F7;-$12F6;-$12F5;-$12F4;-$12F3;-$12F2;-$12F1;-$12F0;-$12EF;-$12EE;-$12ED;-$12EC;-$12EB;-$12EA;-$12E9;-$12E8;-$12E7;-$12E6;-$12E5;-$12E4;-$12E3;-$12E2;-$12E1;-$12E0;-$12DF;-$12DE;-$12DD;-$12DC;-$12DB;-$0C66;-$0C65;-$0C64;-$0C63;-$0C62;-$0C61;-$0C60;-$0C5F;-$0C5E;-$0C5D;-$0C5C;-$0C5B;-$0C5A;-$0C59;-$0C58;-$0C57;-$0C56;-$0C55;-$0C54;-$0C53;-$0C52;-$0C51;-$0C50;-$0C4F;-$0C4E;-$0C4D;-$0C4C;-$0C4B;-$0C4A;-$0C49;-$0C48;-$0C47;-$0C46;-$0C45;-$0C44;-$0C43;-$0C42;-$0C41;-$0C40;-$0C3F;-$0C3E;-$0C3D;-$0C3C;-$0C3B;-$0C3A;-$0C39;-$0C38;-$0C37;-$0C36;-$0C35;-$0C34;-$0C33;-$0C32;-$0C31;-$0C30;-$0C2F;-$0C2E;-$0C2D;-$0C2C;-$0C2B;-$0C2A;-$0C29;-$0C28;-$0C27;-$0C26;-$0C25;-$0C24;-$0C23;-$0C22;-$0C21;-$0C20;-$0C1F;-$0C1E;-$0C1D;-$0C1C;-$0C1B;-$0C1A;-$0C19;-$0C18;-$0C17;-$0C16;-$0C15;-$0C14;-$0C13;-$0C12;-$0C11;-$059C;-$059B;-$059A;-$0599;-$0598;-$0597;-$0596;-$0595;-$0594;-$0593;-$0592;-$0591;-$0590;-$058F;-$058E;-$058D;-$058C;-$058B;-$058A;-$0589;-$0588;-$0587;-$0586;-$0585;-$0584;-$0583;-$0582;-$0581;-$0580;-$057F;-$057E;-$057D;-$057C;-$057B;-$057A;-$0579;-$0578;-$0577;-$0576;-$0575;-$0574;-$0573;-$0572;-$0571;-$0570;-$056F;-$056E;-$056D;-$056C;-$056B;-$056A;-$0569;-$0568;-$0567;-$0566;-$0565;-$0564;-$0563;-$0562;-$0561;-$0560;-$055F;-$055E;-$055D;-$055C;-$055B;-$055A;-$0559;-$0558;-$0557;-$0556;-$0555;-$0554;-$0553;-$0552;-$0551;-$0550;-$054F;-$054E;-$054D;-$054C;-$054B;-$054A;-$0549;-$0548;-$0547" Bytes="1" NewValue="18"/>
+    </Action>
+    <Action Name="Saved games/Experience points" FileMask="SPIEL_?_.">
+      <ChangeAddressWithDialog Addresses="-$28A4;-$21DA;-$1B10;-$1446;-$0D7C;-$06B2" Bytes="4" DefaultValue="1500" Prompt="Experience (0-1500)" MinValue="0" MaxValue="1500"/>
+    </Action>
+    <Action Name="Saved games/Body size" FileMask="SPIEL_?_.">
+      <ChangeAddressWithDialog Addresses="-$28A9;-$21DF;-$1B15;-$144B;-$0D81;-$06B7" Bytes="1" DefaultValue="250" Prompt="Body size (1-255)" MinValue="1"/>
+    </Action>
+    <Action Name="Saved games/Level" FileMask="SPIEL_?_.">
+      <ChangeAddressWithDialog Addresses="-$28A5;-$21DB;-$1B11;-$1447;-$0D7D;-$06B3" Bytes="1" DefaultValue="10" Prompt="Level (0-255)"/>
+    </Action>
+    <Action Name="Saved games/Attack/Parade" FileMask="SPIEL_?_.">
+      <ChangeAddressWithDialog Addresses="-$2865;-$219B;-$1AD1;-$1407;-$0D3D;-$0673" Bytes="1" DefaultValue="127" Prompt="AT/PA (0-127)" MaxValue="127"/>
+    </Action>
+  </GameRecord>
+  <GameRecord Name="Raptor">
+    <Action Name="Energy moduls" FileMask="CHAR*.FIL">
+      <ChangeAddress Addresses="$75;$79" Bytes="1" NewValue="$55"/>
+    </Action>
+    <Action Name="Money" FileMask="CHAR*.FIL">
+      <ChangeAddress Addresses="$27" Bytes="2" NewValue="$FFFF"/>
+    </Action>
+  </GameRecord>
+  <GameRecord Name="Tycoon">
+    <Action Name="Money" FileMask="RR?.SVE">
+      <ChangeAddress Addresses="$3748" Bytes="1" NewValue="$FF"/>
+      <ChangeAddress Addresses="$3749" Bytes="1" NewValue="$5F"/>
+    </Action>
+  </GameRecord>
+  <GameRecord Name="Ufo">
+    <Action Name="Rang" FileMask="SOLDIER.*">
+      <ChangeAddressWithDialog Addresses="$A1" Bytes="1" DefaultValueAddress="$A1" Prompt="Rang (0=soldier, 1=private, 2=sergeant, 3=captain, 4=colonel, 5=commander)" MaxValue="5"/>
+    </Action>
+    <Action Name="Wounds" FileMask="SOLDIER.*">
+      <ChangeAddress Addresses="$A13" Bytes="1" NewValue="0"/>
+    </Action>
+    <Action Name="Time units" FileMask="SOLDIER.*">
+      <ChangeAddress Addresses="$C11;$D6" Bytes="1" NewValue="$50"/>
+    </Action>
+    <Action Name="Health" FileMask="SOLDIER.*">
+      <ChangeAddressWithDialog Addresses="$C12,$D7" Bytes="1" DefaultValue="80" Prompt="Health (1-80)" MinValue="1" MaxValue="80"/>
+    </Action>
+    <Action Name="Energy" FileMask="SOLDIER.*">
+      <ChangeAddressWithDialog Addresses="$C13,$D8" Bytes="1" DefaultValue="80" Prompt="(1-80)" MinValue="1" MaxValue="80"/>
+    </Action>
+    <Action Name="Reaction" FileMask="SOLDIER.*">
+      <ChangeAddressWithDialog Addresses="$C14,$D9" Bytes="1" DefaultValue="80" Prompt="Response','(1-80)" MinValue="1" MaxValue="80"/>
+    </Action>
+    <Action Name="Strength" FileMask="SOLDIER.*">
+      <ChangeAddressWithDialog Addresses="$C15,$D10" Bytes="1" DefaultValue="80" Prompt="Strength','(1-80)" MinValue="1" MaxValue="80"/>
+    </Action>
+    <Action Name="Shooting percision" FileMask="SOLDIER.*">
+      <ChangeAddressWithDialog Addresses="$C16,$D11" Bytes="1" DefaultValue="80" Prompt="Shooting accuracy (1-80)" MinValue="1" MaxValue="80"/>
+    </Action>
+    <Action Name="Throwing percision" FileMask="SOLDIER.*">
+      <ChangeAddressWithDialog Addresses="$D1,$D12" Bytes="1" DefaultValue="80" Prompt="Throwing accuracy (1-80)" MinValue="1" MaxValue="80"/>
+    </Action>
+    <Action Name="PSI strength" FileMask="SOLDIER.*">
+      <ChangeAddressWithDialog Addresses="$D4" Bytes="1" DefaultValue="160" Prompt="PSI strength (1-160)" MinValue="1" MaxValue="160"/>
+    </Action>
+    <Action Name="Armor" FileMask="SOLDIER.*">
+      <ChangeAddressWithDialog Addresses="$D15" Bytes="1" DefaultValueAddress="$D15" Prompt="Armor (0=No armor, 1=personal armor, 2=energy armor, 3=flighting suit)" MinValue="0" MaxValue="4"/>
+    </Action>
+    <Action Name="Money" FileMask="LIGLOB.*">
+      <ChangeAddress Addresses="$A1" Bytes="1" NewValue="0"/>
+      <ChangeAddress Addresses="$A2" Bytes="1" NewValue="$65"/>
+      <ChangeAddress Addresses="$A3" Bytes="1" NewValue="$CD"/>
+      <ChangeAddress Addresses="$A4" Bytes="1" NewValue="$1D"/>
+    </Action>
+    <Action Name="Building time" FileMask="BASE.*">
+      <Internal Nr="6"/>
+    </Action>
+  </GameRecord>
+  <GameRecord Name="Comanche">
+    <Action Name="Cheat mode" FileMask="COMANCHE.EX?">
+      <ChangeAddress Addresses="$27F5D" Bytes="1" NewValue="67"/>
+    </Action>
+  </GameRecord>
+  <GameRecord Name="Pirates Gold">
+    <Action Name="Money" FileMask="*.SAV">
+      <ChangeAddress Addresses="$1AA" Bytes="4" NewValue="$FFFFFFFF"/>
+    </Action>
+    <Action Name="Men" FileMask="*.SAV">
+      <ChangeAddress Addresses="$186" Bytes="1" NewValue="$FF"/>
+      <ChangeAddress Addresses="$185;$187;$188" Bytes="1" NewValue="5"/>
+    </Action>
+    <Action Name="Goods" FileMask="*.SAV">
+      <ChangeAddress Addresses="398" Bytes="2" NewValue="$DD99"/>
+    </Action>
+    <Action Name="Food" FileMask="*.SAV">
+      <ChangeAddress Addresses="430" Bytes="2" NewValue="$FF02"/>
+    </Action>
+    <Action Name="Canons" FileMask="*.SAV">
+      <ChangeAddress Addresses="$18C" Bytes="1" NewValue="$99"/>
+    </Action>
+    <Action Name="Ships" FileMask="*.SAV">
+      <ChangeAddressWithDialog Addresses="392" Bytes="1" DefaultValueAddress="392" Prompt="Ships (0-255)"/>
+    </Action>
+  </GameRecord>
+  <GameRecord Name="Terminator Rampage">
+    <Action Name="Ammo" FileMask="GAME??.SAV">
+      <ChangeAddress Addresses="73;75;77;79;81" Bytes="2" NewValue="32000"/>
+    </Action>
+    <Action Name="Health" FileMask="GAME??.SAV">
+      <ChangeAddress Addresses="41" Bytes="1" NewValue="$64"/>
+    </Action>
+    <Action Name="Amor" FileMask="GAME??.SAV">
+      <ChangeAddress Addresses="59" Bytes="1" NewValue="$FF"/>
+    </Action>
+  </GameRecord>
+  <GameRecord Name="SubWar 2050">
+    <Action Name="Money" FileMask="SWSLOT?.SAV">
+      <ChangeAddress Addresses="$27;$28;$29" Bytes="1" NewValue="66"/>
+    </Action>
+  </GameRecord>
+  <GameRecord Name="Der Clou">
+    <Action Name="Money" FileMask="TCMAIN?.DAT">
+      <ChangeAddress Addresses="$350;$351" Bytes="1" NewValue="$FF"/>
+      <ChangeAddress Addresses="$352" Bytes="1" NewValue="$F0"/>
+    </Action>
+  </GameRecord>
+  <GameRecord Name="Theme Park">
+    <Action Name="Money" FileMask="*.G*">
+      <ChangeAddress Addresses="$A" Bytes="4" NewValue="$5F5F5F5F"/>
+    </Action>
+  </GameRecord>
+  <GameRecord Name="Rüsselsheim">
+    <Action Name="Money" FileMask="DETRIOT?.*">
+      <ChangeAddress Addresses="$207" Bytes="2" NewValue="$FFFF"/>
+      <ChangeAddress Addresses="$209" Bytes="1" NewValue="$FF"/>
+      <ChangeAddress Addresses="$20A" Bytes="1" NewValue="$25"/>
+    </Action>
+  </GameRecord>
+  <GameRecord Name="Battle Isle 2">
+    <Action Name="Energy" FileMask="SAVE????.DAT">
+      <ChangeAddress Addresses="$58" Bytes="1" NewValue="$FF"/>
+      <ChangeAddress Addresses="$59" Bytes="1" NewValue="$67"/>
+      <ChangeAddress Addresses="$5A;$5B" Bytes="1" NewValue="0"/>
+    </Action>
+  </GameRecord>
+  <GameRecord Name="Das Schwarze Auge 2">
+    <Action Name="Money" FileMask="*.GAM">
+      <ChangeAddress Addresses="$014C;$0741;$0D36;$132B;$1920;$1F15;$2AFC" Bytes="2" NewValue="$FFFF"/>
+      <ChangeAddress Addresses="$2AFE" Bytes="1" NewValue="255"/>
+    </Action>
+    <Action Name="Properties" FileMask="*.GAM">
+      <ChangeAddress Addresses="$0154;$0155;$0157;$0158;$015A;$015B;$015D;$015E;$0160;$0161;$0163;$0164;$0166;$0167" Bytes="1" NewValue="127"/>
+      <ChangeAddress Addresses="$0169;$016A;$016C;$016D;$016F;$0170;$0172;$0173;$0175;$0176;$0178;$0179;$017B;$017C" Bytes="1" NewValue="2"/>
+      <ChangeAddress Addresses="$0749;$074A;$074C;$074D;$074F;$0750;$0752;$0753;$0755;$0756;$0758;$0759;$075B;$075C" Bytes="1" NewValue="127"/>
+      <ChangeAddress Addresses="$075E;$075F;$0761;$0762;$0764;$0765;$0767;$0768;$076A;$076B;$076D;$076E;$0770;$0771" Bytes="1" NewValue="2"/>
+      <ChangeAddress Addresses="$0D3E;$0D3F;$0D41;$0D42;$0D44;$0D45;$0D47;$0D48;$0D4A;$0D4B;$0D4D;$0D4E;$0D50;$0D51" Bytes="1" NewValue="127"/>
+      <ChangeAddress Addresses="$0D53;$0D54;$0D56;$0D57;$0D59;$0D5A;$0D5C;$0D5D;$0D5F;$0D60;$0D62;$0D63;$0D65;$0D66" Bytes="1" NewValue="2"/>
+      <ChangeAddress Addresses="$1333;$1334;$1336;$1337;$1339;$133A;$133C;$133D;$133F;$1340;$1342;$1343;$1345;$1346" Bytes="1" NewValue="127"/>
+      <ChangeAddress Addresses="$1348;$1349;$134B;$134C;$134E;$134F;$1351;$1352;$1354;$1355;$1357;$1358;$135A;$135B" Bytes="1" NewValue="2"/>
+      <ChangeAddress Addresses="$1928;$1929;$192B;$192C;$192E;$192F;$1931;$1932;$1934;$1935;$1937;$1938;$193A;$193B" Bytes="1" NewValue="127"/>
+      <ChangeAddress Addresses="$193D;$193E;$1940;$1941;$1943;$1944;$1946;$1947;$1949;$194A;$194C;$194D;$194F;$1950" Bytes="1" NewValue="2"/>
+      <ChangeAddress Addresses="$1F1D;$1F1E;$1F20;$1F21;$1F23;$1F24;$1F26;$1F27;$1F29;$1F2A;$1F2C;$1F2D;$1F2F;$1F30" Bytes="1" NewValue="127"/>
+      <ChangeAddress Addresses="$1F32;$1F33;$1F35;$1F36;$1F38;$1F39;$1F3B;$1F3C;$1F3E;$1F3F;$1F41;$1F42;$1F44;$1F45" Bytes="1" NewValue="2"/>
+    </Action>
+    <Action Name="Life energy" FileMask="*.GAM">
+      <ChangeAddressWithDialog Addresses="$017E;$0180;$0773;$0775;$0D68;$0D6A;$135D;$135F;$1952;$1954;$1F47;$1F49" Bytes="1" DefaultValue="99" Prompt="Life energy (0-255)"/>
+    </Action>
+    <Action Name="Astral energy" FileMask="*.GAM">
+      <ChangeAddressWithDialog Addresses="$0182;$0184;$0777;$0779;$0D6C;$0D6E;$1361;$1363;$1956;$1958;$1F4B;$1F4D" Bytes="1" DefaultValue="99" Prompt="Astral energy (0-255)"/>
+    </Action>
+    <Action Name="Talents" FileMask="*.GAM">
+      <ChangeAddress Addresses="$0228;$0229;$022A;$022B;$022C;$022D;$022E;$022F;$0230;$0231;$0232;$0233;$0234;$0235;$0236;$0237;$0238;$0239;$023A;$023B;$023C;$023D;$023E;$023F;$0240;$0241;$0242;$0243;$0244;$0245;$0246;$0247;$0248;$0249;$024A;$024B;$024C;$024D;$024E;$024F;$0250;$0251;$0252;$0253;$0254;$0255;$0256;$0257;$0258;$0259;$025A;$025B;$081D;$081E;$081F;$0820;$0821;$0822;$0823;$0824;$0825;$0826;$0827;$0828;$0829;$082A;$082B;$082C;$082D;$082E;$082F;$0830;$0831;$0832;$0833;$0834;$0835;$0836;$0837;$0838;$0839;$083A;$083B;$083C;$083D;$083E;$083F;$0840;$0841;$0842;$0843;$0844;$0845;$0846;$0847;$0848;$0849;$084A;$084B;$084C;$084D;$084E;$084F;$0850;$0E12;$0E13;$0E14;$0E15;$0E16;$0E17;$0E18;$0E19;$0E1A;$0E1B;$0E1C;$0E1D;$0E1E;$0E1F;$0E20;$0E21;$0E22;$0E23;$0E24;$0E25;$0E26;$0E27;$0E28;$0E29;$0E2A;$0E2B;$0E2C;$0E2D;$0E2E;$0E2F;$0E30;$0E31;$0E32;$0E33;$0E34;$0E35;$0E36;$0E37;$0E38;$0E39;$0E3A;$0E3B;$0E3C;$0E3D;$0E3E;$0E3F;$0E40;$0E41;$0E42;$0E43;$0E44;$0E45;$1407;$1408;$1409;$140A;$140B;$140C;$140D;$140E;$140F;$1410;$1411;$1412;$1413;$1414;$1415;$1416;$1417;$1418;$1419;$141A;$141B;$141C;$141D;$141E;$141F;$1420;$1421;$1422;$1423;$1424;$1425;$1426;$1427;$1428;$1429;$142A;$142B;$142C;$142D;$142E;$142F;$1430;$1431;$1432;$1433;$1434;$1435;$1436;$1437;$1438;$1439;$143A;$19FC;$19FD;$19FE;$19FF;$1A00;$1A01;$1A02;$1A03;$1A04;$1A05;$1A06;$1A07;$1A08;$1A09;$1A0A;$1A0B;$1A0C;$1A0D;$1A0E;$1A0F;$1A10;$1A11;$1A12;$1A13;$1A14;$1A15;$1A16;$1A17;$1A18;$1A19;$1A1A;$1A1B;$1A1C;$1A1D;$1A1E;$1A1F;$1A20;$1A21;$1A22;$1A23;$1A24;$1A25;$1A26;$1A27;$1A28;$1A29;$1A2A;$1A2B;$1A2C;$1A2D;$1A2E;$1A2F;$1FF1;$1FF2;$1FF3;$1FF4;$1FF5;$1FF6;$1FF7;$1FF8;$1FF9;$1FFA;$1FFB;$1FFC;$1FFD;$1FFE;$1FFF;$2000;$2001;$2002;$2003;$2004;$2005;$2006;$2007;$2008;$2009;$200A;$200B;$200C;$200D;$200E;$200F;$2010;$2011;$2012;$2013;$2014;$2015;$2016;$2017;$2018;$2019;$201A;$201B;$201C;$201D;$201E;$201F;$2020;$2021;$2022;$2023;$2024" Bytes="1" NewValue="18"/>
+    </Action>
+    <Action Name="Magic power" FileMask="*.GAM">
+      <ChangeAddress Addresses="$025E;$025F;$0260;$0261;$0262;$0263;$0264;$0265;$0266;$0267;$0268;$0269;$026A;$026B;$026C;$026D;$026E;$026F;$0270;$0271;$0272;$0273;$0274;$0275;$0276;$0277;$0278;$0279;$027A;$027B;$027C;$027D;$027E;$027F;$0280;$0281;$0282;$0283;$0284;$0285;$0286;$0287;$0288;$0289;$028A;$028B;$028C;$028D;$028E;$028F;$0290;$0291;$0292;$0293;$0294;$0295;$0296;$0297;$0298;$0299;$029A;$029B;$029C;$029D;$029E;$029F;$02A0;$02A1;$02A2;$02A3;$02A4;$02A5;$02A6;$02A7;$02A8;$02A9;$02AA;$02AB;$02AC;$02AD;$02AE;$02AF;$02B0;$02B1;$02B2;$02B3;$0853;$0854;$0855;$0856;$0857;$0858;$0859;$085A;$085B;$085C;$085D;$085E;$085F;$0860;$0861;$0862;$0863;$0864;$0865;$0866;$0867;$0868;$0869;$086A;$086B;$086C;$086D;$086E;$086F;$0870;$0871;$0872;$0873;$0874;$0875;$0876;$0877;$0878;$0879;$087A;$087B;$087C;$087D;$087E;$087F;$0880;$0881;$0882;$0883;$0884;$0885;$0886;$0887;$0888;$0889;$088A;$088B;$088C;$088D;$088E;$088F;$0890;$0891;$0892;$0893;$0894;$0895;$0896;$0897;$0898;$0899;$089A;$089B;$089C;$089D;$089E;$089F;$08A0;$08A1;$08A2;$08A3;$08A4;$08A5;$08A6;$08A7;$08A8;$0E48;$0E49;$0E4A;$0E4B;$0E4C;$0E4D;$0E4E;$0E4F;$0E50;$0E51;$0E52;$0E53;$0E54;$0E55;$0E56;$0E57;$0E58;$0E59;$0E5A;$0E5B;$0E5C;$0E5D;$0E5E;$0E5F;$0E60;$0E61;$0E62;$0E63;$0E64;$0E65;$0E66;$0E67;$0E68;$0E69;$0E6A;$0E6B;$0E6C;$0E6D;$0E6E;$0E6F;$0E70;$0E71;$0E72;$0E73;$0E74;$0E75;$0E76;$0E77;$0E78;$0E79;$0E7A;$0E7B;$0E7C;$0E7D;$0E7E;$0E7F;$0E80;$0E81;$0E82;$0E83;$0E84;$0E85;$0E86;$0E87;$0E88;$0E89;$0E8A;$0E8B;$0E8C;$0E8D;$0E8E;$0E8F;$0E90;$0E91;$0E92;$0E93;$0E94;$0E95;$0E96;$0E97;$0E98;$0E99;$0E9A;$0E9B;$0E9C;$0E9D;$143D;$143E;$143F;$1440;$1441;$1442;$1443;$1444;$1445;$1446;$1447;$1448;$1449;$144A;$144B;$144C;$144D;$144E;$144F;$1450;$1451;$1452;$1453;$1454;$1455;$1456;$1457;$1458;$1459;$145A;$145B;$145C;$145D;$145E;$145F;$1460;$1461;$1462;$1463;$1464;$1465;$1466;$1467;$1468;$1469;$146A;$146B;$146C;$146D;$146E;$146F;$1470;$1471;$1472;$1473;$1474;$1475;$1476;$1477;$1478;$1479;$147A;$147B;$147C;$147D;$147E;$147F;$1480;$1481;$1482;$1483;$1484;$1485;$1486;$1487;$1488;$1489;$148A;$148B;$148C;$148D;$148E;$148F;$1490;$1491;$1492;$1A32;$1A33;$1A34;$1A35;$1A36;$1A37;$1A38;$1A39;$1A3A;$1A3B;$1A3C;$1A3D;$1A3E;$1A3F;$1A40;$1A41;$1A42;$1A43;$1A44;$1A45;$1A46;$1A47;$1A48;$1A49;$1A4A;$1A4B;$1A4C;$1A4D;$1A4E;$1A4F;$1A50;$1A51;$1A52;$1A53;$1A54;$1A55;$1A56;$1A57;$1A58;$1A59;$1A5A;$1A5B;$1A5C;$1A5D;$1A5E;$1A5F;$1A60;$1A61;$1A62;$1A63;$1A64;$1A65;$1A66;$1A67;$1A68;$1A69;$1A6A;$1A6B;$1A6C;$1A6D;$1A6E;$1A6F;$1A70;$1A71;$1A72;$1A73;$1A74;$1A75;$1A76;$1A77;$1A78;$1A79;$1A7A;$1A7B;$1A7C;$1A7D;$1A7E;$1A7F;$1A80;$1A81;$1A82;$1A83;$1A84;$1A85;$1A86;$1A87;$2027;$2028;$2029;$202A;$202B;$202C;$202D;$202E;$202F;$2030;$2031;$2032;$2033;$2034;$2035;$2036;$2037;$2038;$2039;$203A;$203B;$203C;$203D;$203E;$203F;$2040;$2041;$2042;$2043;$2044;$2045;$2046;$2047;$2048;$2049;$204A;$204B;$204C;$204D;$204E;$204F;$2050;$2051;$2052;$2053;$2054;$2055;$2056;$2057;$2058;$2059;$205A;$205B;$205C;$205D;$205E;$205F;$2060;$2061;$2062;$2063;$2064;$2065;$2066;$2067;$2068;$2069;$206A;$206B;$206C;$206D;$206E;$206F;$2070;$2071;$2072;$2073;$2074;$2075;$2076;$2077;$2078;$2079;$207A;$207B;$207C" Bytes="1" NewValue="18"/>
+    </Action>
+    <Action Name="Experience points" FileMask="*.GAM">
+      <ChangeAddressWithDialog Addresses="$0148;$073D;$0D32;$1327;$191C;$1F11" Bytes="4" DefaultValue="1500" Prompt="Experience points (0-1500)" MinValue="0" MaxValue="1500"/>
+    </Action>
+    <Action Name=" Body size" FileMask="*.GAM">
+      <ChangeAddressWithDialog Addresses="$0143;$0738;$0D2D;$1322;$1917;$1F0C" Bytes="1" DefaultValue="250" Prompt="Body size (1-255)" MinValue="1"/>
+    </Action>
+    <Action Name="Level" FileMask="*.GAM">
+      <ChangeAddressWithDialog Addresses="$0147;$073C;$0D31;$1326;$191B;$1F10" Bytes="1" DefaultValue="10" Prompt="Level (0-255)"/>
+    </Action>
+    <Action Name="Attack/Parade" FileMask="*.GAM">
+      <ChangeAddressWithDialog Addresses="$0188;$0189;$018A;$018B;$018C;$018D;$018E;$018F;$0190;$0191;$0192;$0193;$0194;$0195;$077D;$077E;$077F;$0780;$0781;$0782;$0783;$0784;$0785;$0786;$0787;$0788;$0789;$078A;$0D72;$0D73;$0D74;$0D75;$0D76;$0D77;$0D78;$0D79;$0D7A;$0D7B;$0D7C;$0D7D;$0D7E;$0D7F;$1367;$1368;$1369;$136A;$136B;$136C;$136D;$136E;$136F;$1370;$1371;$1372;$1373;$1374;$195C;$195D;$195E;$195F;$1960;$1961;$1962;$1963;$1964;$1965;$1966;$1967;$1968;$1969;$1F51;$1F52;$1F53;$1F54;$1F55;$1F56;$1F57;$1F58;$1F59;$1F5A;$1F5B;$1F5C;$1F5D;$1F5E" Bytes="1" DefaultValue="12" Prompt="AT/PA (0-127)" MaxValue="127"/>
+    </Action>
+  </GameRecord>
+  <GameRecord Name="Corridor 7">
+    <Action Name="Health" FileMask="*.DAT">
+      <ChangeAddress Addresses="48" Bytes="1" NewValue="255"/>
+    </Action>
+    <Action Name="Ammo" FileMask="*.DAT">
+      <ChangeAddress Addresses="50" Bytes="1" NewValue="255"/>
+    </Action>
+    <Action Name="Amor" FileMask="*.DAT">
+      <ChangeAddress Addresses="116" Bytes="1" NewValue="255"/>
+    </Action>
+    <Action Name="Energy" FileMask="*.DAT">
+      <ChangeAddress Addresses="118" Bytes="1" NewValue="255"/>
+    </Action>
+  </GameRecord>
+  <GameRecord Name="Epic Pinball/Android">
+    <Action Name="Unlimited balls" FileMask="EP1.EX*">
+      <ChangeAddress Addresses="$34D0D" Bytes="4" NewValue="$90909090"/>
+    </Action>
+  </GameRecord>
+  <GameRecord Name="Epic Pinball/Pot of gold">
+    <Action Name="Unlimited balls" FileMask="EP2.EX*">
+      <ChangeAddress Addresses="$36AD1" Bytes="4" NewValue="$90909090"/>
+    </Action>
+  </GameRecord>
+  <GameRecord Name="Epic Pinball/Excalibur">
+    <Action Name="Unlimited balls" FileMask="EP3.EX*">
+      <ChangeAddress Addresses="$336B7" Bytes="4" NewValue="$90909090"/>
+    </Action>
+  </GameRecord>
+  <GameRecord Name="Epic Pinball/Crash and burn">
+    <Action Name="Unlimited balls" FileMask="EP4.EX*">
+      <ChangeAddress Addresses="$338C8" Bytes="4" NewValue="$90909090"/>
+    </Action>
+  </GameRecord>
+  <GameRecord Name="Epic Pinball/Magic">
+    <Action Name="Unlimited balls" FileMask="EP5.EX*">
+      <ChangeAddress Addresses="$3049D" Bytes="4" NewValue="$90909090"/>
+    </Action>
+  </GameRecord>
+  <GameRecord Name="Epic Pinball/Jungle Pinball">
+    <Action Name="Unlimited balls" FileMask="EP6.EX*">
+      <ChangeAddress Addresses="$37FF6" Bytes="4" NewValue="$90909090"/>
+    </Action>
+  </GameRecord>
+  <GameRecord Name="Epic Pinball/Deep Sea">
+    <Action Name="Unlimited balls" FileMask="EP7.EX*">
+      <ChangeAddress Addresses="$34358" Bytes="4" NewValue="$90909090"/>
+    </Action>
+  </GameRecord>
+  <GameRecord Name="Epic Pinball/Enigma">
+    <Action Name="Unlimited balls" FileMask="EP8.EX*">
+      <ChangeAddress Addresses="$37932" Bytes="4" NewValue="$90909090"/>
+    </Action>
+  </GameRecord>
+  <GameRecord Name="Heretic">
+    <Action Name="Life energy" FileMask="HTICSAV?.HSG">
+      <ChangeAddress Addresses="$60" Bytes="1" NewValue="200"/>
+    </Action>
+    <Action Name="Ammo" FileMask="HTICSAV?.HSG">
+      <ChangeAddress Addresses="$64" Bytes="1" NewValue="200"/>
+      <ChangeAddress Addresses="$68" Bytes="1" NewValue="1"/>
+    </Action>
+    <Action Name="Objects" FileMask="HTICSAV?.HSG">
+      <ChangeAddress Addresses="$6C" Bytes="1" NewValue="1"/>
+      <ChangeAddress Addresses="$74" Bytes="1" NewValue="3"/>
+      <ChangeAddress Addresses="$7C" Bytes="1" NewValue="5"/>
+      <ChangeAddress Addresses="$84" Bytes="1" NewValue="6"/>
+      <ChangeAddress Addresses="$70;$78;$80" Bytes="1" NewValue="9"/>
+    </Action>
+  </GameRecord>
+  <GameRecord Name="Lands of Lore">
+    <Action Name="Health, experience, magic" FileMask="_SAVE???.DAT">
+      <ChangeAddress Addresses="$17A;$1FC;$27E" Bytes="4" NewValue="$E7E7E7E7"/>
+      <ChangeAddress Addresses="$1A7;$1A8;$1A9;$229;$22A;$22B;$2AB;$2AC;$2AD" Bytes="1" NewValue="$14"/>
+    </Action>
+  </GameRecord>
+  <GameRecord Name="Larry 1">
+    <Action Name="All Objects" FileMask="LLLLLSG.?">
+      <ChangeAddress Addresses="$8E7;$8EA;$8ED;$8F0;$8F3;$8F6;$8F9;$8FC;$8FF;$902;$905;$908;$90B;$90E;$911;$914;$917;$91A;$91D" Bytes="1" NewValue="$FF"/>
+    </Action>
+  </GameRecord>
+  <GameRecord Name="One Must Fall: 2097">
+    <Action Name="Money" FileMask="*.CHR">
+      <ChangeAddress Addresses="$128" Bytes="4" NewValue="$FFFFFFFF"/>
+    </Action>
+    <Action Name="Mech power" FileMask="*.CHR">
+      <ChangeAddress Addresses="$11C" Bytes="1" NewValue="$C1"/>
+      <ChangeAddress Addresses="$11D" Bytes="1" NewValue="$E8"/>
+      <ChangeAddress Addresses="$11E" Bytes="1" NewValue="$C3"/>
+      <ChangeAddress Addresses="$11F" Bytes="1" NewValue="$EA"/>
+      <ChangeAddress Addresses="$204" Bytes="1" NewValue="$34"/>
+      <ChangeAddress Addresses="$205" Bytes="1" NewValue="$71"/>
+    </Action>
+    <Action Name="Weapon: Pyro" FileMask="*.CHR">
+      <ChangeAddress Addresses="$11B" Bytes="1" NewValue="$C4"/>
+    </Action>
+    <Action Name="Weapon: Thorn" FileMask="*.CHR">
+      <ChangeAddress Addresses="$11B" Bytes="1" NewValue="$C5"/>
+    </Action>
+    <Action Name="Weapon: Shadow" FileMask="*.CHR">
+      <ChangeAddress Addresses="$11B" Bytes="1" NewValue="$C6"/>
+    </Action>
+    <Action Name="Weapon: Jaguar" FileMask="*.CHR">
+      <ChangeAddress Addresses="$11B" Bytes="1" NewValue="$C7"/>
+    </Action>
+    <Action Name="Roboter type: Flail" FileMask="*.CHR">
+      <ChangeAddress Addresses="$11B" Bytes="1" NewValue="$C0"/>
+    </Action>
+    <Action Name="Roboter type: Shredder" FileMask="*.CHR">
+      <ChangeAddress Addresses="$11B" Bytes="1" NewValue="$C1"/>
+    </Action>
+    <Action Name="Roboter type: Katana" FileMask="*.CHR">
+      <ChangeAddress Addresses="$11B" Bytes="1" NewValue="$C2"/>
+    </Action>
+    <Action Name="Roboter type: Electra" FileMask="*.CHR">
+      <ChangeAddress Addresses="$11B" Bytes="1" NewValue="$C3"/>
+    </Action>
+    <Action Name="Roboter type: Pyros" FileMask="*.CHR">
+      <ChangeAddress Addresses="$11B" Bytes="1" NewValue="$C4"/>
+    </Action>
+    <Action Name="Roboter type: Thron" FileMask="*.CHR">
+      <ChangeAddress Addresses="$11B" Bytes="1" NewValue="$C5"/>
+    </Action>
+    <Action Name="Roboter type: Shadow" FileMask="*.CHR">
+      <ChangeAddress Addresses="$11B" Bytes="1" NewValue="$C6"/>
+    </Action>
+    <Action Name="Roboter type: Jaguar" FileMask="*.CHR">
+      <ChangeAddress Addresses="$11B" Bytes="1" NewValue="$C7"/>
+    </Action>
+    <Action Name="Roboter type: Nova" FileMask="*.CHR">
+      <ChangeAddress Addresses="$11B" Bytes="1" NewValue="$CD"/>
+    </Action>
+    <Action Name="Roboter type: Chronos" FileMask="*.CHR">
+      <ChangeAddress Addresses="$11B" Bytes="1" NewValue="$CE"/>
+    </Action>
+    <Action Name="Roboter type: Gargoyle" FileMask="*.CHR">
+      <ChangeAddress Addresses="$11B" Bytes="1" NewValue="$CF"/>
+    </Action>
+  </GameRecord>
+  <GameRecord Name="Police Quest 1 AGI">
+    <Action Name="All objects" FileMask="PQSG.?">
+      <ChangeAddress Addresses="$967;$96A;$96D;$970;$973;$976;$979;$97C;$97F;$982;$985;$988;$98B;$98E;$991;$994;$997;$99A;$99D;$9A0;$9A3;$9A6;$9A9;$9AC" Bytes="1" NewValue="$FF"/>
+    </Action>
+  </GameRecord>
+  <GameRecord Name="X-COM">
+    <Action Name="Money" FileMask="LIGLOB.*">
+      <ChangeAddress Addresses="0" Bytes="2" NewValue="$FFFF"/>
+      <ChangeAddress Addresses="2" Bytes="1" NewValue="$FF"/>
+      <ChangeAddress Addresses="3" Bytes="1" NewValue="$6F"/>
+    </Action>
+    <Action Name="Zrbit" FileMask="LIGLOB.*">
+      <ChangeAddress Addresses="254;258;262;266;270;274;278;282;286" Bytes="4" NewValue="$FFFFFFFF"/>
+    </Action>
+    <Action Name="Building time:0" FileMask="LIGLOB.*">
+      <ChangeAddress Addresses="136" Bytes="2" NewValue="0"/>
+    </Action>
+  </GameRecord>
+  <GameRecord Name="WarCraft">
+    <Action Name="Gold, wood" FileMask="SAVE*.SAV">
+      <ChangeAddress Addresses="$61A;$606" Bytes="2" NewValue="$FFFF"/>
+    </Action>
+  </GameRecord>
+  <GameRecord Name="Novastorm">
+    <Action Name="More lifes" FileMask="NOVA*.CFG">
+      <ChangeAddress Addresses="0" Bytes="1" NewValue="$FA"/>
+    </Action>
+  </GameRecord>
+  <GameRecord Name="Cyberia">
+    <Action Name="Alle scens selectable" FileMask="*.LOG">
+      <ChangeAddress Addresses="4" Bytes="1" NewValue="$2D"/>
+    </Action>
+    <Action Name="Select scene" FileMask="*.LOG">
+      <ChangeAddress Addresses="$4" Bytes="1" NewValue="$2D"/>
+    </Action>
+  </GameRecord>
+  <GameRecord Name="Metaltech: Earthsiege">
+    <Action Name="More raw materials" FileMask="CAR_?.CAR">
+      <ChangeAddress Addresses="$140" Bytes="2" NewValue="$FFFF"/>
+      <ChangeAddress Addresses="$142" Bytes="1" NewValue="$FF"/>
+      <ChangeAddress Addresses="$143" Bytes="1" NewValue="0"/>
+      <ChangeAddress Addresses="$144;$145;$146" Bytes="1" NewValue="$FF"/>
+    </Action>
+  </GameRecord>
+  <GameRecord Name="US Navy Fighter">
+    <Action Name="No failed missions anymore" FileMask="PLT???.P">
+      <ChangeAddress Addresses="$1512" Bytes="1" NewValue="0"/>
+    </Action>
+  </GameRecord>
+  <GameRecord Name="Quarantine">
+    <Action Name="Money" FileMask="SAVE?.GAM">
+      <ChangeAddress Addresses="$1997" Bytes="2" NewValue="$7F7F"/>
+    </Action>
+    <Action Name="Weapons" FileMask="SAVE?.GAM">
+      <ChangeAddress Addresses="$F9" Bytes="1" NewValue="5"/>
+      <ChangeAddress Addresses="$2D" Bytes="1" NewValue="3"/>
+      <ChangeAddress Addresses="$31" Bytes="2" NewValue="$7F7F"/>
+      <ChangeAddress Addresses="$35" Bytes="1" NewValue="3"/>
+      <ChangeAddress Addresses="$39" Bytes="2" NewValue="$7F7F"/>
+      <ChangeAddress Addresses="$3D" Bytes="1" NewValue="3"/>
+      <ChangeAddress Addresses="$41" Bytes="2" NewValue="$7F7F"/>
+      <ChangeAddress Addresses="$55" Bytes="1" NewValue="3"/>
+      <ChangeAddress Addresses="$59" Bytes="2" NewValue="$7F7F"/>
+    </Action>
+    <Action Name="Amor" FileMask="SAVE?.GAM">
+      <ChangeAddress Addresses="$2B" Bytes="2" NewValue="$7F7F"/>
+    </Action>
+  </GameRecord>
+  <GameRecord Name="Little Big Adventure">
+    <Action Name="Money, hitpoints, ..." FileMask="S????.LBA">
+      <ChangeAddress Addresses="$10;$1D;$21" Bytes="4" NewValue="$01010101"/>
+      <ChangeAddress Addresses="$25" Bytes="2" NewValue="$0101"/>
+      <ChangeAddress Addresses="$11;$22;$33" Bytes="1" NewValue="1"/>
+      <ChangeAddress Addresses="$44" Bytes="1" NewValue="$FF"/>
+      <ChangeAddress Addresses="$55" Bytes="1" NewValue="0"/>
+      <ChangeAddress Addresses="$56" Bytes="1" NewValue="$32"/>
+      <ChangeAddress Addresses="$66" Bytes="1" NewValue="$E7"/>
+      <ChangeAddress Addresses="$67" Bytes="1" NewValue="31"/>
+    </Action>
+    <Action Name="Objects" FileMask="S????.LBA">
+      <ChangeAddress Addresses="$B;$F;$13" Bytes="4" NewValue="$1010101"/>
+      <ChangeAddress Addresses="$17" Bytes="2" NewValue="$101"/>
+      <ChangeAddress Addresses="$19" Bytes="1" NewValue="$1"/>
+      <ChangeAddress Addresses="$1A" Bytes="1" NewValue="99"/>
+      <ChangeAddress Addresses="$1B;$1F" Bytes="4" NewValue="$1010101"/>
+      <ChangeAddress Addresses="$23" Bytes="2" NewValue="$101"/>
+      <ChangeAddress Addresses="$25" Bytes="1" NewValue="1"/>
+    </Action>
+  </GameRecord>
+  <GameRecord Name="Alone in the Dark">
+    <Action Name="Lifes, light, ammo" FileMask="SAVE?.ITD">
+      <ChangeAddress Addresses="$4EAA" Bytes="1" NewValue="0"/>
+      <ChangeAddress Addresses="$4EAB" Bytes="1" NewValue="$7F"/>
+      <ChangeAddress Addresses="$4E90" Bytes="1" NewValue="0"/>
+      <ChangeAddress Addresses="$4E91" Bytes="1" NewValue="$7F"/>
+      <ChangeAddress Addresses="$4E9A" Bytes="1" NewValue="0"/>
+      <ChangeAddress Addresses="$4E9B" Bytes="1" NewValue="$7F"/>
+      <ChangeAddress Addresses="$4E38" Bytes="1" NewValue="0"/>
+      <ChangeAddress Addresses="$4E39" Bytes="1" NewValue="$7F"/>
+    </Action>
+  </GameRecord>
+  <GameRecord Name="Master of Magic">
+    <Action Name="Money" FileMask="SAVE?.GAM">
+      <ChangeAddress Addresses="3390" Bytes="2" NewValue="$7F7F"/>
+    </Action>
+    <Action Name="Magic power" FileMask="SAVE?.GAM">
+      <ChangeAddress Addresses="3140" Bytes="2" NewValue="$7F7F"/>
+    </Action>
+  </GameRecord>
+  <GameRecord Name="High Seas">
+    <Action Name="Money" FileMask="*.HSG">
+      <ChangeAddress Addresses="38719" Bytes="4" NewValue="$7F7F7F7F"/>
+    </Action>
+  </GameRecord>
+  <GameRecord Name="Commander Keen Dreams">
+    <Action Name="Ammo, lifes" FileMask="*.KDR">
+      <ChangeAddress Addresses="$56;$60" Bytes="1" NewValue="$FF"/>
+    </Action>
+    <Action Name="Bombs" FileMask="*.KDR">
+      <ChangeAddress Addresses="$58" Bytes="1" NewValue="$0C"/>
+    </Action>
+  </GameRecord>
+  <GameRecord Name="Commander Keen 1">
+    <Action Name="Lifes" FileMask="*.CK1">
+      <ChangeAddress Addresses="$32" Bytes="1" NewValue="$63"/>
+    </Action>
+    <Action Name="Ammo" FileMask="*.CK1">
+      <ChangeAddress Addresses="$34" Bytes="1" NewValue="$63"/>
+    </Action>
+  </GameRecord>
+  <GameRecord Name="Commander Keen 4">
+    <Action Name="Lifes" FileMask="*.CK4">
+      <ChangeAddress Addresses="122" Bytes="1" NewValue="20"/>
+    </Action>
+    <Action Name="Ammo" FileMask="*.CK4">
+      <ChangeAddress Addresses="104" Bytes="1" NewValue="99"/>
+    </Action>
+  </GameRecord>
+  <GameRecord Name="Commander Keen 5">
+    <Action Name="Lifes" FileMask="*.CK5">
+      <ChangeAddress Addresses="124" Bytes="1" NewValue="20"/>
+    </Action>
+    <Action Name="Ammo" FileMask="*.CK5">
+      <ChangeAddress Addresses="104" Bytes="1" NewValue="99"/>
+    </Action>
+  </GameRecord>
+  <GameRecord Name="Commander Keen 6">
+    <Action Name="Lifes" FileMask="*.CK6">
+      <ChangeAddress Addresses="126" Bytes="1" NewValue="20"/>
+    </Action>
+    <Action Name="Ammo" FileMask="*.CK6">
+      <ChangeAddress Addresses="104" Bytes="1" NewValue="99"/>
+    </Action>
+  </GameRecord>
+  <GameRecord Name="Crystal Caves 1">
+    <Action Name="Ammo" FileMask="CC1-?.SAV">
+      <ChangeAddress Addresses="$4" Bytes="1" NewValue="$FF"/>
+    </Action>
+  </GameRecord>
+  <GameRecord Name="Bio Menace 1">
+    <Action Name="Lifes" FileMask="*.BM1">
+      <ChangeAddress Addresses="$4F" Bytes="1" NewValue="$63"/>
+    </Action>
+    <Action Name="Energy" FileMask="*.BM1">
+      <ChangeAddress Addresses="$51" Bytes="1" NewValue="$9"/>
+    </Action>
+    <Action Name="Gems" FileMask="*.BM1">
+      <ChangeAddress Addresses="$50" Bytes="1" NewValue="$63"/>
+    </Action>
+    <Action Name="Points" FileMask="*.BM1">
+      <ChangeAddress Addresses="$29;$2A;$2B" Bytes="1" NewValue="$FF"/>
+    </Action>
+  </GameRecord>
+  <GameRecord Name="Doom">
+    <Action Name="Health" FileMask="DOOMSAV?.DSG">
+      <ChangeAddress Addresses="$52" Bytes="2" NewValue="9999"/>
+    </Action>
+    <Action Name="Amor" FileMask="DOOMSAV?.DSG">
+      <ChangeAddress Addresses="$56" Bytes="2" NewValue="9999"/>
+    </Action>
+    <Action Name="Ammo:Bull" FileMask="DOOMSAV?.DSG">
+      <ChangeAddress Addresses="$CA" Bytes="2" NewValue="9999"/>
+    </Action>
+    <Action Name="Ammo:Shel" FileMask="DOOMSAV?.DSG">
+      <ChangeAddress Addresses="$CE" Bytes="2" NewValue="9999"/>
+    </Action>
+    <Action Name="Ammo:Rckt" FileMask="DOOMSAV?.DSG">
+      <ChangeAddress Addresses="$D6" Bytes="2" NewValue="9999"/>
+    </Action>
+    <Action Name="Ammo:Cell" FileMask="DOOMSAV?.DSG">
+      <ChangeAddress Addresses="$D2" Bytes="2" NewValue="9999"/>
+    </Action>
+  </GameRecord>
+  <GameRecord Name="Command &amp; Conquer">
+    <Action Name="GDI money" FileMask="SAVEGAME.*">
+      <Internal Nr="9"/>
+    </Action>
+  </GameRecord>
+  <GameRecord Name="4D Sports Boxing">
+    <Action Name="Strength, fitness, money" FileMask="BCDATA?.DAT">
+      <ChangeAddress Addresses="$121;$122;$123" Bytes="1" NewValue="$FF"/>
+      <ChangeAddress Addresses="$190" Bytes="2" NewValue="$FFFF"/>
+      <ChangeAddress Addresses="$192" Bytes="1" NewValue="$FF"/>
+    </Action>
+  </GameRecord>
+  <GameRecord Name="Alone in the Dark 2">
+    <Action Name="Hit points, ammo" FileMask="SAVE?.IDT">
+      <ChangeAddress Addresses="$68B4;$68C4;$68C6;$68FC;$6C1E" Bytes="2" NewValue="$7F7F"/>
+    </Action>
+  </GameRecord>
+  <GameRecord Name="Alone in the Dark 3">
+    <Action Name="Health, ammo" FileMask="NSAVE?.ITD">
+      <ChangeAddress Addresses="$AE64;$B0CE;$B0C6;$B1C0;$B16A;$AE7A;$B1EA" Bytes="2" NewValue="$4000"/>
+    </Action>
+  </GameRecord>
+  <GameRecord Name="Bloodnet">
+    <Action Name="Money" FileMask="GAME*.SAV">
+      <ChangeAddress Addresses="$34A" Bytes="2" NewValue="$FFFF"/>
+      <ChangeAddress Addresses="$34C" Bytes="1" NewValue="$FF"/>
+    </Action>
+  </GameRecord>
+  <GameRecord Name="Caesar">
+    <Action Name="Money" FileMask="*.SAV">
+      <ChangeAddress Addresses="$13E" Bytes="2" NewValue="$61A8"/>
+    </Action>
+  </GameRecord>
+  <GameRecord Name="Cybermage">
+    <Action Name="Mana, health, weapons" FileMask="SAVE00X.DAT">
+      <ChangeAddress Addresses="$6AC;$6AE;$318B4;$318B6;$318A8;$318AA;$318AC;$318AE;$318B0;$318A2" Bytes="2" NewValue="$E703"/>
+    </Action>
+  </GameRecord>
+  <GameRecord Name="Cycle Mania">
+    <Action Name="Money" FileMask="CHAMP.*">
+      <ChangeAddress Addresses="$0" Bytes="2" NewValue="$C350"/>
+    </Action>
+  </GameRecord>
+  <GameRecord Name="Death Track USA">
+    <Action Name="Money" FileMask="*.RCT">
+      <ChangeAddress Addresses="18" Bytes="2" NewValue="$FFFF"/>
+      <ChangeAddress Addresses="20" Bytes="1" NewValue="$FF"/>
+    </Action>
+  </GameRecord>
+  <GameRecord Name="Double Dragon">
+    <Action Name="Unlimited lifes" FileMask="NDRAGON.EX?">
+      <ChangeAddress Addresses="$BC6;$BCC" Bytes="1" NewValue="$FF"/>
+    </Action>
+  </GameRecord>
+  <GameRecord Name="Druidenzirkel/Druid">
+    <Action Name="All" FileMask="SAVE.*">
+      <ChangeAddress Addresses="$0;$4;$8;$C;$10;$14;$18;$1C;$20;$24;$28;$2C;$30;$34;$38;$3C" Bytes="4" NewValue="$FFFFFFFF"/>
+    </Action>
+  </GameRecord>
+  <GameRecord Name="First Samurai">
+    <Action Name="Unlimited lifes, level selection" FileMask="SAM.CF?">
+      <ChangeAddress Addresses="$102;$10C;$116;$120;$12A;$134;$13E;$148;$152;$15C;$166" Bytes="1" NewValue="$FF"/>
+    </Action>
+  </GameRecord>
+  <GameRecord Name="Heroes of Might &amp; Magic">
+    <Action Name="Gold, wood, etc." FileMask="*.SAV">
+      <ChangeAddress Addresses="391;375;387;383;379;371;367" Bytes="2" NewValue="$FFFF"/>
+    </Action>
+  </GameRecord>
+  <GameRecord Name="Ishar">
+    <Action Name="Strength, money, psyche, etc." FileMask="GAME??.SAV">
+      <ChangeAddress Addresses="$2D5;$2DF;$2E9" Bytes="1" NewValue="$FF"/>
+      <ChangeAddress Addresses="$3EF" Bytes="1" NewValue="$7F"/>
+      <ChangeAddress Addresses="$3E7" Bytes="1" NewValue="$FF"/>
+      <ChangeAddress Addresses="$3E7;$3F1" Bytes="1" NewValue="$7F"/>
+      <ChangeAddress Addresses="$3F6;$3FB" Bytes="1" NewValue="$33"/>
+      <ChangeAddress Addresses="$3FF" Bytes="1" NewValue="$1F"/>
+      <ChangeAddress Addresses="$40;$405" Bytes="1" NewValue="$77"/>
+    </Action>
+  </GameRecord>
+  <GameRecord Name="Ishar 3">
+    <Action Name="Money" FileMask="*.SAV">
+      <ChangeAddress Addresses="$21" Bytes="1" NewValue="$FF"/>
+    </Action>
+  </GameRecord>
+  <GameRecord Name="Ravenloft">
+    <Action Name="Class, hit points; player 1" FileMask="SAVE*.DAT">
+      <ChangeAddress Addresses="$97" Bytes="2" NewValue="$14"/>
+      <ChangeAddress Addresses="$A9;$AD" Bytes="4" NewValue="$FFFFFFFF"/>
+      <ChangeAddress Addresses="$B1" Bytes="2" NewValue="$FFFF"/>
+      <ChangeAddress Addresses="$93" Bytes="4" NewValue="$7FFF7FFF"/>
+      <ChangeAddress Addresses="$9D" Bytes="4" NewValue="$3D0900"/>
+    </Action>
+    <Action Name="Class, hit points; player 2" FileMask="SAVE*.DAT">
+      <ChangeAddress Addresses="$2DF" Bytes="2" NewValue="$14"/>
+      <ChangeAddress Addresses="$2F1;$2F5" Bytes="4" NewValue="$FFFFFFFF"/>
+      <ChangeAddress Addresses="$2F9" Bytes="2" NewValue="$FFFF"/>
+      <ChangeAddress Addresses="$2DB" Bytes="4" NewValue="$7FFF7FFF"/>
+      <ChangeAddress Addresses="$2E5" Bytes="4" NewValue="$3D0900"/>
+    </Action>
+  </GameRecord>
+  <GameRecord Name="Rick Dangerous 2">
+    <Action Name="Unlimited lifes and level selection" FileMask="MAIN.EX?">
+      <ChangeAddress Addresses="$9CAF" Bytes="1" NewValue="5"/>
+      <ChangeAddress Addresses="$D7ED" Bytes="1" NewValue="$EB"/>
+      <ChangeAddress Addresses="$D824" Bytes="2" NewValue="$9090"/>
+      <ChangeAddress Addresses="$D826" Bytes="1" NewValue="$90"/>
+    </Action>
+  </GameRecord>
+  <GameRecord Name="Whale's Voyage 2">
+    <Action Name="Health, energy, etc." FileMask="SAVEX.WV?">
+      <ChangeAddress Addresses="$E;$12" Bytes="4" NewValue="$FFFFFFFF"/>
+      <ChangeAddress Addresses="$16" Bytes="2" NewValue="$FFFF"/>
+      <ChangeAddress Addresses="$18" Bytes="2" NewValue="0"/>
+      <ChangeAddress Addresses="$23;$38" Bytes="2" NewValue="$FFFF"/>
+    </Action>
+  </GameRecord>
+  <GameRecord Name="WarCraft 2">
+    <Action Name="Humans; gold, wood, oil" FileMask="SAVE*.SAV">
+      <ChangeAddress Addresses="$1F8;$1B8;$238" Bytes="4" NewValue="$7FFFFF"/>
+    </Action>
+    <Action Name="Orcs; gold, wood, oil" FileMask="SAVE*.SAV">
+      <ChangeAddress Addresses="$1F4;$1B4;$234" Bytes="4" NewValue="$7FFFFF"/>
+    </Action>
+  </GameRecord>
+  <GameRecord Name="Anvil of Dawn">
+    <Action Name="Magic, experience" FileMask="SAVE*.DAT">
+      <ChangeAddress Addresses="$4C4B;$4C4F" Bytes="4" NewValue="$CCCCCCCC"/>
+    </Action>
+    <Action Name="Weapons and level" FileMask="SAVE*.DAT">
+      <ChangeAddress Addresses="$4D29;$4D2D" Bytes="4" NewValue="$0A0A0A0A"/>
+      <ChangeAddress Addresses="$4D31" Bytes="2" NewValue="$0A0A"/>
+      <ChangeAddress Addresses="$4D33" Bytes="1" NewValue="$0A"/>
+    </Action>
+    <Action Name="Properties" FileMask="SAVE*.DAT">
+      <ChangeAddress Addresses="$4C57" Bytes="1" NewValue="$46"/>
+      <ChangeAddress Addresses="$4C61" Bytes="1" NewValue="$00"/>
+      <ChangeAddress Addresses="$4C6B" Bytes="1" NewValue="$46"/>
+      <ChangeAddress Addresses="$4C75" Bytes="1" NewValue="$00"/>
+    </Action>
+  </GameRecord>
+  <GameRecord Name="Caesar 2">
+    <Action Name="Money" FileMask="*.SAV">
+      <ChangeAddress Addresses="$329EC;$35FCC" Bytes="4" NewValue="$404B4C"/>
+    </Action>
+  </GameRecord>
+  <GameRecord Name="WarCraft 2 Beyond the Dark Portal">
+    <Action Name="Humans" FileMask="SAVE*.SAV">
+      <ChangeAddress Addresses="$1F8;$1B8;$238" Bytes="4" NewValue="$7FFFFF"/>
+    </Action>
+    <Action Name="Orcs" FileMask="SAVE*.SAV">
+      <ChangeAddress Addresses="$208;$1C8;$248" Bytes="4" NewValue="$7FFFFF"/>
+    </Action>
+  </GameRecord>
+  <GameRecord Name="Arcy 2">
+    <Action Name="All Levels" FileMask="SAVE?.DAT">
+      <ChangeAddress Addresses="$101" Bytes="1" NewValue="$14"/>
+    </Action>
+  </GameRecord>
+  <GameRecord Name="Atlas">
+    <Action Name="Money" FileMask="GAME*.DAT">
+      <ChangeAddress Addresses="-3;-2;-1" Bytes="1" NewValue="$FF"/>
+    </Action>
+  </GameRecord>
+  <GameRecord Name="Civilization">
+    <Action Name="Romans/Russians; Money" FileMask="CIVI*.SVE">
+      <ChangeAddress Addresses="$314" Bytes="2" NewValue="$7F7F"/>
+    </Action>
+    <Action Name="Zulus/Babylonier; Money" FileMask="CIVI*.SVE">
+      <ChangeAddress Addresses="$316" Bytes="2" NewValue="$7F7F"/>
+    </Action>
+    <Action Name="Germans/French; Money" FileMask="CIVI*.SVE">
+      <ChangeAddress Addresses="$318" Bytes="2" NewValue="$7F7F"/>
+    </Action>
+    <Action Name="Azteks/Egyptian; Money" FileMask="CIVI*.SVE">
+      <ChangeAddress Addresses="$320" Bytes="2" NewValue="$7F7F"/>
+    </Action>
+    <Action Name="Greeks/Englishman; Money" FileMask="CIVI*.SVE">
+      <ChangeAddress Addresses="$324" Bytes="2" NewValue="$7F7F"/>
+    </Action>
+    <Action Name="Indian/Mongolian; Money" FileMask="CIVI*.SVE">
+      <ChangeAddress Addresses="$326" Bytes="2" NewValue="$7F7F"/>
+    </Action>
+  </GameRecord>
+  <GameRecord Name="Jagged Alliance">
+    <Action Name="Money" FileMask="GAME*.SAV">
+      <ChangeAddress Addresses="$50F0" Bytes="2" NewValue="$FFFF"/>
+      <ChangeAddress Addresses="$50F2" Bytes="1" NewValue="$FF"/>
+    </Action>
+  </GameRecord>
+  <GameRecord Name="Lords of the Realm">
+    <Action Name="Money" FileMask="*.SAV">
+      <ChangeAddress Addresses="87990" Bytes="2" NewValue="$FFFF"/>
+      <ChangeAddress Addresses="87992" Bytes="1" NewValue="$FF"/>
+    </Action>
+  </GameRecord>
+  <GameRecord Name="Might&amp;Magic 5">
+    <Action Name="Unbeatable heros" FileMask="*.GM1">
+      <ChangeAddress Addresses="$990" Bytes="1" NewValue="$11"/>
+      <ChangeAddress Addresses="$991;$9A0" Bytes="1" NewValue="$D"/>
+      <ChangeAddress Addresses="$9A1" Bytes="1" NewValue="$13"/>
+      <ChangeAddress Addresses="$9A2" Bytes="1" NewValue="$10"/>
+      <ChangeAddress Addresses="$9A3" Bytes="1" NewValue="$F"/>
+      <ChangeAddress Addresses="$9A4" Bytes="1" NewValue="$C"/>
+      <ChangeAddress Addresses="$AC0;$AC1;$AC2;$AC3;$AC4;$AC5" Bytes="1" NewValue="$7"/>
+      <ChangeAddress Addresses="$AD0" Bytes="1" NewValue="$C"/>
+      <ChangeAddress Addresses="$AD1" Bytes="1" NewValue="$2"/>
+      <ChangeAddress Addresses="$AF0" Bytes="1" NewValue="$C"/>
+      <ChangeAddress Addresses="$B00" Bytes="1" NewValue="$A"/>
+      <ChangeAddress Addresses="$B01" Bytes="1" NewValue="$14"/>
+      <ChangeAddress Addresses="$B02" Bytes="1" NewValue="$10"/>
+      <ChangeAddress Addresses="$B03" Bytes="1" NewValue="$E"/>
+      <ChangeAddress Addresses="$B04" Bytes="1" NewValue="$D"/>
+      <ChangeAddress Addresses="$B05" Bytes="1" NewValue="$E"/>
+      <ChangeAddress Addresses="$C20;$C21" Bytes="1" NewValue="$7"/>
+      <ChangeAddress Addresses="$11E0" Bytes="1" NewValue="$8"/>
+      <ChangeAddress Addresses="$11E1" Bytes="1" NewValue="$14"/>
+      <ChangeAddress Addresses="$11E2" Bytes="1" NewValue="$D"/>
+      <ChangeAddress Addresses="$11E3" Bytes="1" NewValue="$11"/>
+      <ChangeAddress Addresses="$11F0" Bytes="1" NewValue="$E"/>
+      <ChangeAddress Addresses="$11F1;$11F2" Bytes="1" NewValue="$F"/>
+      <ChangeAddress Addresses="$1300;$1301;$1310;$1311" Bytes="1" NewValue="$0"/>
+      <ChangeAddress Addresses="$1312;$1313;$1320" Bytes="1" NewValue="$5"/>
+      <ChangeAddress Addresses="$1321" Bytes="1" NewValue="$9"/>
+      <ChangeAddress Addresses="$18D0" Bytes="1" NewValue="$E"/>
+      <ChangeAddress Addresses="$18D1" Bytes="1" NewValue="$C"/>
+      <ChangeAddress Addresses="$18D2" Bytes="1" NewValue="$E"/>
+      <ChangeAddress Addresses="$18D3" Bytes="1" NewValue="$11"/>
+      <ChangeAddress Addresses="$18D4" Bytes="1" NewValue="$F"/>
+      <ChangeAddress Addresses="$18D5" Bytes="1" NewValue="$12"/>
+      <ChangeAddress Addresses="$18D6" Bytes="1" NewValue="$11"/>
+      <ChangeAddress Addresses="$19F0;$19F1;$19F2" Bytes="1" NewValue="$5"/>
+      <ChangeAddress Addresses="$19F3" Bytes="1" NewValue="$14"/>
+      <ChangeAddress Addresses="$19F4" Bytes="1" NewValue="$5"/>
+      <ChangeAddress Addresses="$1A00" Bytes="1" NewValue="$0"/>
+      <ChangeAddress Addresses="$1A10" Bytes="1" NewValue="$A"/>
+      <ChangeAddress Addresses="$1A11" Bytes="1" NewValue="$0"/>
+      <ChangeAddress Addresses="$1CF0;$1CF1;$1CF2" Bytes="1" NewValue="$F"/>
+      <ChangeAddress Addresses="$1CF3" Bytes="1" NewValue="$10"/>
+      <ChangeAddress Addresses="$1D00" Bytes="1" NewValue="$F"/>
+      <ChangeAddress Addresses="$1D01" Bytes="1" NewValue="$C"/>
+      <ChangeAddress Addresses="$1D02" Bytes="1" NewValue="$A"/>
+      <ChangeAddress Addresses="$1E10;$1E11;$1E20;$1E21;$1E22" Bytes="1" NewValue="$2"/>
+      <ChangeAddress Addresses="$1E23" Bytes="1" NewValue="$14"/>
+      <ChangeAddress Addresses="$1E30" Bytes="1" NewValue="$C"/>
+      <ChangeAddress Addresses="$1E31" Bytes="1" NewValue="$2"/>
+      <ChangeAddress Addresses="$2280" Bytes="1" NewValue="$13"/>
+      <ChangeAddress Addresses="$2281" Bytes="1" NewValue="$A"/>
+      <ChangeAddress Addresses="$2282" Bytes="1" NewValue="$8"/>
+      <ChangeAddress Addresses="$2283" Bytes="1" NewValue="$13"/>
+      <ChangeAddress Addresses="$2284;$2285" Bytes="1" NewValue="$10"/>
+      <ChangeAddress Addresses="$2286" Bytes="1" NewValue="$E"/>
+      <ChangeAddress Addresses="$23C0" Bytes="1" NewValue="$10"/>
+      <ChangeAddress Addresses="$23C1" Bytes="1" NewValue="$0"/>
+    </Action>
+  </GameRecord>
+  <GameRecord Name="SimTower">
+    <Action Name="Stars, money" FileMask="*.TDT">
+      <ChangeAddress Addresses="$102" Bytes="1" NewValue="$5"/>
+      <ChangeAddress Addresses="$106" Bytes="1" NewValue="$FF"/>
+    </Action>
+  </GameRecord>
+  <GameRecord Name="Space Hult">
+    <Action Name="Unlimited annealing time" FileMask="HULK.EX*">
+      <ChangeAddress Addresses="$9DEF" Bytes="1" NewValue="$90"/>
+    </Action>
+  </GameRecord>
+  <GameRecord Name="Stonekeep">
+    <Action Name="Life energy" FileMask="GAMEINFO.SA*">
+      <ChangeAddress Addresses="$154" Bytes="1" NewValue="$BC"/>
+      <ChangeAddress Addresses="$155" Bytes="1" NewValue="$02"/>
+      <ChangeAddress Addresses="$156" Bytes="1" NewValue="$BC"/>
+      <ChangeAddress Addresses="$157" Bytes="1" NewValue="$02"/>
+    </Action>
+  </GameRecord>
+  <GameRecord Name="Terminator 2029">
+    <Action Name="Unbeatable" FileMask="TERM.EX*">
+      <ChangeAddress Addresses="$F17" Bytes="2" NewValue="$9090"/>
+    </Action>
+  </GameRecord>
+  <GameRecord Name="Trolls">
+    <Action Name="Unlimited lifes" FileMask="TROLLCGA.PC*">
+      <ChangeAddress Addresses="$5CB6" Bytes="4" NewValue="$90909090"/>
+      <ChangeAddress Addresses="$5CBA" Bytes="1" NewValue="$90"/>
+      <ChangeAddress Addresses="$A3BA" Bytes="4" NewValue="$90909090"/>
+      <ChangeAddress Addresses="$A3BE" Bytes="1" NewValue="$90"/>
+      <ChangeAddress Addresses="$A482" Bytes="4" NewValue="$90909090"/>
+      <ChangeAddress Addresses="$A486" Bytes="1" NewValue="$90"/>
+    </Action>
+  </GameRecord>
+  <GameRecord Name="Bad Mojo">
+    <Action Name="Lifes" FileMask="*.BM?">
+      <ChangeAddress Addresses="$7E" Bytes="1" NewValue="$0"/>
+    </Action>
+  </GameRecord>
+  <GameRecord Name="CivNet">
+    <Action Name="Money; orange; 3 player" FileMask="*.SAV">
+      <ChangeAddress Addresses="290" Bytes="2" NewValue="$7F7F"/>
+    </Action>
+    <Action Name="Money; orange; 4 player" FileMask="*.SAV">
+      <ChangeAddress Addresses="294" Bytes="2" NewValue="$7F7F"/>
+    </Action>
+    <Action Name="Money; orange; 5 player" FileMask="*.SAV">
+      <ChangeAddress Addresses="298" Bytes="2" NewValue="$7F7F"/>
+    </Action>
+    <Action Name="Money; orange; 6 player" FileMask="*.SAV">
+      <ChangeAddress Addresses="303" Bytes="2" NewValue="$7F7F"/>
+    </Action>
+    <Action Name="Money; orange; 7 player" FileMask="*.SAV">
+      <ChangeAddress Addresses="305" Bytes="2" NewValue="$7F7F"/>
+    </Action>
+    <Action Name="Money; gray; 3 player" FileMask="*.SAV">
+      <ChangeAddress Addresses="292" Bytes="2" NewValue="$7F7F"/>
+    </Action>
+    <Action Name="Money; gray; 4 player" FileMask="*.SAV">
+      <ChangeAddress Addresses="296" Bytes="2" NewValue="$7F7F"/>
+    </Action>
+    <Action Name="Money; gray; 5 player" FileMask="*.SAV">
+      <ChangeAddress Addresses="300" Bytes="2" NewValue="$7F7F"/>
+    </Action>
+    <Action Name="Money; gray; 6 player" FileMask="*.SAV">
+      <ChangeAddress Addresses="305" Bytes="2" NewValue="$7F7F"/>
+    </Action>
+    <Action Name="Money; gray; 7 player" FileMask="*.SAV">
+      <ChangeAddress Addresses="307" Bytes="2" NewValue="$7F7F"/>
+    </Action>
+    <Action Name="Money; blue; 3 player" FileMask="*.SAV">
+      <ChangeAddress Addresses="294" Bytes="2" NewValue="$7F7F"/>
+    </Action>
+    <Action Name="Money; blue; 4 player" FileMask="*.SAV">
+      <ChangeAddress Addresses="298" Bytes="2" NewValue="$7F7F"/>
+    </Action>
+    <Action Name="Money; blue; 5 player" FileMask="*.SAV">
+      <ChangeAddress Addresses="302" Bytes="2" NewValue="$7F7F"/>
+    </Action>
+    <Action Name="Money; blue; 6 player" FileMask="*.SAV">
+      <ChangeAddress Addresses="307" Bytes="2" NewValue="$7F7F"/>
+    </Action>
+    <Action Name="Money; blue; 7 player" FileMask="*.SAV">
+      <ChangeAddress Addresses="309" Bytes="2" NewValue="$7F7F"/>
+    </Action>
+    <Action Name="Money; light blue; 4 player" FileMask="*.SAV">
+      <ChangeAddress Addresses="2300" Bytes="2" NewValue="$7F7F"/>
+    </Action>
+    <Action Name="Money; light blue; 5 player" FileMask="*.SAV">
+      <ChangeAddress Addresses="304" Bytes="2" NewValue="$7F7F"/>
+    </Action>
+    <Action Name="Money; light blue; 6 player" FileMask="*.SAV">
+      <ChangeAddress Addresses="309" Bytes="2" NewValue="$7F7F"/>
+    </Action>
+    <Action Name="Money; light blue; 7 player" FileMask="*.SAV">
+      <ChangeAddress Addresses="311" Bytes="2" NewValue="$7F7F"/>
+    </Action>
+    <Action Name="Money; violett; 5 player" FileMask="*.SAV">
+      <ChangeAddress Addresses="306" Bytes="2" NewValue="$7F7F"/>
+    </Action>
+    <Action Name="Money; violett; 6 player" FileMask="*.SAV">
+      <ChangeAddress Addresses="311" Bytes="2" NewValue="$7F7F"/>
+    </Action>
+    <Action Name="Money; violett; 7 player" FileMask="*.SAV">
+      <ChangeAddress Addresses="313" Bytes="2" NewValue="$7F7F"/>
+    </Action>
+    <Action Name="Money; green; 6 player" FileMask="*.SAV">
+      <ChangeAddress Addresses="313" Bytes="2" NewValue="$7F7F"/>
+    </Action>
+    <Action Name="Money; green; 7 player" FileMask="*.SAV">
+      <ChangeAddress Addresses="315" Bytes="2" NewValue="$7F7F"/>
+    </Action>
+    <Action Name="Money; white; 7 player" FileMask="*.SAV">
+      <ChangeAddress Addresses="317" Bytes="2" NewValue="$7F7F"/>
+    </Action>
+  </GameRecord>
+  <GameRecord Name="Legend of Valour">
+    <Action Name="Change characters" FileMask="CHAR*.DAT">
+      <ChangeAddress Addresses="$122" Bytes="2" NewValue="$6363"/>
+    </Action>
+  </GameRecord>
+  <GameRecord Name="Sensible World of Soccer">
+    <Action Name="Parameters" FileMask="*.CAR">
+      <ChangeAddress Addresses="$D5DC" Bytes="1" NewValue="$0"/>
+      <ChangeAddress Addresses="$D5DD" Bytes="1" NewValue="$E1"/>
+      <ChangeAddress Addresses="$D5DE" Bytes="1" NewValue="$F5"/>
+      <ChangeAddress Addresses="$D5DF" Bytes="1" NewValue="$5"/>
+    </Action>
+  </GameRecord>
+  <GameRecord Name="SimCity für OS/2">
+    <Action Name="Money" FileMask="*.CTY">
+      <ChangeAddress Addresses="$BA4" Bytes="4" NewValue="$7F7F7F7F"/>
+    </Action>
+  </GameRecord>
+  <GameRecord Name="Z">
+    <Action Name="All missions" FileMask="OPTIONS.CF*">
+      <ChangeAddress Addresses="$0" Bytes="1" NewValue="$32"/>
+      <ChangeAddress Addresses="$1" Bytes="1" NewValue="$1"/>
+      <ChangeAddress Addresses="$2;$6;$A;$E;$12" Bytes="4" NewValue="$0"/>
+      <ChangeAddress Addresses="$16;$1A" Bytes="4" NewValue="$1"/>
+      <ChangeAddress Addresses="$1F" Bytes="1" NewValue="$1"/>
+    </Action>
+  </GameRecord>
+  <GameRecord Name="Goblins 3">
+    <Action Name="Number of jokers" FileMask="CAT.IN?">
+      <ChangeAddress Addresses="$4F" Bytes="1" NewValue="$7F"/>
+    </Action>
+  </GameRecord>
+  <GameRecord Name="1869">
+    <Action Name="Player 1" FileMask="*.PAC">
+      <ChangeAddress Addresses="$11FE" Bytes="2" NewValue="$9090"/>
+      <ChangeAddress Addresses="$1200" Bytes="1" NewValue="$90"/>
+    </Action>
+    <Action Name="Player 2" FileMask="*.PAC">
+      <ChangeAddress Addresses="$1850" Bytes="2" NewValue="$9090"/>
+      <ChangeAddress Addresses="$1852" Bytes="1" NewValue="$90"/>
+    </Action>
+    <Action Name="Player 3" FileMask="*.PAC">
+      <ChangeAddress Addresses="$24F4" Bytes="2" NewValue="$9090"/>
+      <ChangeAddress Addresses="$24F6" Bytes="1" NewValue="$90"/>
+    </Action>
+  </GameRecord>
+  <GameRecord Name="Virtual Corporation">
+    <Action Name="Money" FileMask="GAME?.DAT">
+      <ChangeAddress Addresses="$1068" Bytes="2" NewValue="$FFFF"/>
+      <ChangeAddress Addresses="$106A" Bytes="1" NewValue="$64"/>
+    </Action>
+  </GameRecord>
+  <GameRecord Name="Area 51">
+    <Action Name="Lifes, continues, health" FileMask="OPTIONS.SA?">
+      <ChangeAddress Addresses="$124;$128;$12C;$130" Bytes="1" NewValue="$FF"/>
+    </Action>
+  </GameRecord>
+  <GameRecord Name="Dungeon Keeper">
+    <Action Name="Gold" FileMask="game*.sav">
+      <ChangeAddress Addresses="$140D9A;$143FD6;$14E4A2" Bytes="4" NewValue="$FFFFFF"/>
+    </Action>
+  </GameRecord>
+</CheatDB>

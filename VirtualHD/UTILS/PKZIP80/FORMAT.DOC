@@ -1,0 +1,252 @@
+General Format
+--------------
+
+  Files stored in arbitrary order.  Large zipfiles can span multiple
+  diskette media.
+
+  Overall zipfile format:
+
+    [local file header+file data] . . .
+    [central directory] end of central directory record
+
+
+  A.  Local file header:
+  
+	local file header signature	4 bytes  (0x04034b50)
+	version needed to extract	2 bytes
+	general purpose bit flag	2 bytes
+	compression method		2 bytes
+	last mod file time 		2 bytes
+	last mod file date		2 bytes
+	crc-32   			4 bytes
+	compressed size			4 bytes
+	uncompressed size		4 bytes
+	filename length			2 bytes
+	extra field length		2 bytes
+
+	filename (variable size)
+	extra field (variable size)
+      
+
+  B.  Central directory structure:
+
+      [file header] . . .  end of central dir record
+
+      File header:
+
+	central file header signature	4 bytes  (0x02014b50)
+	version made by			2 bytes
+	version needed to extract	2 bytes
+	general purpose bit flag	2 bytes
+	compression method		2 bytes
+	last mod file time 		2 bytes
+	last mod file date		2 bytes
+	crc-32   			4 bytes
+	compressed size			4 bytes
+	uncompressed size		4 bytes
+	filename length			2 bytes
+	extra field length		2 bytes
+	file comment length		2 bytes
+	disk number start		2 bytes
+	internal file attributes	2 bytes
+	external file attributes	4 bytes
+	relative offset of local header	4 bytes
+
+	filename (variable size)
+	extra field (variable size)
+	file comment (variable size)
+
+      End of central dir record:
+
+	end of central dir signature	4 bytes  (0x06054b50)
+	number of this disk		2 bytes
+	number of the disk with the
+	start of the central directory	2 bytes
+	total number of entries in
+	the central dir on this disk	2 bytes
+	total number of entries in
+	the central dir			2 bytes
+	size of the central directory   4 bytes
+	offset of start of central
+	directory with respect to
+	the starting disk number	4 bytes
+	zipfile comment length		2 bytes
+	zipfile comment (variable size)
+      
+
+
+
+  C.  Explanation of fields:
+
+      version made by
+      
+	  The upper byte indicates the host system (OS) for the
+	  file.  Software can use this information to determine
+	  the line record format for text files etc.  The current
+	  mappings are:
+	  
+	  0 - IBM (MS-DOS)	1 - Amiga	2 - VMS
+	  3 - *nix		4 thru 255 - unused
+	  
+	  The lower byte indicates the version number of the 
+	  software used to encode the file.  The value/10 
+	  indicates the major version number, and the value 
+	  mod 10 is the minor version number.
+
+      version needed to extract
+      
+	  The minimum software version needed to extract the 
+	  file, mapped as above.
+
+      general purpose bit flag:
+
+	  The lowest bit, if set, indicates that the file is 
+	  encrypted.  The upper three bits are reserved and 
+	  used internally by the software when processing the 
+	  zipfile.  The remaining bits are unused in version 
+	  1.0.
+
+      compression method:
+      
+	  (see accompanying documentation for algorithm 
+	  descriptions)
+      
+	  0 - The file is stored (no compression)
+	  1 - The file is Shrunk
+	  2 - The file is Reduced with compression factor 1
+	  3 - The file is Reduced with compression factor 2
+	  4 - The file is Reduced with compression factor 3
+	  5 - The file is Reduced with compression factor 4
+
+      date and time fields:
+
+	  The date and time are encoded in standard MS-DOS 
+	  format.
+
+      CRC-32:
+      
+	  The CRC-32 algorithm was generously contributed by 
+	  David Schwaderer and can be found in his excellent 
+	  book "C Programmers Guide to NetBIOS" published by
+	  Howard W. Sams & Co. Inc.  The 'magic number' for 
+	  the CRC is 0xdebb20e3.  The proper CRC pre and post 
+	  conditioning is used, meaning that the CRC register 
+	  is pre-conditioned with all ones (a starting value 
+	  of 0xffffffff) and the value is post-conditioned by 
+	  taking the one's complement of the CRC residual.
+	  
+      compressed size:
+      uncompressed size:
+
+	  The size of the file compressed and uncompressed, 
+	  respectively.
+      
+      filename length:
+      extra field length:
+      file comment length:
+
+	  The length of the filename, extra field, and comment 
+	  fields respectively.  The combined length of any
+	  directory record and these three fields should not
+	  generally exceed 65,535 bytes.
+
+      disk number start:
+
+	  The number of the disk on which this file begins.
+
+      internal file attributes:
+
+	  The lowest bit of this field indicates, if set, that 
+	  the file is apparently an ASCII or text file.  If not
+	  set, that the file apparently contains binary data.
+	  The remaining bits are unused in version 1.0.
+
+      external file attributes:
+
+	  The mapping of the external attributes is 
+	  host-system dependent (see 'version made by').  For 
+	  MS-DOS, the low order byte is the MS-DOS directory 
+	  attribute byte.
+
+      relative offset of local header:
+
+	  This is the offset from the start of the first disk on
+	  which this file appears, to where the local header should
+	  be found.
+
+      filename:
+
+	  The name of the file, with optional relative path.  
+	  The path stored should not contain a drive or 
+	  device letter, or a leading slash.  All slashes 
+	  should be forward slashes '/' as opposed to 
+	  backwards slashes '\' for compatibility with Amiga
+	  and Unix file systems etc.
+
+      extra field:
+
+	  This is for future expansion.  If additional information
+	  needs to be stored in the future, it should be stored
+	  here.  Earlier versions of the software can then safely
+	  skip this file, and find the next file or header.  This
+	  field will be 0 length in version 1.0.
+
+      file comment:
+
+	  The comment for this file.
+
+
+      number of this disk:
+      
+	  The number of this disk, which contains central 
+	  directory end record.
+    
+      number of the disk with the start of the central directory:
+      
+	  The number of the disk on which the central 
+	  directory starts.
+
+      total number of entries in the central dir on this disk:
+      
+	  The number of central directory entries on this disk.
+	  
+      total number of entries in the central dir:
+      
+	  The total number of files in the zipfile.
+      
+
+      size of the central directory:
+      
+	  The size (in bytes) of the entire central directory.
+
+      offset of start of central directory with respect to
+      the starting disk number:
+      
+	  Offset of the start of the central direcory on the 
+	  disk on which the central directory starts.
+      
+      zipfile comment length:
+      
+	  The length of the comment for this zipfile.
+      
+      zipfile comment:
+      
+	  The comment for this zipfile.
+
+
+  D.  General notes:
+
+      1)  All fields unless otherwise noted are unsigned and stored
+	  in Intel low-byte:high-byte, low-word:high-word order.
+
+      2)  String fields are not null terminated, since the
+	  length is given explicitly.
+
+      3)  Local headers should not span disk boundries.  Also, even
+	  though the central directory can span disk boundries, no
+	  single record in the central directory should be split
+	  across disks.
+
+      4)  The entries in the central directory may not necessarily
+	  be in the same order that files appear in the zipfile.
+

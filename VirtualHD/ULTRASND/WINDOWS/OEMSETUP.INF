@@ -1,0 +1,6 @@
+[disks]
+    1 =. ,"UltraSound Driver Disk #1"
+
+[Installable.Drivers]
+; key        = filename, type(s), description, VxD(s), Default Params
+ultrasnd=1:ultrasnd.drv,  "WAVE,MIDI,AUX", "Ultra Wave and MIDI Synth", 1:grvsultr.386,,
