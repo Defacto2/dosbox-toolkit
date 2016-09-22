@@ -9,11 +9,13 @@ The package comprises of [D-Fend](http://dfendreloaded.sourceforge.net/), [DOSBo
 Unfortunately only for Windows.
 
 Option 1 - Zip download
+
 1. Select **Download ZIP** from the green **Clone or download** button on the [GitHub repository](https://github.com/Defacto2/defacto2-dosbox). 
 2. Extract the downloaded zip into a directory of your choice.
 3. Open the directory and run `DFend.exe`.
 
 Option 2 - Git clone
+
 1. Open an administrator command prompt and `cd` to a directory where you want to install.
 2. `git clone https://github.com/Defacto2/defacto2-dosbox.git`
 3. `defacto2-dosbox\dfend.exe`
