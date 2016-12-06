@@ -24,15 +24,15 @@ Option 2 - Git clone
 
 #### Profiles
 
-Most of the D-Fend profiles should be self-explanatory for anyone familiar with DOS. Generally **Default** or **Default (max speed)** should work for most *scene* programs. Some programs have buggy audio detection routines and with those you're best to drill down to either one of the *SoundBlaster* or the *Gravis Ultrasound* profiles, instead of using the *Defaults* that have multiple soundcards.
+Most of the D-Fend profiles should be self-explanatory for anyone familiar with DOS. **Default** or **Default (max speed)** should work for most *scene* programs. Some programs have buggy audio detection routines and with those you're best to drill down to either one of the *SoundBlaster* or the *Gravis Ultrasound* profiles, instead of using the *Defaults* that have multiple soundcards.
 
-The *debug:* profiles are mostly to troubleshoot in case the DOS software has incompatibility issues with certain hardware. Some demos work better with *VGA* instead of the *Default*'s *SVGA*. Others need all the audio emulation disabled to work correctly.
+The *debug:* profiles are mostly to troubleshoot in case the DOS software has incompatibility issues with certain hardware. Some demos work better with *VGA* instead of the *Default*'s *SVGA*. Others need all the audio emulation disabled to function correctly.
 
 #### VirtualHD
 
-The D-Fend VirtualHD (virtual `C:` drive) has a number of DOS tools and utilities.
+The D-Fend VirtualHD (virtual `C:` drive) has some DOS tools and utilities.
 
-Please note while D-Fend, DOSBox and the configurations are released under a GPL-3.0 licence. The files within `VirtualHD` are probably not, and should be considered proprietary unless they state otherwise.
+Please note while D-Fend, DOSBox and the configurations are under a GPL-3.0 licence. The files within `VirtualHD` are probably not, and are proprietary unless they state otherwise.
 
 ######Archive decompression utilities
 `7ZIP` `ARC` `ARJ` `DOSZIP` `LHA` `PKARC` `PKZIP*` `RAR` `UCFCUP34` `ZOO`
