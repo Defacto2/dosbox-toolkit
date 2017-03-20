@@ -1,0 +1,15 @@
+DOSBox version SVN-lfn
+Copyright 2002-2015 DOSBox Team, published under GNU GPL.
+Long File Name (LFN) and mouse copy/paste support, by Wengier, 2014-2017.
+---
+CONFIG:Loading primary settings from config file C:\Users\Ben\AppData\Local\Temp\DOSBOX.CONF
+Memory sizes above 31 MB are NOT recommended.
+Stick with the default values unless you are absolutely certain.
+MIDI: Opened device:win32
+Failed to create ddraw surface, back to normal surface.
+DOS keyboard layout loaded with main language code US for layout US
+SHELL: Redirect output to nul
+Capturing Screenshot to D:\Workspaces\GitHub\Defacto2\defacto2-dosbox\Capture\DOSBox DOS\\000.png
+Capturing Video to D:\Workspaces\GitHub\Defacto2\defacto2-dosbox\Capture\DOSBox DOS\\000.avi
+Capturing Screenshot to D:\Workspaces\GitHub\Defacto2\defacto2-dosbox\Capture\DOSBox DOS\\001.png
+Stopped capturing video.
