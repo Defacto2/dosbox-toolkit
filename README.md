@@ -34,20 +34,20 @@ The D-Fend VirtualHD (virtual `C:` drive) has some DOS tools and utilities.
 
 Please note while D-Fend, DOSBox and the configurations are under a GPL-3.0 licence. The files within `VirtualHD` are probably not, and are proprietary unless they state otherwise.
 
-######Archive decompression utilities
+###### Archive decompression utilities
 `7ZIP` `ARC` `ARJ` `DOSZIP` `LHA` `PKARC` `PKZIP*` `RAR` `UCFCUP34` `ZOO`
 
-######Operating systems
+###### Operating systems
 `FREEDOS`
 
-######Backup startup configurations
+###### Backup startup configurations
 `AUTOEXEC`
 
-######ACiDView (ansi, text, nfo reader)
+###### ACiDView (ansi, text, nfo reader)
 `AVD-436`
 
-######Software patches and fixes
+###### Software patches and fixes
 `TP-FIX` `UNP411`
 
-######Gravis Ultrasound Patches
+###### Gravis Ultrasound Patches
 `ULTRASND`
